@@ -23,10 +23,19 @@ type User struct {
 
 type GameSession struct {
 	gorm.Model
-	UserID       uint           `gorm:"not null" json:"userId"`
-	GameID       string         `gorm:"not null" json:"gameId"`
-	Score        int            `json:"score"`
-	Duration     int            `json:"duration"` // in seconds
-	WrongAnswers []string       `gorm:"type:text[]" json:"wrongAnswers"`
-	Timestamp    time.Time      `json:"timestamp"`
+	UserID       uint      `gorm:"not null" json:"userId"`
+	GameID       string    `gorm:"not null" json:"gameId"`
+	Score        int       `json:"score"`
+	Duration     int       `json:"duration"` // in seconds
+	WrongAnswers []string  `gorm:"type:text[]" json:"wrongAnswers"`
+	Timestamp    time.Time `json:"timestamp"`
+}
+
+type Question struct {
+	gorm.Model
+	Category string   `gorm:"index" json:"category"`
+	Text     string   `json:"text"`
+	Options  []string `gorm:"type:text[]" json:"options"`
+	Answer   string   `json:"answer"`
+	Fact     string   `json:"fact"`
 }
