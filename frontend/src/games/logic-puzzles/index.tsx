@@ -110,6 +110,18 @@ const LogicPuzzles: React.FC = () => {
                     </motion.div>
                 )}
 
+                {gameState === 'playing' && questions.length === 0 && !loading && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        className="flex flex-col items-center gap-6"
+                    >
+                        <HelpCircle className="text-slate-300" size={64} />
+                        <p className="text-xl font-bold text-slate-400">Puzzle bank is empty. Check back soon!</p>
+                        <button onClick={() => setGameState('idle')} className="btn-secondary px-8 py-3 rounded-2xl">Return</button>
+                    </motion.div>
+                )}
+
                 {gameState === 'playing' && questions.length > 0 && (
                     <motion.div
                         key="playing"

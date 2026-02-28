@@ -138,40 +138,8 @@ func main() {
 		log.Fatal(err)
 	}
 }
-func seedQuestions(db *gorm.DB) {
-	questions := []models.Question{
-		// Science
-		{Category: "science", Text: "Which planet is known as the Red Planet?", Options: []string{"Venus", "Mars", "Jupiter", "Saturn"}, Answer: "Mars", Fact: "Mars has iron oxide on its surface, giving it a reddish look."},
-		{Category: "science", Text: "What is the largest animal on Earth?", Options: []string{"Elephant", "Blue Whale", "Giraffe", "Shark"}, Answer: "Blue Whale", Fact: "Its tongue alone can weigh as much as an elephant!"},
-		{Category: "science", Text: "How many legs does a spider have?", Options: []string{"6", "8", "10", "12"}, Answer: "8", Fact: "Spiders are arachnids, not insects!"},
-		{Category: "science", Text: "What gas do humans need to breathe to live?", Options: []string{"Nitrogen", "Oxygen", "Carbon Dioxide", "Hydrogen"}, Answer: "Oxygen", Fact: "Oxygen is produced by plants through photosynthesis."},
-		{Category: "science", Text: "Which is the boiling point of water?", Options: []string{"50°C", "100°C", "150°C", "200°C"}, Answer: "100°C", Fact: "At sea level, water boils exactly at 100 degrees Celsius."},
-		{Category: "science", Text: "What is the center of an atom called?", Options: []string{"Electron", "Proton", "Nucleus", "Neutron"}, Answer: "Nucleus", Fact: "The nucleus contains protons and neutrons."},
-		{Category: "science", Text: "What is the closest star to Earth?", Options: []string{"Sirius", "Sun", "Alpha Centauri", "Polaris"}, Answer: "Sun", Fact: "The Sun provides the energy needed for life on Earth."},
-		{Category: "science", Text: "How many bones are in the adult human body?", Options: []string{"106", "206", "306", "406"}, Answer: "206", Fact: "You are born with more bones, but some fuse together as you grow."},
-		{Category: "science", Text: "What part of the plant grows underground?", Options: []string{"Leaf", "Stem", "Root", "Flower"}, Answer: "Root", Fact: "Roots absorb water and nutrients from the soil."},
-		{Category: "science", Text: "What is the hardest natural substance on Earth?", Options: []string{"Gold", "Iron", "Diamond", "Quartz"}, Answer: "Diamond", Fact: "Diamonds are made of pure carbon."},
 
-		// Logic
-		{Category: "logic", Text: "If 1=5, 2=25, 3=125, what does 5 equal?", Options: []string{"625", "3125", "1", "5"}, Answer: "1", Fact: "If 1=5, then 5=1!"},
-		{Category: "logic", Text: "Complete the sequence: 2, 4, 8, 16, ?", Options: []string{"20", "24", "30", "32"}, Answer: "32", Fact: "Each number is double the previous one."},
-		{Category: "logic", Text: "What comes next: Triangle, Square, Pentagon, ?", Options: []string{"Circle", "Hexagon", "Octagon", "Star"}, Answer: "Hexagon", Fact: "The number of sides increases by one (3, 4, 5, 6)."},
-		{Category: "logic", Text: "Which month has 28 days?", Options: []string{"February", "January", "June", "All of them"}, Answer: "All of them", Fact: "Every month has at least 28 days!"},
-		{Category: "logic", Text: "If you have 3 apples and you take away 2, how many apples do you have?", Options: []string{"1", "2", "3", "5"}, Answer: "2", Fact: "You took 2, so you have 2!"},
-		{Category: "logic", Text: "What has keys but can't open locks?", Options: []string{"Door", "Piano", "Chest", "Box"}, Answer: "Piano", Fact: "Pianos have keys that make music, not open doors."},
-		{Category: "logic", Text: "I follow you all day long, but when the sun goes down I'm gone. What am I?", Options: []string{"Wind", "Shadow", "Bird", "Cloud"}, Answer: "Shadow", Fact: "Shadows need light to exist."},
-		{Category: "logic", Text: "What goes up but never comes down?", Options: []string{"Balloon", "Age", "Plane", "Bird"}, Answer: "Age", Fact: "You only get older, never younger!"},
-		{Category: "logic", Text: "What has eyes but can't see?", Options: []string{"Needle", "Potato", "Storm", "All of above"}, Answer: "All of above", Fact: "A needle has an eye, a potato has eyes, and a storm has an eye!"},
-		{Category: "logic", Text: "What belongs to you but others use it more than you?", Options: []string{"Money", "Name", "House", "Car"}, Answer: "Name", Fact: "Others call you by your name more than you say it yourself!"},
-	}
-
-	for _, q := range questions {
-		db.Create(&q)
-	}
-	log.Println("Seeding completed successfully!")
-}
-
-// AuthMiddleware - Verifies our custom JWT
+// AuthMiddleware ...
 func AuthMiddleware(secret string) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		authHeader := c.GetHeader("Authorization")

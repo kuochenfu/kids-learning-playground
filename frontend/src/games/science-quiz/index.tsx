@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Star, Trophy, ArrowRight, Lightbulb, RefreshCw, Loader2 } from 'lucide-react';
+import { Star, Trophy, ArrowRight, Lightbulb, RefreshCw, Loader2, HelpCircle } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import axios from 'axios';
 
@@ -107,6 +107,18 @@ const ScienceQuiz: React.FC = () => {
                             {loading ? <Loader2 className="animate-spin" /> : "Let's Discover!"}
                             {!loading && <ArrowRight className="group-hover:translate-x-2 transition-transform" />}
                         </button>
+                    </motion.div>
+                )}
+
+                {gameState === 'playing' && questions.length === 0 && !loading && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        className="flex flex-col items-center gap-6"
+                    >
+                        <HelpCircle className="text-slate-300" size={64} />
+                        <p className="text-xl font-bold text-slate-400">Question bank is empty. Check back soon!</p>
+                        <button onClick={() => setGameState('idle')} className="btn-secondary px-8 py-3 rounded-2xl">Return</button>
                     </motion.div>
                 )}
 
