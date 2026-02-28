@@ -1,0 +1,20 @@
+# Node
+frontend/node_modules/
+frontend/dist/
+shared/node_modules/
+
+# Go
+backend/bin/
+backend/vendor/
+*.exe
+*.o
+*.a
+
+# Git and OS
+.git/
+.DS_Store
+.vscode/
+.idea/
+
+# Local data
+data/
