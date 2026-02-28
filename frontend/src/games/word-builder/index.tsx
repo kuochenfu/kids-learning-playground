@@ -16,7 +16,7 @@ const WordBuilder: React.FC = () => {
     const { token } = useAuth();
     const [gameState, setGameState] = useState<'idle' | 'playing' | 'finished'>('idle');
     const [currentWord, setCurrentWord] = useState('');
-    const [scrambled, setScrambled] = useState<string[]>([]);
+    const [scrambled, setScrambled] = useState<{ id: string; char: string }[]>([]);
     const [solvedWords, setSolvedWords] = useState<string[]>([]);
     const [score, setScore] = useState(0);
     const [feedback, setFeedback] = useState<boolean | null>(null);
@@ -24,7 +24,10 @@ const WordBuilder: React.FC = () => {
     const generateWord = useCallback(() => {
         const word = WORD_LIST[Math.floor(Math.random() * WORD_LIST.length)];
         setCurrentWord(word);
-        const letters = word.split('').sort(() => Math.random() - 0.5);
+        const letters = word.split('').map((char, idx) => ({
+            id: `${char}-${idx}-${Math.random()}`,
+            char
+        })).sort(() => Math.random() - 0.5);
         setScrambled(letters);
         setFeedback(null);
     }, []);
@@ -53,9 +56,10 @@ const WordBuilder: React.FC = () => {
         }
     }, [token]);
 
-    const handleReorder = (newOrder: string[]) => {
+    const handleReorder = (newOrder: { id: string; char: string }[]) => {
         setScrambled(newOrder);
-        if (newOrder.join('') === currentWord) {
+        const attempt = newOrder.map(l => l.char).join('');
+        if (attempt === currentWord) {
             setFeedback(true);
             const newScore = score + 50;
             setScore(newScore);
@@ -121,12 +125,30 @@ const WordBuilder: React.FC = () => {
                             </div>
                         </div>
 
-                        <div className="bg-white/40 p-12 rounded-[4rem] border-4 border-dashed border-slate-200">
-                            <Reorder.Group axis="x" values={scrambled} onReorder={handleReorder} className="flex flex-wrap justify-center gap-4">
-                                {scrambled.map((letter, index) => (
-                                    <Reorder.Item key={`${letter}-${index}`} value={letter} className="cursor-pointer select-none">
-                                        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9, rotate: 5 }} className={`w-16 h-20 md:w-20 md:h-24 bg-white rounded-2xl md:rounded-[2rem] shadow-playful border-b-8 border-slate-100 flex items-center justify-center text-4xl md:text-5xl font-black text-slate-700 ${feedback ? 'border-secondary bg-secondary/10 text-secondary' : ''}`}>
-                                            {letter}
+                        <div className="bg-white/40 p-8 md:p-12 rounded-[3rem] md:rounded-[4rem] border-4 border-dashed border-slate-200 w-full min-h-[320px] md:min-h-[400px] flex items-center justify-center">
+                            <Reorder.Group
+                                axis="x"
+                                values={scrambled}
+                                onReorder={handleReorder}
+                                className="flex flex-wrap justify-center gap-2 md:gap-4 w-full"
+                            >
+                                {scrambled.map((item) => (
+                                    <Reorder.Item
+                                        key={item.id}
+                                        value={item}
+                                        className="cursor-pointer select-none"
+                                    >
+                                        <motion.div
+                                            whileHover={{ scale: 1.05 }}
+                                            whileTap={{ scale: 0.95, rotate: 2 }}
+                                            className={`
+                                                ${currentWord.length > 8 ? 'w-12 h-16 md:w-16 md:h-20 text-3xl md:text-4xl' : 'w-16 h-20 md:w-20 md:h-24 text-4xl md:text-5xl'} 
+                                                bg-white rounded-xl md:rounded-[2rem] shadow-playful border-b-8 border-slate-100 flex items-center justify-center font-black text-slate-700 
+                                                ${feedback ? 'border-secondary bg-secondary/10 text-secondary' : ''}
+                                                transition-colors
+                                            `}
+                                        >
+                                            {item.char}
                                         </motion.div>
                                     </Reorder.Item>
                                 ))}
