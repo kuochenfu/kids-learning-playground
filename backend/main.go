@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"log"
 	"net/http"
@@ -178,4 +179,20 @@ func AuthMiddleware(secret string) gin.HandlerFunc {
 		c.Set("userRole", claims["role"])
 		c.Next()
 	}
+}
+
+//go:embed questions.json
+var embeddedQuestions []byte
+
+func seedQuestions(db *gorm.DB) {
+	var questions []models.Question
+	if err := json.Unmarshal(embeddedQuestions, &questions); err != nil {
+		log.Printf("Error unmarshalling embedded questions: %v", err)
+		return
+	}
+
+	for _, q := range questions {
+		db.Create(&q)
+	}
+	log.Printf("Successfully seeded %d questions!", len(questions))
 }

@@ -1,0 +1,6002 @@
+[
+  {
+    "category": "science",
+    "text": "What is the center of an atom?",
+    "options": [
+      "Nucleus",
+      "Proton",
+      "Electron",
+      "Neutron"
+    ],
+    "answer": "Nucleus",
+    "fact": "The nucleus contains protons and neutrons."
+  },
+  {
+    "category": "science",
+    "text": "What planet is closest to the Sun?",
+    "options": [
+      "Venus",
+      "Mars",
+      "Mercury",
+      "Earth"
+    ],
+    "answer": "Mercury",
+    "fact": "Mercury is the smallest planet too."
+  },
+  {
+    "category": "science",
+    "text": "What gas do plants need for photosynthesis?",
+    "options": [
+      "Oxygen",
+      "Carbon Dioxide",
+      "Nitrogen",
+      "Hydrogen"
+    ],
+    "answer": "Carbon Dioxide",
+    "fact": "Plants breathe it in."
+  },
+  {
+    "category": "science",
+    "text": "What is the powerhouse of the cell?",
+    "options": [
+      "Nucleus",
+      "Mitochondria",
+      "Ribosome",
+      "Wall"
+    ],
+    "answer": "Mitochondria",
+    "fact": "It produces energy."
+  },
+  {
+    "category": "science",
+    "text": "How many continents are there?",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "answer": "7",
+    "fact": "Asia, Africa, NA, SA, Antarctica, Europe, Australia."
+  },
+  {
+    "category": "science",
+    "text": "What is the fastest land animal?",
+    "options": [
+      "Lion",
+      "Cheetah",
+      "Horse",
+      "Eagle"
+    ],
+    "answer": "Cheetah",
+    "fact": "It can reach 120 km/h."
+  },
+  {
+    "category": "science",
+    "text": "What is the only mammal that can fly?",
+    "options": [
+      "Bat",
+      "Butterfly",
+      "Bird",
+      "Squirrel"
+    ],
+    "answer": "Bat",
+    "fact": "Bats are mammals with wings."
+  },
+  {
+    "category": "science",
+    "text": "Which planet has rings made of ice and dust?",
+    "options": [
+      "Jupiter",
+      "Saturn",
+      "Neptune",
+      "Uranus"
+    ],
+    "answer": "Saturn",
+    "fact": "Saturn's rings are very famous."
+  },
+  {
+    "category": "science",
+    "text": "What do bees collect from flowers?",
+    "options": [
+      "Nectar",
+      "Water",
+      "Honey",
+      "Dirt"
+    ],
+    "answer": "Nectar",
+    "fact": "They turn nectar into honey."
+  },
+  {
+    "category": "science",
+    "text": "What is the freezing point of water?",
+    "options": [
+      "0\u00b0C",
+      "10\u00b0C",
+      "32\u00b0C",
+      "-10\u00b0C"
+    ],
+    "answer": "0\u00b0C",
+    "fact": "At 0\u00b0C, water turns to ice."
+  },
+  {
+    "category": "science",
+    "text": "What is the largest organ in the human body?",
+    "options": [
+      "Heart",
+      "Skin",
+      "Lungs",
+      "Liver"
+    ],
+    "answer": "Skin",
+    "fact": "Skin protects everything inside!"
+  },
+  {
+    "category": "science",
+    "text": "What force pulls objects toward the Earth?",
+    "options": [
+      "Magnetism",
+      "Gravity",
+      "Friction",
+      "Wind"
+    ],
+    "answer": "Gravity",
+    "fact": "Gravity keeps us on the ground."
+  },
+  {
+    "category": "science",
+    "text": "What is the closest planet to Earth?",
+    "options": [
+      "Venus",
+      "Mars",
+      "Mercury",
+      "Jupiter"
+    ],
+    "answer": "Venus",
+    "fact": "Venus is often called Earth's twin."
+  },
+  {
+    "category": "science",
+    "text": "How long does it take Earth to orbit the Sun?",
+    "options": [
+      "1 day",
+      "1 month",
+      "1 year",
+      "1 week"
+    ],
+    "answer": "1 year",
+    "fact": "It specifically takes 365.25 days."
+  },
+  {
+    "category": "science",
+    "text": "What do you call a scientist who studies stars?",
+    "options": [
+      "Biologist",
+      "Geologist",
+      "Astronomer",
+      "Chemist"
+    ],
+    "answer": "Astronomer",
+    "fact": "Astronomers use telescopes."
+  },
+  {
+    "category": "science",
+    "text": "What part of the plant makes food?",
+    "options": [
+      "Root",
+      "Stem",
+      "Leaf",
+      "Flower"
+    ],
+    "answer": "Leaf",
+    "fact": "Leaves use sunlight to make food."
+  },
+  {
+    "category": "science",
+    "text": "Which animal is known as the 'King of the Jungle'?",
+    "options": [
+      "Tiger",
+      "Elephant",
+      "Lion",
+      "Gorilla"
+    ],
+    "answer": "Lion",
+    "fact": "Actually, lions usually live in the savannah."
+  },
+  {
+    "category": "science",
+    "text": "What is the hardest mineral?",
+    "options": [
+      "Gold",
+      "Quartz",
+      "Diamond",
+      "Silver"
+    ],
+    "answer": "Diamond",
+    "fact": "Only another diamond can scratch a diamond."
+  },
+  {
+    "category": "science",
+    "text": "How many teeth does an adult human normally have?",
+    "options": [
+      "28",
+      "30",
+      "32",
+      "34"
+    ],
+    "answer": "32",
+    "fact": "This includes the wisdom teeth."
+  },
+  {
+    "category": "science",
+    "text": "What is the study of living things called?",
+    "options": [
+      "Physics",
+      "Biology",
+      "Chemistry",
+      "History"
+    ],
+    "answer": "Biology",
+    "fact": "Bio means life."
+  },
+  {
+    "category": "science",
+    "text": "What is the primary source of energy for Earth?",
+    "options": [
+      "Moon",
+      "Sun",
+      "Gravity",
+      "Earth's core"
+    ],
+    "answer": "Sun",
+    "fact": "The Sun provides light and heat."
+  },
+  {
+    "category": "science",
+    "text": "What is the chemical symbol for water?",
+    "options": [
+      "H2O",
+      "O2",
+      "CO2",
+      "N2"
+    ],
+    "answer": "H2O",
+    "fact": "Two hydrogen and one oxygen."
+  },
+  {
+    "category": "science",
+    "text": "Which planet is the 'Red Planet'?",
+    "options": [
+      "Mars",
+      "Jupiter",
+      "Venus",
+      "Saturn"
+    ],
+    "answer": "Mars",
+    "fact": "Mars has reddish soil."
+  },
+  {
+    "category": "science",
+    "text": "What do caterpillars turn into?",
+    "options": [
+      "Bees",
+      "Butterflies",
+      "Ants",
+      "Flies"
+    ],
+    "answer": "Butterflies",
+    "fact": "It's called metamorphosis."
+  },
+  {
+    "category": "science",
+    "text": "What is the tallest grass in the world?",
+    "options": [
+      "Wheat",
+      "Bamboo",
+      "Sugarcane",
+      "Rice"
+    ],
+    "answer": "Bamboo",
+    "fact": "Bamboo can grow very fast!"
+  },
+  {
+    "category": "science",
+    "text": "Which is the largest ocean on Earth?",
+    "options": [
+      "Atlantic",
+      "Indian",
+      "Pacific",
+      "Arctic"
+    ],
+    "answer": "Pacific",
+    "fact": "The Pacific covers 1/3 of Earth."
+  },
+  {
+    "category": "science",
+    "text": "What gas do we breathe out?",
+    "options": [
+      "Oxygen",
+      "Carbon Dioxide",
+      "Nitrogen",
+      "Helium"
+    ],
+    "answer": "Carbon Dioxide",
+    "fact": "Plants breathe this in!"
+  },
+  {
+    "category": "science",
+    "text": "How many legs does a ladybug have?",
+    "options": [
+      "4",
+      "6",
+      "8",
+      "2"
+    ],
+    "answer": "6",
+    "fact": "All insects have 6 legs."
+  },
+  {
+    "category": "science",
+    "text": "What is the name of the galaxy we live in?",
+    "options": [
+      "Andromeda",
+      "Milky Way",
+      "Orion",
+      "Starry"
+    ],
+    "answer": "Milky Way",
+    "fact": "It looks like milk in the sky."
+  },
+  {
+    "category": "science",
+    "text": "What is a baby frog called?",
+    "options": [
+      "Pup",
+      "Kitten",
+      "Tadpole",
+      "Joey"
+    ],
+    "answer": "Tadpole",
+    "fact": "Tadpoles live in water."
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #31: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #32: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #33: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #34: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #35: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #36: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #37: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #38: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #39: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #40: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #41: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #42: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #43: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #44: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #45: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #46: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #47: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #48: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #49: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #50: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #51: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #52: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #53: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #54: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #55: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #56: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #57: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #58: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #59: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #60: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #61: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #62: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #63: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #64: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #65: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #66: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #67: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #68: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #69: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #70: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #71: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #72: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #73: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #74: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #75: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #76: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #77: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #78: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #79: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #80: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #81: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #82: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #83: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #84: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #85: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #86: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #87: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #88: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #89: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #90: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #91: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #92: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #93: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #94: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #95: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #96: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #97: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #98: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #99: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #100: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #101: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #102: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #103: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #104: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #105: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #106: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #107: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #108: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #109: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #110: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #111: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #112: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #113: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #114: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #115: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #116: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #117: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #118: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #119: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #120: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #121: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #122: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #123: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #124: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #125: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #126: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #127: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #128: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #129: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #130: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #131: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #132: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #133: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #134: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #135: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #136: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #137: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #138: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #139: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #140: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #141: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #142: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #143: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #144: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #145: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #146: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #147: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #148: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #149: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #150: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #151: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #152: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #153: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #154: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #155: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #156: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #157: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #158: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #159: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #160: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #161: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #162: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #163: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #164: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #165: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #166: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #167: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #168: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #169: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #170: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #171: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #172: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #173: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #174: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #175: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #176: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #177: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #178: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #179: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #180: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #181: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #182: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #183: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #184: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #185: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #186: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #187: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #188: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #189: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #190: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #191: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #192: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #193: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #194: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #195: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #196: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #197: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #198: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #199: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #200: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #201: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #202: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #203: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #204: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #205: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #206: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #207: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #208: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #209: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #210: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #211: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #212: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #213: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #214: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #215: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #216: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #217: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #218: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #219: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #220: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #221: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #222: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #223: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #224: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #225: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #226: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #227: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #228: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #229: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #230: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #231: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #232: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #233: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #234: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #235: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #236: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #237: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #238: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #239: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #240: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #241: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #242: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #243: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #244: What is the primary element in water?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #245: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #246: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #247: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #248: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #249: What is the primary element in the air?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "science",
+    "text": "Science Quiz #250: What is the primary element in the sun?",
+    "options": [
+      "Nitrogen",
+      "Hydrogen",
+      "Oxygen",
+      "Carbon"
+    ],
+    "answer": "Hydrogen",
+    "fact": "Science is amazing!"
+  },
+  {
+    "category": "logic",
+    "text": "What has a face and two hands but no arms or legs?",
+    "options": [
+      "Clock",
+      "Person",
+      "Ghost",
+      "Mirror"
+    ],
+    "answer": "Clock",
+    "fact": "A clock has hands and a face!"
+  },
+  {
+    "category": "logic",
+    "text": "What has a thumb and four fingers but is not alive?",
+    "options": [
+      "Glove",
+      "Hand",
+      "Robot",
+      "Branch"
+    ],
+    "answer": "Glove",
+    "fact": "Gloves fit our hands perfectly."
+  },
+  {
+    "category": "logic",
+    "text": "Which is heavier: a pound of feathers or a pound of lead?",
+    "options": [
+      "Feathers",
+      "Lead",
+      "Both are same",
+      "Depends"
+    ],
+    "answer": "Both are same",
+    "fact": "A pound is a pound!"
+  },
+  {
+    "category": "logic",
+    "text": "What has to be broken before you can use it?",
+    "options": [
+      "Bottle",
+      "Egg",
+      "Window",
+      "Code"
+    ],
+    "answer": "Egg",
+    "fact": "You have to crack an egg to cook it."
+  },
+  {
+    "category": "logic",
+    "text": "I\u2019m tall when I\u2019m young, and I\u2019m short when I\u2019m old. What am I?",
+    "options": [
+      "Tree",
+      "Candle",
+      "Pencil",
+      "Man"
+    ],
+    "answer": "Candle",
+    "fact": "Candles melt down as they burn."
+  },
+  {
+    "category": "logic",
+    "text": "What month of the year has 28 days?",
+    "options": [
+      "February",
+      "January",
+      "March",
+      "All of them"
+    ],
+    "answer": "All of them",
+    "fact": "Every month has at least 28 days!"
+  },
+  {
+    "category": "logic",
+    "text": "What is full of holes but still holds water?",
+    "options": [
+      "Sponge",
+      "Bucket",
+      "Net",
+      "Sieve"
+    ],
+    "answer": "Sponge",
+    "fact": "Sponges are very absorbent."
+  },
+  {
+    "category": "logic",
+    "text": "What building has the most stories?",
+    "options": [
+      "Skyscraper",
+      "Library",
+      "School",
+      "Hotel"
+    ],
+    "answer": "Library",
+    "fact": "A library has thousands of stories (books)!"
+  },
+  {
+    "category": "logic",
+    "text": "If you feed me, I live. If you give me a drink, I die. What am I?",
+    "options": [
+      "Water",
+      "Fire",
+      "Earth",
+      "Wind"
+    ],
+    "answer": "Fire",
+    "fact": "Water puts out fire."
+  },
+  {
+    "category": "logic",
+    "text": "What can you catch but not throw?",
+    "options": [
+      "Ball",
+      "Cold",
+      "Wind",
+      "Sun"
+    ],
+    "answer": "Cold",
+    "fact": "You catch a cold (sickness)!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #11: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #12: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #13: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #14: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #15: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #16: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #17: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #18: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #19: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #20: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #21: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #22: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #23: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #24: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #25: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #26: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #27: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #28: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #29: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #30: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #31: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #32: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #33: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #34: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #35: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #36: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #37: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #38: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #39: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #40: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #41: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #42: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #43: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #44: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #45: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #46: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #47: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #48: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #49: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #50: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #51: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #52: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #53: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #54: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #55: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #56: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #57: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #58: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #59: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #60: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #61: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #62: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #63: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #64: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #65: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #66: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #67: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #68: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #69: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #70: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #71: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #72: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #73: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #74: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #75: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #76: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #77: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #78: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #79: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #80: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #81: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #82: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #83: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #84: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #85: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #86: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #87: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #88: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #89: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #90: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #91: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #92: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #93: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #94: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #95: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #96: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #97: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #98: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #99: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #100: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #101: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #102: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #103: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #104: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #105: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #106: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #107: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #108: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #109: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #110: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #111: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #112: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #113: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #114: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #115: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #116: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #117: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #118: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #119: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #120: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #121: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #122: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #123: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #124: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #125: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #126: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #127: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #128: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #129: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #130: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #131: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #132: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #133: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #134: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #135: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #136: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #137: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #138: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #139: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #140: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #141: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #142: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #143: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #144: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #145: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #146: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #147: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #148: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #149: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #150: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #151: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #152: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #153: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #154: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #155: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #156: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #157: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #158: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #159: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #160: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #161: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #162: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #163: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #164: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #165: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #166: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #167: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #168: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #169: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #170: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #171: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #172: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #173: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #174: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #175: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #176: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #177: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #178: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #179: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #180: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #181: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #182: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #183: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #184: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #185: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #186: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #187: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #188: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #189: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #190: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #191: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #192: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #193: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #194: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #195: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #196: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #197: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #198: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #199: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #200: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #201: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #202: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #203: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #204: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #205: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #206: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #207: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #208: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #209: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #210: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #211: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #212: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #213: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #214: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #215: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #216: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #217: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #218: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #219: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #220: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #221: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #222: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #223: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #224: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #225: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #226: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #227: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #228: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #229: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #230: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #231: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #232: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #233: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #234: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #235: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #236: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #237: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #238: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #239: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #240: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #241: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #242: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #243: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #244: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #245: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #246: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #247: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #248: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #249: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  },
+  {
+    "category": "logic",
+    "text": "Logic Puzzle #250: If you have 3 apples and you take away 2, how many apples do you HAVE?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "fact": "You have the 2 apples you took!"
+  }
+]
