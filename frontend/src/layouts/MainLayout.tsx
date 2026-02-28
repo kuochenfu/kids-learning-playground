@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { LogOut, Home, Star, Trophy, Gamepad2 } from 'lucide-react';
+import { LogOut, Star, Trophy, Gamepad2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {

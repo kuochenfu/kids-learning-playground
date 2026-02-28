@@ -9,7 +9,7 @@ const MAX_TIME = 60; // 60 seconds per challenge
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080';
 
 const SpeedMath: React.FC = () => {
-    const { user, token } = useAuth();
+    const { token } = useAuth();
 
     // Game State
     const [gameState, setGameState] = useState<'idle' | 'playing' | 'finished'>('idle');

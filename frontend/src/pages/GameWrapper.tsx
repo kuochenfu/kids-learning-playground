@@ -1,11 +1,10 @@
 import React, { Suspense, lazy, useMemo } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, Home, RotateCcw, HelpCircle } from 'lucide-react';
+import { useParams, Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { ArrowLeft, RotateCcw, HelpCircle } from 'lucide-react';
 
 const GameWrapper: React.FC = () => {
     const { id } = useParams<{ id: string }>();
-    const navigate = useNavigate();
 
     // Dynamic Import based on ID
     const GameComponent = useMemo(() => {

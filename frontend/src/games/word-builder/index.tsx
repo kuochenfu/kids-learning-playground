@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import { motion, AnimatePresence, Reorder } from 'framer-motion';
-import { Star, Trophy, ArrowRight, BookOpen, RefreshCw, CheckCircle2 } from 'lucide-react';
+import { Star, Trophy, ArrowRight, BookOpen, RefreshCw } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import axios from 'axios';
 
@@ -42,7 +42,7 @@ const WordBuilder: React.FC = () => {
             await axios.post(`${API_BASE_URL}/api/score`, {
                 gameId: 'word-builder',
                 score: finalScore,
-                duration: 0, // Simplified for now
+                duration: 0,
                 wrongAnswers: [],
                 timestamp: new Date().toISOString(),
             }, {
