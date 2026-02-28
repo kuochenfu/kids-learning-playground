@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Star, Trophy, ArrowRight, HelpCircle, RefreshCw, MessageCircle, CheckCircle2, XCircle } from 'lucide-react';
+import { Trophy, ArrowRight, HelpCircle, RefreshCw, MessageCircle, CheckCircle2, XCircle } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import axios from 'axios';
 

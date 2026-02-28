@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Star, Trophy, ArrowRight, BookOpen, RefreshCw, Zap } from 'lucide-react';
+import { Star, Trophy, ArrowRight, RefreshCw, Zap } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import axios from 'axios';
 
@@ -11,7 +11,7 @@ const ADVERB_MISSIONS = [
         correct: "Slowly",
         animation: {
             move: { x: [0, 100, 0] },
-            transition: { duration: 5, repeat: Infinity, ease: "linear" }
+            transition: { duration: 5, repeat: Infinity, ease: "linear" as const }
         },
         description: "The robot is taking its time..."
     },
