@@ -6,9 +6,9 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/chenfu/kids-learning-playground/backend/config"
-	"github.com/chenfu/kids-learning-playground/backend/models"
-	"github.com/chenfu/kids-learning-playground/backend/services"
+	"github.com/kuochenfu/kids-learning-playground/backend/config"
+	"github.com/kuochenfu/kids-learning-playground/backend/models"
+	"github.com/kuochenfu/kids-learning-playground/backend/services"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v5"

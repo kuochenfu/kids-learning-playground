@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/chenfu/kids-learning-playground/backend/config"
-	"github.com/chenfu/kids-learning-playground/backend/models"
+	"github.com/kuochenfu/kids-learning-playground/backend/config"
+	"github.com/kuochenfu/kids-learning-playground/backend/models"
 	"github.com/golang-jwt/jwt/v5"
 	"google.golang.org/api/idtoken"
 	"gorm.io/gorm"
