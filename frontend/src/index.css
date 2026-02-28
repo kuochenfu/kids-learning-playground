@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased font-['Outfit'] bg-background text-text;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight text-slate-800;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-8 py-3 bg-primary text-white font-bold rounded-2xl 
+           shadow-playful hover:shadow-popping hover:-translate-y-1 
+           active:translate-y-0 transition-all duration-200 
+           flex items-center justify-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply px-8 py-3 bg-secondary text-white font-bold rounded-2xl 
+           shadow-playful hover:shadow-popping hover:-translate-y-1 
+           active:translate-y-0 transition-all duration-200 
+           flex items-center justify-center gap-2;
+  }
+
+  .card-playful {
+    @apply bg-white p-6 rounded-3xl shadow-playful 
+           hover:shadow-popping hover:-translate-y-2 
+           transition-all duration-300 border-b-4 border-slate-100;
+  }
+
+  .bg-grad-playful {
+    @apply bg-gradient-to-br from-background to-blue-50;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-light rounded-full border-2 border-slate-100 opacity-60;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary opacity-100;
+}
