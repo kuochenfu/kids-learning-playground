@@ -28,14 +28,21 @@ func main() {
 	}
 
 	// Auto Migrate
-	db.AutoMigrate(&models.User{}, &models.GameSession{}, &models.Question{})
-	log.Println("Database migrated successfully")
+	if err := db.AutoMigrate(&models.User{}, &models.GameSession{}, &models.Question{}); err != nil {
+		log.Printf("Migration failed: %v", err)
+	} else {
+		log.Println("Database migrated successfully")
+	}
 
 	// Initial Seeding
 	var count int64
 	db.Model(&models.Question{}).Count(&count)
+	log.Printf("Current question count in DB: %d", count)
 	if count == 0 {
+		log.Println("Database is empty, starting seeding process...")
 		seedQuestions(db)
+		db.Model(&models.Question{}).Count(&count)
+		log.Printf("Seeding finished. New count: %d", count)
 	}
 
 	authService := services.NewAuthService(db, cfg)
@@ -126,10 +133,12 @@ func main() {
 				result := db.Where("category = ?", category).Order("RANDOM()").Limit(limitInt).Find(&questions)
 
 				if result.Error != nil {
+					log.Printf("Error fetching questions for %s: %v", category, result.Error)
 					c.JSON(http.StatusInternalServerError, gin.H{"error": "failed to fetch questions"})
 					return
 				}
 
+				log.Printf("Fetched %d questions for category: %s", len(questions), category)
 				c.JSON(http.StatusOK, questions)
 			})
 		}
@@ -188,12 +197,14 @@ var embeddedQuestions []byte
 func seedQuestions(db *gorm.DB) {
 	var questions []models.Question
 	if err := json.Unmarshal(embeddedQuestions, &questions); err != nil {
-		log.Printf("Error unmarshalling embedded questions: %v", err)
+		log.Printf("CRITICAL: Error unmarshalling embedded questions: %v", err)
 		return
 	}
 
-	for _, q := range questions {
-		db.Create(&q)
+	// Use batch insert for efficiency
+	if err := db.CreateInBatches(questions, 100).Error; err != nil {
+		log.Printf("CRITICAL: Failed to batch insert questions: %v", err)
+	} else {
+		log.Printf("Successfully seeded %d questions!", len(questions))
 	}
-	log.Printf("Successfully seeded %d questions!", len(questions))
 }

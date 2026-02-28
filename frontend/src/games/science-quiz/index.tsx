@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, Trophy, ArrowRight, Lightbulb, RefreshCw, Loader2, HelpCircle } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
@@ -22,25 +22,42 @@ const ScienceQuiz: React.FC = () => {
     const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null);
     const [showFact, setShowFact] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [fetchError, setFetchError] = useState<string | null>(null);
 
-    const startGame = async () => {
-        setLoading(true);
-        try {
-            const res = await axios.get(`${API_BASE_URL}/api/questions?category=science`, {
-                headers: { Authorization: `Bearer ${token}` }
-            });
-            setQuestions(res.data);
-            setGameState('playing');
-            setScore(0);
-            setCurrentIdx(0);
-            setFeedback(null);
-            setShowFact(false);
-        } catch (err) {
-            console.error('Failed to load questions:', err);
-            alert('Failed to load questions. Please try again.');
-        } finally {
-            setLoading(false);
+    useEffect(() => {
+        const fetchQuestions = async () => {
+            if (!token) {
+                setFetchError('Authentication token not found. Please log in.');
+                setLoading(false);
+                return;
+            }
+            try {
+                setLoading(true);
+                setFetchError(null);
+                const res = await axios.get(`${API_BASE_URL}/api/questions?category=science`, {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                setQuestions(res.data);
+            } catch (err: any) {
+                console.error('Failed to fetch questions:', err);
+                setFetchError(err.response?.data?.error || err.message || 'Connection failed');
+            } finally {
+                setLoading(false);
+            }
+        };
+        if (gameState === 'playing' && questions.length === 0 && !loading && !fetchError) {
+            fetchQuestions();
         }
+    }, [gameState, token, questions.length, loading, fetchError]);
+
+    const startGame = () => {
+        setGameState('playing');
+        setScore(0);
+        setCurrentIdx(0);
+        setFeedback(null);
+        setShowFact(false);
+        setFetchError(null); // Clear any previous errors when starting a new game
+        setQuestions([]); // Clear questions to trigger useEffect to fetch new ones
     };
 
     const finishGame = useCallback(async (finalScore: number) => {
@@ -110,7 +127,19 @@ const ScienceQuiz: React.FC = () => {
                     </motion.div>
                 )}
 
-                {gameState === 'playing' && questions.length === 0 && !loading && (
+                {gameState === 'playing' && fetchError && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        className="flex flex-col items-center gap-6"
+                    >
+                        <HelpCircle className="text-primary" size={64} />
+                        <p className="text-xl font-bold text-primary">Error: {fetchError}</p>
+                        <button onClick={() => setGameState('idle')} className="btn-secondary px-8 py-3 rounded-2xl">Return</button>
+                    </motion.div>
+                )}
+
+                {gameState === 'playing' && questions.length === 0 && !loading && !fetchError && (
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
