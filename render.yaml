@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: kids-learning-backend
+    runtime: go
+    buildCommand: go build -o main backend/main.go
+    startCommand: ./main
+    plan: free
+    region: frankfurt # Or oregon, whatever is closest. Frankfurt/Oregon/Ohio are free.
+    envVars:
+      - key: PORT
+        value: 10000 # Render default
+      - key: DB_DSN
+        sync: false # Set this in Render Dashboard for security
+      - key: JWT_SECRET
+        sync: false # Set this in Render Dashboard
+      - key: GOOGLE_CLIENT_ID
+        sync: false # Set this in Render Dashboard
