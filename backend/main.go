@@ -1,7 +1,7 @@
 package main
 
 import (
-	"embed"
+	_ "embed"
 	"encoding/json"
 	"fmt"
 	"log"
