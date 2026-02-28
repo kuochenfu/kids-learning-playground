@@ -33,6 +33,12 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
     const login = async (googleResponse: any) => {
         setLoading(true);
+        // Clear previous state to ensure clean switch
+        setUser(null);
+        setToken(null);
+        localStorage.removeItem('user');
+        localStorage.removeItem('token');
+
         try {
             const response = await axios.post(`${API_BASE_URL}/api/auth/google`, {
                 credential: googleResponse.credential
@@ -40,6 +46,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
             const { user: backendUser, token: backendToken } = response.data;
 
+            // Update state and storage
             setUser(backendUser);
             setToken(backendToken);
             localStorage.setItem('user', JSON.stringify(backendUser));

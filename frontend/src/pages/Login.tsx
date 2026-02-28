@@ -1,16 +1,19 @@
 import React from 'react';
 import { GoogleLogin } from '@react-oauth/google';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { Navigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Sparkles, Gamepad2 } from 'lucide-react';
+import { Sparkles, Gamepad2, Loader2 } from 'lucide-react';
 
 const Login: React.FC = () => {
-    const { login, isAuthenticated } = useAuth();
+    const { login, isAuthenticated, loading } = useAuth();
+    const navigate = useNavigate();
 
-    if (isAuthenticated) {
-        return <Navigate to="/" replace />;
-    }
+    React.useEffect(() => {
+        if (isAuthenticated && !loading) {
+            navigate('/', { replace: true });
+        }
+    }, [isAuthenticated, loading, navigate]);
 
     return (
         <div className="min-h-screen bg-grad-playful flex flex-col items-center justify-center p-6 bg-slate-50">
@@ -38,20 +41,27 @@ const Login: React.FC = () => {
                 </div>
 
                 <div className="space-y-6">
-                    <div className="flex flex-col items-center">
-                        <GoogleLogin
-                            onSuccess={credentialResponse => {
-                                login(credentialResponse);
-                            }}
-                            onError={() => {
-                                console.log('Login Failed');
-                            }}
-                            useOneTap
-                            shape="pill"
-                            theme="outline"
-                            size="large"
-                            text="continue_with"
-                        />
+                    <div className="flex flex-col items-center min-h-[50px] justify-center">
+                        {loading ? (
+                            <div className="flex flex-col items-center gap-4 text-primary animate-pulse">
+                                <Loader2 className="animate-spin" size={40} />
+                                <span className="font-bold">Signing you in...</span>
+                            </div>
+                        ) : (
+                            <GoogleLogin
+                                onSuccess={credentialResponse => {
+                                    login(credentialResponse);
+                                }}
+                                onError={() => {
+                                    console.log('Login Failed');
+                                }}
+                                useOneTap
+                                shape="pill"
+                                theme="outline"
+                                size="large"
+                                text="continue_with"
+                            />
+                        )}
                     </div>
 
                     <div className="pt-8 border-t border-slate-100 text-center">
