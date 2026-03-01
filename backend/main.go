@@ -215,6 +215,12 @@ func main() {
 			})
 
 			protected.POST("/puzzles/upload", func(c *gin.Context) {
+				email, _ := c.Get("userEmail")
+				if email != "kuochenfu@gmail.com" {
+					c.JSON(http.StatusForbidden, gin.H{"error": "only kuochenfu@gmail.com can upload puzzles"})
+					return
+				}
+
 				file, err := c.FormFile("image")
 				if err != nil {
 					c.JSON(http.StatusBadRequest, gin.H{"error": "no image provided"})
@@ -246,6 +252,29 @@ func main() {
 				c.JSON(http.StatusOK, gin.H{
 					"url": "/uploads/puzzle/" + filename,
 				})
+			})
+
+			protected.DELETE("/puzzles/:filename", func(c *gin.Context) {
+				email, _ := c.Get("userEmail")
+				if email != "kuochenfu@gmail.com" {
+					c.JSON(http.StatusForbidden, gin.H{"error": "only kuochenfu@gmail.com can delete puzzles"})
+					return
+				}
+
+				filename := c.Param("filename")
+				// Basic security check to prevent path traversal
+				if strings.Contains(filename, "..") || strings.Contains(filename, "/") {
+					c.JSON(http.StatusBadRequest, gin.H{"error": "invalid filename"})
+					return
+				}
+
+				filePath := filepath.Join("./uploads/puzzle", filename)
+				if err := os.Remove(filePath); err != nil {
+					c.JSON(http.StatusInternalServerError, gin.H{"error": "failed to delete file"})
+					return
+				}
+
+				c.JSON(http.StatusOK, gin.H{"message": "deleted successfully"})
 			})
 		}
 	}
@@ -292,6 +321,7 @@ func AuthMiddleware(secret string) gin.HandlerFunc {
 
 		userID := uint(claims["sub"].(float64))
 		c.Set("userID", userID)
+		c.Set("userEmail", claims["email"])
 		c.Set("userRole", claims["role"])
 		c.Next()
 	}

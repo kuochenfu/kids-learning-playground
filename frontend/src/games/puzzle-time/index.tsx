@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence, useAnimation, useMotionValue } from 'framer-motion';
-import { Timer, Eye, RotateCcw, Star, Trophy, Home, Plus, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Timer, Eye, RotateCcw, Star, Trophy, Home, Plus, ChevronLeft, ChevronRight, Trash2 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -17,7 +17,7 @@ interface Piece {
 }
 
 const PuzzleTime: React.FC = () => {
-    const { token } = useAuth();
+    const { token, user } = useAuth();
     const navigate = useNavigate();
     const [gameState, setGameState] = useState<'idle' | 'playing' | 'finished'>('idle');
     const [gridSize, setGridSize] = useState(3); // Defaulting to 3x3 for better demo, can toggle to 5 or 7
@@ -147,6 +147,25 @@ const PuzzleTime: React.FC = () => {
         }
     };
 
+    const handleDelete = async (e: React.MouseEvent, imgUrl: string) => {
+        e.stopPropagation();
+        if (!window.confirm('Are you sure you want to delete this puzzle?') || !token) return;
+
+        const filename = imgUrl.split('/').pop();
+        try {
+            await axios.delete(`${API_BASE_URL}/api/puzzles/${filename}`, {
+                headers: { Authorization: `Bearer ${token}` }
+            });
+            setPuzzleImages(prev => prev.filter(img => img !== imgUrl));
+            if (puzzleImages[selectedImageIndex] === imgUrl) {
+                setSelectedImageIndex(0);
+            }
+        } catch (err) {
+            console.error('Delete failed:', err);
+            alert('Failed to delete image.');
+        }
+    };
+
     const currentPuzzleImage = resolveImageUrl(puzzleImages[selectedImageIndex] || '/assets/puzzle/kitten.png');
 
     // Auto-scroll logic
@@ -187,7 +206,7 @@ const PuzzleTime: React.FC = () => {
                                         key={img}
                                         ref={el => { itemRefs.current[idx] = el; }}
                                         onClick={() => setSelectedImageIndex(idx)}
-                                        className={`relative flex-shrink-0 w-40 h-40 rounded-[2.5rem] cursor-pointer transition-all snap-center ${selectedImageIndex === idx
+                                        className={`relative flex-shrink-0 w-40 h-40 rounded-[2.5rem] cursor-pointer transition-all snap-center group ${selectedImageIndex === idx
                                             ? 'ring-[12px] ring-[#FFB7CE] shadow-popping scale-110 z-10'
                                             : 'opacity-40 grayscale hover:grayscale-0 hover:opacity-100 hover:scale-105'
                                             }`}
@@ -203,27 +222,38 @@ const PuzzleTime: React.FC = () => {
                                             <motion.div
                                                 initial={{ scale: 0 }}
                                                 animate={{ scale: 1 }}
-                                                className="absolute -top-3 -right-3 bg-[#B2E2F2] p-2 rounded-full shadow-playful"
+                                                className="absolute -top-3 -right-3 bg-[#B2E2F2] p-2 rounded-full shadow-playful z-20"
                                             >
                                                 🐾
                                             </motion.div>
                                         )}
+                                        {/* Delete Button for authorized user */}
+                                        {user?.email === 'kuochenfu@gmail.com' && img.startsWith('/uploads') && (
+                                            <button
+                                                onClick={(e) => handleDelete(e, img)}
+                                                className="absolute -bottom-2 -left-2 bg-red-500 text-white p-2 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity hover:scale-110 z-20"
+                                            >
+                                                <Trash2 size={16} />
+                                            </button>
+                                        )}
                                     </motion.div>
                                 ))}
 
-                                {/* Upload Button */}
-                                <label className="flex-shrink-0 w-40 h-40 rounded-[2.5rem] border-4 border-dashed border-slate-200 flex flex-col items-center justify-center cursor-pointer hover:bg-slate-50 transition-colors p-4 text-center snap-center">
-                                    <input type="file" className="hidden" accept="image/*" onChange={handleFileUpload} disabled={isUploading} />
-                                    {isUploading ? (
-                                        <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-[#FFB7CE]"></div>
-                                    ) : (
-                                        <>
-                                            <Plus size={32} className="text-slate-300" />
-                                            <span className="text-xs font-black text-slate-400 uppercase mt-2">New Card</span>
-                                            <span className="text-[10px] font-bold text-slate-300 mt-1 leading-tight">JPG / PNG / WEBP<br />Max 5MB</span>
-                                        </>
-                                    )}
-                                </label>
+                                {/* Upload Button - Restricted to authorized user */}
+                                {user?.email === 'kuochenfu@gmail.com' && (
+                                    <label className="flex-shrink-0 w-40 h-40 rounded-[2.5rem] border-4 border-dashed border-slate-200 flex flex-col items-center justify-center cursor-pointer hover:bg-slate-50 transition-colors p-4 text-center snap-center">
+                                        <input type="file" className="hidden" accept="image/*" onChange={handleFileUpload} disabled={isUploading} />
+                                        {isUploading ? (
+                                            <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-[#FFB7CE]"></div>
+                                        ) : (
+                                            <>
+                                                <Plus size={32} className="text-slate-300" />
+                                                <span className="text-xs font-black text-slate-400 uppercase mt-2">New Card</span>
+                                                <span className="text-[10px] font-bold text-slate-300 mt-1 leading-tight">JPG / PNG / WEBP<br />Max 5MB</span>
+                                            </>
+                                        )}
+                                    </label>
+                                )}
                             </div>
 
                             {/* Scroll Arrows */}
