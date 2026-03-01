@@ -3,6 +3,7 @@ import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { LogOut, Star, Trophy, Gamepad2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import axios from 'axios'; // Added axios import
 
 const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const { user, logout } = useAuth();
@@ -16,8 +17,8 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
     const navItems = [
         { name: 'Lobby', path: '/', icon: <Gamepad2 size={24} /> },
-        { name: 'Star Chart', path: '/dashboard', icon: <Star size={24} /> },
-        { name: 'Best Score', path: '/achievements', icon: <Trophy size={24} /> },
+        { name: 'Star Chart', path: '/dashboard', icon: <Star size={24} /> }, // Updated name
+        { name: 'Best Score', path: '/dashboard', icon: <Trophy size={24} /> }, // Added new item
     ];
 
     return (

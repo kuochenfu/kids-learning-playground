@@ -2,6 +2,8 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calculator, Book, Beaker, GraduationCap, Zap, Star } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
+import axios from 'axios';
 import type { GameMetadata } from '../../../shared/types';
 
 const GAMES: GameMetadata[] = [
@@ -72,7 +74,25 @@ const GAMES: GameMetadata[] = [
 ];
 
 const Lobby: React.FC = () => {
+    const { user, token } = useAuth();
     const navigate = useNavigate();
+    const [totalStars, setTotalStars] = React.useState(0);
+
+    React.useEffect(() => {
+        const fetchStars = async () => {
+            if (!token) return;
+            try {
+                const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}/api/achievements`, {
+                    headers: { Authorization: `Bearer ${token}` }
+                });
+                const stars = res.data?.reduce((acc: number, s: any) => acc + Math.floor(s.score / 10), 0) || 0;
+                setTotalStars(stars);
+            } catch (err) {
+                console.error('Failed to fetch stars:', err);
+            }
+        };
+        fetchStars();
+    }, [token]);
 
     const getIcon = (type: string) => {
         switch (type) {
@@ -89,7 +109,7 @@ const Lobby: React.FC = () => {
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
                 <div>
                     <h1 className="text-4xl md:text-5xl font-black text-slate-800 mb-4 tracking-tight">
-                        Hi, Yui! <span className="text-primary">What's the plan today?</span> 🚀
+                        Hi, {user?.name || 'Explorer'}! <span className="text-primary">What's the plan today?</span> 🚀
                     </h1>
                     <p className="text-xl font-bold text-slate-500 max-w-2xl leading-relaxed">
                         Choose a challenge and earn your stars. Every game brings you one step closer to your goal!
@@ -102,7 +122,7 @@ const Lobby: React.FC = () => {
                     </div>
                     <div>
                         <div className="text-sm font-bold text-slate-400 uppercase tracking-widest leading-none mb-1">Total Stars</div>
-                        <div className="text-3xl font-black text-slate-800 leading-none">248</div>
+                        <div className="text-3xl font-black text-slate-800 leading-none">{totalStars}</div>
                     </div>
                 </div>
             </div>
