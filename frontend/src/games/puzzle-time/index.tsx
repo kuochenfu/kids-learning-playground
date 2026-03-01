@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence, useAnimation, useMotionValue } from 'framer-motion';
-import { Timer, Eye, RotateCcw, Star, Trophy, Home } from 'lucide-react';
+import { Timer, Eye, RotateCcw, Star, Trophy, Home, Plus, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080';
-const PUZZLE_IMAGE = '/assets/puzzle/kitten.png';
 
 interface Piece {
     id: number;
@@ -27,6 +26,9 @@ const PuzzleTime: React.FC = () => {
     const [score, setScore] = useState(0);
     const [showPeek, setShowPeek] = useState(false);
     const [hintOpacity] = useState(0.1);
+    const [puzzleImages, setPuzzleImages] = useState<string[]>([]);
+    const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+    const [isUploading, setIsUploading] = useState(false);
     const boardSize = 600; // 600px square board
     const trayWidth = 180;
 
@@ -97,9 +99,55 @@ const PuzzleTime: React.FC = () => {
         return () => clearInterval(timer);
     }, [gameState, timeLeft]);
 
+    useEffect(() => {
+        const fetchPuzzles = async () => {
+            try {
+                const res = await axios.get(`${API_BASE_URL}/api/puzzles`, {
+                    headers: { Authorization: `Bearer ${token}` }
+                });
+                setPuzzleImages(res.data);
+            } catch (err) {
+                console.error('Failed to fetch puzzles:', err);
+                setPuzzleImages(['/assets/puzzle/kitten.png']);
+            }
+        };
+        if (token) fetchPuzzles();
+    }, [token]);
+
+    const resolveImageUrl = (url: string) => {
+        if (url.startsWith('/uploads')) return `${API_BASE_URL}${url}`;
+        return url;
+    };
+
+    const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0];
+        if (!file || !token) return;
+
+        setIsUploading(true);
+        const formData = new FormData();
+        formData.append('image', file);
+
+        try {
+            const res = await axios.post(`${API_BASE_URL}/api/puzzles/upload`, formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            const newUrl = res.data.url;
+            setPuzzleImages(prev => [...prev, newUrl]);
+            setSelectedImageIndex(puzzleImages.length); // Select new upload
+        } catch (err) {
+            console.error('Upload failed:', err);
+        } finally {
+            setIsUploading(false);
+        }
+    };
+
+    const currentPuzzleImage = resolveImageUrl(puzzleImages[selectedImageIndex] || '/assets/puzzle/kitten.png');
+
     const lockPiece = (id: number) => {
         setPieces(prev => prev.map(p => p.id === id ? { ...p, isLocked: true } : p));
-        // Add a small "Meow" visual feedback or score
     };
 
     return (
@@ -113,15 +161,64 @@ const PuzzleTime: React.FC = () => {
                         exit={{ opacity: 0, y: -20 }}
                         className="text-center space-y-8"
                     >
-                        <div className="w-40 h-40 bg-[#FFB7CE] rounded-[3rem] shadow-playful flex items-center justify-center mx-auto relative group">
-                            <motion.img
-                                src={PUZZLE_IMAGE}
-                                className="w-32 h-32 rounded-2xl shadow-inner group-hover:scale-110 transition-transform"
-                                alt="Kitten"
-                            />
-                            <div className="absolute -top-4 -right-4 bg-[#B2E2F2] p-3 rounded-full shadow-playful">
-                                🐾
+                        {/* Image Selection Carousel */}
+                        <div className="relative w-full max-w-4xl px-12">
+                            <div className="flex items-center justify-center gap-6 overflow-x-auto py-8 snap-x no-scrollbar scroll-smooth">
+                                {puzzleImages.map((img, idx) => (
+                                    <motion.div
+                                        key={img}
+                                        onClick={() => setSelectedImageIndex(idx)}
+                                        className={`relative flex-shrink-0 w-32 h-32 rounded-[2rem] cursor-pointer transition-all snap-center ${selectedImageIndex === idx
+                                            ? 'ring-8 ring-[#FFB7CE] shadow-playful scale-110 z-10'
+                                            : 'opacity-50 grayscale hover:grayscale-0 hover:opacity-100 hover:scale-105'
+                                            }`}
+                                        initial={{ opacity: 0, scale: 0.8 }}
+                                        animate={{ opacity: 1, scale: selectedImageIndex === idx ? 1.1 : 1 }}
+                                    >
+                                        <img
+                                            src={resolveImageUrl(img)}
+                                            className="w-full h-full object-cover rounded-[1.8rem]"
+                                            alt={`Puzzle ${idx + 1}`}
+                                        />
+                                        {selectedImageIndex === idx && (
+                                            <motion.div
+                                                initial={{ scale: 0 }}
+                                                animate={{ scale: 1 }}
+                                                className="absolute -top-3 -right-3 bg-[#B2E2F2] p-2 rounded-full shadow-playful"
+                                            >
+                                                🐾
+                                            </motion.div>
+                                        )}
+                                    </motion.div>
+                                ))}
+
+                                {/* Upload Button */}
+                                <label className="flex-shrink-0 w-32 h-32 rounded-[2rem] border-4 border-dashed border-slate-200 flex flex-col items-center justify-center cursor-pointer hover:bg-slate-50 transition-colors gap-2">
+                                    <input type="file" className="hidden" accept="image/*" onChange={handleFileUpload} disabled={isUploading} />
+                                    {isUploading ? (
+                                        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#FFB7CE]"></div>
+                                    ) : (
+                                        <>
+                                            <Plus size={32} className="text-slate-300" />
+                                            <span className="text-[10px] font-black text-slate-300 uppercase">Upload</span>
+                                        </>
+                                    )}
+                                </label>
                             </div>
+
+                            {/* Scroll Arrows */}
+                            <button
+                                onClick={() => setSelectedImageIndex(prev => Math.max(0, prev - 1))}
+                                className="absolute left-0 top-1/2 -translate-y-1/2 p-4 text-slate-300 hover:text-[#FFB7CE] transition-colors"
+                            >
+                                <ChevronLeft size={48} strokeWidth={3} />
+                            </button>
+                            <button
+                                onClick={() => setSelectedImageIndex(prev => Math.min(puzzleImages.length - 1, prev + 1))}
+                                className="absolute right-0 top-1/2 -translate-y-1/2 p-4 text-slate-300 hover:text-[#FFB7CE] transition-colors"
+                            >
+                                <ChevronRight size={48} strokeWidth={3} />
+                            </button>
                         </div>
 
                         <h2 className="text-5xl font-black text-slate-800 tracking-tight">Puzzle Time!</h2>
@@ -207,7 +304,7 @@ const PuzzleTime: React.FC = () => {
                                 <div
                                     className="absolute inset-0 transition-opacity duration-1000"
                                     style={{
-                                        backgroundImage: `url(${PUZZLE_IMAGE})`,
+                                        backgroundImage: `url(${currentPuzzleImage})`,
                                         backgroundSize: `${boardSize}px ${boardSize}px`,
                                         opacity: showPeek ? 1 : hintOpacity
                                     }}
@@ -227,6 +324,7 @@ const PuzzleTime: React.FC = () => {
                                         piece={piece}
                                         pieceSize={pieceSize}
                                         boardSize={boardSize}
+                                        puzzleImage={currentPuzzleImage}
                                         onLock={() => lockPiece(piece.id)}
                                     />
                                 ))}
@@ -291,8 +389,9 @@ const PuzzlePiece: React.FC<{
     piece: Piece;
     pieceSize: number;
     boardSize: number;
+    puzzleImage: string;
     onLock: () => void;
-}> = ({ piece, pieceSize, boardSize, onLock }) => {
+}> = ({ piece, pieceSize, boardSize, puzzleImage, onLock }) => {
     const controls = useAnimation();
     const x = useMotionValue(piece.currentX);
     const y = useMotionValue(piece.currentY);
@@ -349,7 +448,7 @@ const PuzzlePiece: React.FC<{
                 x, y,
                 width: pieceSize,
                 height: pieceSize,
-                backgroundImage: `url(${PUZZLE_IMAGE})`,
+                backgroundImage: `url(${puzzleImage})`,
                 backgroundSize: `${boardSize}px ${boardSize}px`,
                 backgroundPosition: `-${piece.x * pieceSize}px -${piece.y * pieceSize}px`,
                 boxShadow: isPlaced ? 'none' : '0 10px 20px rgba(0,0,0,0.1)',

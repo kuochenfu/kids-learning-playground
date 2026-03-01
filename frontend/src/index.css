@@ -9,30 +9,27 @@
     @apply antialiased font-['Outfit'] bg-background text-text;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-bold tracking-tight text-slate-800;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply px-8 py-3 bg-primary text-white font-bold rounded-2xl 
-           shadow-playful hover:shadow-popping hover:-translate-y-1 
-           active:translate-y-0 transition-all duration-200 
-           flex items-center justify-center gap-2;
+    @apply px-8 py-3 bg-primary text-white font-bold rounded-2xl shadow-playful hover:shadow-popping hover:-translate-y-1 active:translate-y-0 transition-all duration-200 flex items-center justify-center gap-2;
   }
 
   .btn-secondary {
-    @apply px-8 py-3 bg-secondary text-white font-bold rounded-2xl 
-           shadow-playful hover:shadow-popping hover:-translate-y-1 
-           active:translate-y-0 transition-all duration-200 
-           flex items-center justify-center gap-2;
+    @apply px-8 py-3 bg-secondary text-white font-bold rounded-2xl shadow-playful hover:shadow-popping hover:-translate-y-1 active:translate-y-0 transition-all duration-200 flex items-center justify-center gap-2;
   }
 
   .card-playful {
-    @apply bg-white p-6 rounded-3xl shadow-playful 
-           hover:shadow-popping hover:-translate-y-2 
-           transition-all duration-300 border-b-4 border-slate-100;
+    @apply bg-white p-6 rounded-3xl shadow-playful hover:shadow-popping hover:-translate-y-2 transition-all duration-300 border-b-4 border-slate-100;
   }
 
   .bg-grad-playful {
@@ -55,4 +52,15 @@
 
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-primary opacity-100;
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }

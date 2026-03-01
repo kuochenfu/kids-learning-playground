@@ -6,7 +6,10 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
+	"path/filepath"
 	"strings"
+	"time"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
@@ -66,6 +69,13 @@ func main() {
 		ExposeHeaders:    []string{"Content-Length"},
 		AllowCredentials: true,
 	}))
+
+	// Static files for uploaded images
+	r.Static("/uploads", "./uploads")
+	// Ensure uploads/puzzle exists
+	if err := os.MkdirAll("./uploads/puzzle", 0755); err != nil {
+		log.Printf("Warning: Failed to create uploads directory: %v", err)
+	}
 
 	// API Routes
 	api := r.Group("/api")
@@ -167,6 +177,53 @@ func main() {
 				log.Printf("Question Fetch: category=%s, found=%d (limit=%d), total_available=%d", category, len(questions), limitInt, totalInCategory)
 
 				c.JSON(http.StatusOK, questions)
+			})
+
+			// 3. Puzzle Image Management
+			protected.GET("/puzzles", func(c *gin.Context) {
+				files, err := os.ReadDir("./uploads/puzzle")
+				if err != nil {
+					c.JSON(http.StatusInternalServerError, gin.H{"error": "failed to read puzzle directory"})
+					return
+				}
+
+				var images []string
+				for _, f := range files {
+					if !f.IsDir() {
+						ext := strings.ToLower(filepath.Ext(f.Name()))
+						if ext == ".png" || ext == ".jpg" || ext == ".jpeg" || ext == ".webp" {
+							images = append(images, "/uploads/puzzle/"+f.Name())
+						}
+					}
+				}
+
+				// If empty, return the default kitten (if it exists)
+				if len(images) == 0 {
+					images = append(images, "/assets/puzzle/kitten.png") // Fallback to public asset
+				}
+
+				c.JSON(http.StatusOK, images)
+			})
+
+			protected.POST("/puzzles/upload", func(c *gin.Context) {
+				file, err := c.FormFile("image")
+				if err != nil {
+					c.JSON(http.StatusBadRequest, gin.H{"error": "no image provided"})
+					return
+				}
+
+				// Create unique filename
+				filename := fmt.Sprintf("%d%s", time.Now().UnixNano(), filepath.Ext(file.Filename))
+				savePath := filepath.Join("./uploads/puzzle", filename)
+
+				if err := c.SaveUploadedFile(file, savePath); err != nil {
+					c.JSON(http.StatusInternalServerError, gin.H{"error": "failed to save image"})
+					return
+				}
+
+				c.JSON(http.StatusOK, gin.H{
+					"url": "/uploads/puzzle/" + filename,
+				})
 			})
 		}
 	}
