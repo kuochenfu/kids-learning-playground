@@ -34,25 +34,24 @@ func main() {
 		log.Println("Database migrated successfully")
 	}
 
-	// Initial Seeding v5 (Diverse CS update)
-	var firstQ models.Question
-	db.First(&firstQ)
-
-	// Check if we need to force update (v5 includes specific terms like 'Drone' or 'CPU')
-	needsUpdate := strings.Contains(firstQ.Text, "Science Quest") || strings.Contains(firstQ.Text, "Logic Master Step") || firstQ.ID == 0 || !strings.Contains(firstQ.Text, "CPU")
+	// Initial Seeding v9 (Version-based)
+	const TargetVersion = "DB_VERSION_V9_FULL"
+	var metaQ models.Question
+	db.Where("category = ? AND text = ?", "meta", TargetVersion).First(&metaQ)
 
 	var count int64
 	db.Model(&models.Question{}).Count(&count)
 
-	if needsUpdate || count != 500 {
-		log.Printf("🔄 Data update required v5 (current: %d). Overwriting database...", count)
+	if metaQ.ID == 0 || count < 500 {
+		log.Printf("🔄 DB Version Mismatch or Incomplete (Count: %d). Force Overwriting with %s...", count, TargetVersion)
+		// More robust table reset
 		db.Migrator().DropTable(&models.Question{})
 		db.AutoMigrate(&models.Question{})
 		seedQuestions(db)
 		db.Model(&models.Question{}).Count(&count)
-		log.Printf("✅ DB fully refreshed with v5 Diverse CS content! Final Count: %d", count)
+		log.Printf("✅ DB fully refreshed to %s! Total count: %d", TargetVersion, count)
 	} else {
-		log.Printf("✅ DB v5 Verified. Count: %d", count)
+		log.Printf("✅ DB already at %s. Verified count: %d", TargetVersion, count)
 	}
 
 	authService := services.NewAuthService(db, cfg)
@@ -151,10 +150,10 @@ func main() {
 
 			protected.GET("/questions", func(c *gin.Context) {
 				category := c.Query("category")
-				limitInt := 10
+				limitInt := 15 // Increased from 10 to 15 to provide more variety to the frontend shuffle
 
 				var questions []models.Question
-				// Using Random order for Postgres (RANDOM() function)
+				// Ensure meta records aren't returned to players
 				result := db.Where("category = ?", category).Order("RANDOM()").Limit(limitInt).Find(&questions)
 
 				if result.Error != nil {
