@@ -17,8 +17,7 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
     const navItems = [
         { name: 'Lobby', path: '/', icon: <Gamepad2 size={24} /> },
-        { name: 'Star Chart', path: '/dashboard', icon: <Star size={24} /> }, // Updated name
-        { name: 'Best Score', path: '/dashboard', icon: <Trophy size={24} /> }, // Added new item
+        { name: 'Achievements', path: '/dashboard', icon: <Trophy size={24} /> },
     ];
 
     return (
@@ -92,7 +91,7 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
             {/* Footer */}
             <footer className="py-8 text-center text-slate-400 font-medium border-t border-slate-100 bg-white/50">
-                <p>© 2026 Interactive Learning Portal • Built with Love for Yui ❤️</p>
+                <p>© 2026 Interactive Learning Portal • Happy Learning! ❤️</p>
             </footer>
         </div>
     );

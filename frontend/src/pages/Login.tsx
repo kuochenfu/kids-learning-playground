@@ -33,7 +33,7 @@ const Login: React.FC = () => {
                     </motion.div>
 
                     <h1 className="text-4xl font-extrabold text-slate-800 mb-2 tracking-tight text-center">
-                        Hi, Yui! 🌟
+                        Welcome, Explorer! 🌟
                     </h1>
                     <p className="text-slate-500 font-bold text-lg text-center leading-relaxed">
                         Ready for your <span className="text-primary font-black uppercase tracking-widest text-sm">learning journey</span>?

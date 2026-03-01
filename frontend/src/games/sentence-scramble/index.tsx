@@ -7,7 +7,6 @@ import axios from 'axios';
 const SENTENCES = [
     "The quick brown fox jumps over the lazy dog",
     "Learning English is fun and exciting",
-    "Yui loves to play educational games",
     "A small seed can grow into a big tree",
     "The bright sun shines high in the blue sky",
     "Please remember to wash your hands before dinner",
