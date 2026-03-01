@@ -37,12 +37,15 @@ func main() {
 	// Initial Seeding
 	var count int64
 	db.Model(&models.Question{}).Count(&count)
-	log.Printf("Current question count in DB: %d", count)
-	if count == 0 {
-		log.Println("Database is empty, starting seeding process...")
+	log.Printf("🔥 Question count in database: %d", count)
+
+	if count < 400 { // If it's less than 400, re-seed (Ensures 500+ questions are active)
+		log.Printf("⚠️ Question count low (%d). Resetting and re-seeding database...", count)
+		// Use Unscoped().Delete with condition to clear table safely
+		db.Session(&gorm.Session{AllowGlobalUpdate: true}).Unscoped().Where("1 = 1").Delete(&models.Question{})
 		seedQuestions(db)
 		db.Model(&models.Question{}).Count(&count)
-		log.Printf("Seeding finished. New count: %d", count)
+		log.Printf("✅ Re-seeding finished. Final count: %d", count)
 	}
 
 	authService := services.NewAuthService(db, cfg)
@@ -63,6 +66,21 @@ func main() {
 	{
 		api.GET("/ping", func(c *gin.Context) {
 			c.JSON(http.StatusOK, gin.H{"message": "pong"})
+		})
+
+		api.GET("/health", func(c *gin.Context) {
+			var qCount int64
+			db.Model(&models.Question{}).Count(&qCount)
+
+			var categories []string
+			db.Model(&models.Question{}).Distinct("category").Pluck("category", &categories)
+
+			c.JSON(http.StatusOK, gin.H{
+				"status":         "ok",
+				"database":       "connected",
+				"question_count": qCount,
+				"categories":     categories,
+			})
 		})
 
 		// 1. Auth Endpoint: Receives ID Token from Frontend

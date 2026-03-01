@@ -35,7 +35,7 @@ type Question struct {
 	gorm.Model
 	Category string   `gorm:"index" json:"category"`
 	Text     string   `json:"text"`
-	Options  []string `gorm:"type:text[]" json:"options"`
+	Options  []string `gorm:"serializer:json;type:text" json:"options"`
 	Answer   string   `json:"answer"`
 	Fact     string   `json:"fact"`
 }
