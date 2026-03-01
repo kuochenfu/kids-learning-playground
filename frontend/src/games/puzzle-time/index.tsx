@@ -199,7 +199,7 @@ const PuzzleTime: React.FC = () => {
                             {/* Board */}
                             <div
                                 ref={boardRef}
-                                className="relative bg-white shadow-popping rounded-2xl border-8 border-white overflow-visible"
+                                className="relative bg-white shadow-popping rounded-2xl border-8 border-white overflow-visible box-content"
                                 style={{ width: boardSize, height: boardSize }}
                             >
                                 {/* Ghost Hint */}
@@ -302,30 +302,28 @@ const PuzzlePiece: React.FC<{
         if (isPlaced || !boardRef.current) return;
 
         const rect = boardRef.current.getBoundingClientRect();
-
-        // Calculate position relative to board inner-content area (ignoring the 8px border)
         const borderSize = 8;
-        const relativeX = info.point.x - rect.left - borderSize - (pieceSize / 2);
-        const relativeY = info.point.y - rect.top - borderSize - (pieceSize / 2);
 
-        const targetX = piece.x * pieceSize;
-        const targetY = piece.y * pieceSize;
+        // Target center relative to viewport
+        const targetCenterX = rect.left + borderSize + (piece.x * pieceSize) + (pieceSize / 2);
+        const targetCenterY = rect.top + borderSize + (piece.y * pieceSize) + (pieceSize / 2);
 
+        // Distance from pointer to target center
         const distance = Math.sqrt(
-            Math.pow(relativeX - targetX, 2) +
-            Math.pow(relativeY - targetY, 2)
+            Math.pow(info.point.x - targetCenterX, 2) +
+            Math.pow(info.point.y - targetCenterY, 2)
         );
 
-        if (distance < 35) { // Slightly increased radius for better feel
+        if (distance < 40) { // Increased snap zone
             setIsPlaced(true);
             setShowMeow(true);
             onLock();
             controls.start({
-                x: targetX,
-                y: targetY,
+                x: piece.x * pieceSize,
+                y: piece.y * pieceSize,
                 scale: 1,
                 rotate: 0,
-                transition: { type: 'spring', stiffness: 500, damping: 30 }
+                transition: { type: 'spring', stiffness: 600, damping: 30 }
             });
             setTimeout(() => setShowMeow(false), 1000);
         }
@@ -352,7 +350,7 @@ const PuzzlePiece: React.FC<{
                 backgroundSize: `${boardSize}px ${boardSize}px`,
                 backgroundPosition: `-${piece.x * pieceSize}px -${piece.y * pieceSize}px`,
                 boxShadow: isPlaced ? 'none' : '0 10px 20px rgba(0,0,0,0.1)',
-                border: isPlaced ? '0.5px solid rgba(255,255,255,0.1)' : '2px solid white',
+                border: isPlaced ? 'none' : '2px solid white',
                 borderRadius: isPlaced ? '0' : '8px'
             }}
         >
