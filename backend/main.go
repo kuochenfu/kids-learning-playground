@@ -181,25 +181,20 @@ func main() {
 
 			// 3. Puzzle Image Management
 			protected.GET("/puzzles", func(c *gin.Context) {
-				files, err := os.ReadDir("./uploads/puzzle")
-				if err != nil {
-					c.JSON(http.StatusInternalServerError, gin.H{"error": "failed to read puzzle directory"})
-					return
-				}
-
 				var images []string
-				for _, f := range files {
-					if !f.IsDir() {
-						ext := strings.ToLower(filepath.Ext(f.Name()))
-						if ext == ".png" || ext == ".jpg" || ext == ".jpeg" || ext == ".webp" {
-							images = append(images, "/uploads/puzzle/"+f.Name())
+				// Always start with the default kitten
+				images = append(images, "/assets/puzzle/kitten.png")
+
+				files, err := os.ReadDir("./uploads/puzzle")
+				if err == nil {
+					for _, f := range files {
+						if !f.IsDir() {
+							ext := strings.ToLower(filepath.Ext(f.Name()))
+							if ext == ".png" || ext == ".jpg" || ext == ".jpeg" || ext == ".webp" {
+								images = append(images, "/uploads/puzzle/"+f.Name())
+							}
 						}
 					}
-				}
-
-				// If empty, return the default kitten (if it exists)
-				if len(images) == 0 {
-					images = append(images, "/assets/puzzle/kitten.png") // Fallback to public asset
 				}
 
 				c.JSON(http.StatusOK, images)
@@ -212,8 +207,21 @@ func main() {
 					return
 				}
 
+				// Limit: 5MB
+				if file.Size > 5*1024*1024 {
+					c.JSON(http.StatusBadRequest, gin.H{"error": "image too large (max 5MB)"})
+					return
+				}
+
+				ext := strings.ToLower(filepath.Ext(file.Filename))
+				allowed := map[string]bool{".jpg": true, ".jpeg": true, ".png": true, ".webp": true}
+				if !allowed[ext] {
+					c.JSON(http.StatusBadRequest, gin.H{"error": "invalid format (use jpg, png, or webp)"})
+					return
+				}
+
 				// Create unique filename
-				filename := fmt.Sprintf("%d%s", time.Now().UnixNano(), filepath.Ext(file.Filename))
+				filename := fmt.Sprintf("%d%s", time.Now().UnixNano(), ext)
 				savePath := filepath.Join("./uploads/puzzle", filename)
 
 				if err := c.SaveUploadedFile(file, savePath); err != nil {

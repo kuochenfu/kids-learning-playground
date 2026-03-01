@@ -137,8 +137,9 @@ const PuzzleTime: React.FC = () => {
             const newUrl = res.data.url;
             setPuzzleImages(prev => [...prev, newUrl]);
             setSelectedImageIndex(puzzleImages.length); // Select new upload
-        } catch (err) {
+        } catch (err: any) {
             console.error('Upload failed:', err);
+            alert(err.response?.data?.error || 'Upload failed. Please check file size and format.');
         } finally {
             setIsUploading(false);
         }
@@ -163,6 +164,7 @@ const PuzzleTime: React.FC = () => {
                     >
                         {/* Image Selection Carousel */}
                         <div className="relative w-full max-w-4xl px-12">
+                            <h3 className="text-2xl font-black text-slate-800 mb-2">Choose your puzzle!</h3>
                             <div className="flex items-center justify-center gap-6 overflow-x-auto py-8 snap-x no-scrollbar scroll-smooth">
                                 {puzzleImages.map((img, idx) => (
                                     <motion.div
@@ -193,14 +195,15 @@ const PuzzleTime: React.FC = () => {
                                 ))}
 
                                 {/* Upload Button */}
-                                <label className="flex-shrink-0 w-32 h-32 rounded-[2rem] border-4 border-dashed border-slate-200 flex flex-col items-center justify-center cursor-pointer hover:bg-slate-50 transition-colors gap-2">
+                                <label className="flex-shrink-0 w-32 h-32 rounded-[2rem] border-2 border-dashed border-slate-300 flex flex-col items-center justify-center cursor-pointer hover:bg-slate-50 transition-colors p-2 text-center">
                                     <input type="file" className="hidden" accept="image/*" onChange={handleFileUpload} disabled={isUploading} />
                                     {isUploading ? (
                                         <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#FFB7CE]"></div>
                                     ) : (
                                         <>
-                                            <Plus size={32} className="text-slate-300" />
-                                            <span className="text-[10px] font-black text-slate-300 uppercase">Upload</span>
+                                            <Plus size={24} className="text-slate-300" />
+                                            <span className="text-[10px] font-black text-slate-400 uppercase mt-1">Upload Card</span>
+                                            <span className="text-[8px] font-bold text-slate-300 mt-0.5 leading-tight">JPG/PNG/WEBP<br />Max 5MB</span>
                                         </>
                                     )}
                                 </label>
