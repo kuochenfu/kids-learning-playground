@@ -39,13 +39,13 @@ func main() {
 	db.Model(&models.Question{}).Count(&count)
 	log.Printf("🔥 Question count in database: %d", count)
 
-	if count < 400 { // If it's less than 400, re-seed (Ensures 500+ questions are active)
-		log.Printf("⚠️ Question count low (%d). Resetting and re-seeding database...", count)
+	if count < 500 { // Increased to force re-seed for the new diverse data
+		log.Printf("⚠️ Question count low or updating (%d). Resetting and re-seeding database...", count)
 		// Use Unscoped().Delete with condition to clear table safely
 		db.Session(&gorm.Session{AllowGlobalUpdate: true}).Unscoped().Where("1 = 1").Delete(&models.Question{})
 		seedQuestions(db)
 		db.Model(&models.Question{}).Count(&count)
-		log.Printf("✅ Re-seeding finished. Final count: %d", count)
+		log.Printf("✅ Re-seeding finished with diverse data. Final count: %d", count)
 	}
 
 	authService := services.NewAuthService(db, cfg)
