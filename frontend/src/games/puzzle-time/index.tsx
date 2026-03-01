@@ -23,12 +23,13 @@ const PuzzleTime: React.FC = () => {
     const [gameState, setGameState] = useState<'idle' | 'playing' | 'finished'>('idle');
     const [gridSize, setGridSize] = useState(3); // Defaulting to 3x3 for better demo, can toggle to 5 or 7
     const [pieces, setPieces] = useState<Piece[]>([]);
-    const [timeLeft, setTimeLeft] = useState(120);
+    const [timeLeft, setTimeLeft] = useState(180);
     const [score, setScore] = useState(0);
     const [showPeek, setShowPeek] = useState(false);
     const [hintOpacity] = useState(0.1);
     const boardSize = 500; // 500px square board
     const trayWidth = 200;
+    const boardRef = React.useRef<HTMLDivElement>(null);
 
     const pieceSize = boardSize / gridSize;
 
@@ -54,7 +55,7 @@ const PuzzleTime: React.FC = () => {
     const startGame = (size: number) => {
         setGridSize(size);
         setGameState('playing');
-        setTimeLeft(120);
+        setTimeLeft(180);
         setScore(0);
         generatePieces(size);
     };
@@ -70,7 +71,7 @@ const PuzzleTime: React.FC = () => {
     // Check win condition
     useEffect(() => {
         if (gameState === 'playing' && pieces.length > 0 && pieces.every(p => p.isLocked)) {
-            const finalScore = Math.floor((timeLeft / 120) * 1000) + (gridSize === 5 ? 500 : gridSize === 7 ? 1000 : 0);
+            const finalScore = Math.floor((timeLeft / 180) * 1000) + (gridSize === 4 ? 400 : gridSize === 5 ? 800 : 0);
             setScore(finalScore);
             setGameState('finished');
             if (token) {
@@ -131,13 +132,13 @@ const PuzzleTime: React.FC = () => {
                                 <span className="text-2xl">3 x 3</span>
                                 <span className="text-xs opacity-60">Starter 🐣</span>
                             </button>
-                            <button onClick={() => startGame(5)} className="px-10 py-5 bg-[#FFB7CE] text-white font-black rounded-3xl shadow-playful hover:scale-105 transition-transform flex flex-col items-center">
-                                <span className="text-2xl">5 x 5</span>
-                                <span className="text-xs opacity-80">Jigsaw Master 🐱</span>
+                            <button onClick={() => startGame(4)} className="px-10 py-5 bg-[#FFB7CE] text-white font-black rounded-3xl shadow-playful hover:scale-105 transition-transform flex flex-col items-center">
+                                <span className="text-2xl">4 x 4</span>
+                                <span className="text-xs opacity-80">Pro 🐱</span>
                             </button>
-                            <button onClick={() => startGame(7)} className="px-10 py-5 bg-playful-purple text-white font-black rounded-3xl shadow-playful hover:scale-105 transition-transform flex flex-col items-center">
-                                <span className="text-2xl">7 x 7</span>
-                                <span className="text-xs opacity-80">Mega Challenge 🦁</span>
+                            <button onClick={() => startGame(5)} className="px-10 py-5 bg-playful-purple text-white font-black rounded-3xl shadow-playful hover:scale-105 transition-transform flex flex-col items-center">
+                                <span className="text-2xl">5 x 5</span>
+                                <span className="text-xs opacity-80">Master 🦁</span>
                             </button>
                         </div>
                     </motion.div>
@@ -197,6 +198,7 @@ const PuzzleTime: React.FC = () => {
                         <div className="relative flex items-center justify-center gap-12 mt-4 select-none">
                             {/* Board */}
                             <div
+                                ref={boardRef}
                                 className="relative bg-white shadow-popping rounded-2xl border-8 border-white overflow-visible"
                                 style={{ width: boardSize, height: boardSize }}
                             >
@@ -224,6 +226,7 @@ const PuzzleTime: React.FC = () => {
                                         piece={piece}
                                         pieceSize={pieceSize}
                                         boardSize={boardSize}
+                                        boardRef={boardRef}
                                         onLock={() => lockPiece(piece.id)}
                                     />
                                 ))}
@@ -288,34 +291,35 @@ const PuzzlePiece: React.FC<{
     piece: Piece;
     pieceSize: number;
     boardSize: number;
+    boardRef: React.RefObject<HTMLDivElement | null>;
     onLock: () => void;
-}> = ({ piece, pieceSize, boardSize, onLock }) => {
+}> = ({ piece, pieceSize, boardSize, boardRef, onLock }) => {
     const controls = useAnimation();
     const [isPlaced, setIsPlaced] = useState(false);
+    const [showMeow, setShowMeow] = useState(false);
 
-    const handleDragEnd = (_: any, info: { offset: { x: number; y: number } }) => {
-        if (isPlaced) return;
+    const handleDragEnd = (_: any, info: { point: { x: number; y: number } }) => {
+        if (isPlaced || !boardRef.current) return;
 
-        // info.point is global, let's use info.offset relative to starting pos if possible
-        // but easier to check position relative to the board
+        const rect = boardRef.current.getBoundingClientRect();
+
+        // Calculate position relative to board
+        // info.point is centered on mouse/touch. 
+        // We want the top-left of the piece to be near piece.x * pieceSize
+        const relativeX = info.point.x - rect.left - (pieceSize / 2);
+        const relativeY = info.point.y - rect.top - (pieceSize / 2);
+
         const targetX = piece.x * pieceSize;
         const targetY = piece.y * pieceSize;
 
-        // We need the piece's current position relative to the board container
-        // Since we are using absolute positioning within the board area (with overflow visible)
-        // the piece position is starts at piece.currentX/Y.
-        // info.offset is how much it moved from starting position.
-
-        const currentX = piece.currentX + info.offset.x;
-        const currentY = piece.currentY + info.offset.y;
-
         const distance = Math.sqrt(
-            Math.pow(currentX - targetX, 2) +
-            Math.pow(currentY - targetY, 2)
+            Math.pow(relativeX - targetX, 2) +
+            Math.pow(relativeY - targetY, 2)
         );
 
-        if (distance < 25) { // Magnetic Snap radius
+        if (distance < 35) { // Slightly increased radius for better feel
             setIsPlaced(true);
+            setShowMeow(true);
             onLock();
             controls.start({
                 x: targetX,
@@ -324,6 +328,7 @@ const PuzzlePiece: React.FC<{
                 rotate: 0,
                 transition: { type: 'spring', stiffness: 500, damping: 30 }
             });
+            setTimeout(() => setShowMeow(false), 1000);
         }
     };
 
@@ -352,6 +357,16 @@ const PuzzlePiece: React.FC<{
                 borderRadius: '8px'
             }}
         >
+            {showMeow && (
+                <motion.div
+                    initial={{ opacity: 0, y: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, y: -50, scale: 1.5 }}
+                    exit={{ opacity: 0 }}
+                    className="absolute inset-0 flex items-center justify-center pointer-events-none z-50"
+                >
+                    <span className="text-[#FFB7CE] font-black text-2xl drop-shadow-md">Meow! 🐾</span>
+                </motion.div>
+            )}
             {isPlaced && (
                 <motion.div
                     initial={{ opacity: 0, scale: 2 }}
