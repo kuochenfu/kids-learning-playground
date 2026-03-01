@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, Trophy, ArrowRight, Brain, RefreshCw, HelpCircle, Loader2 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
@@ -15,6 +16,7 @@ interface Question {
 
 const LogicPuzzles: React.FC = () => {
     const { token } = useAuth();
+    const navigate = useNavigate();
     const [questions, setQuestions] = useState<Question[]>([]);
     const [gameState, setGameState] = useState<'idle' | 'playing' | 'finished'>('idle');
     const [currentIdx, setCurrentIdx] = useState(0);
@@ -147,7 +149,7 @@ const LogicPuzzles: React.FC = () => {
                     >
                         <HelpCircle className="text-primary" size={64} />
                         <p className="text-xl font-bold text-primary">Error: {fetchError}</p>
-                        <button onClick={() => setGameState('idle')} className="btn-secondary px-8 py-3 rounded-2xl">Return</button>
+                        <button onClick={() => navigate('/lobby')} className="btn-secondary px-8 py-3 rounded-2xl">Return to Lobby</button>
                     </motion.div>
                 )}
 
@@ -159,7 +161,7 @@ const LogicPuzzles: React.FC = () => {
                     >
                         <HelpCircle className="text-slate-300" size={64} />
                         <p className="text-xl font-bold text-slate-400">Puzzle bank is empty. Check back soon!</p>
-                        <button onClick={() => setGameState('idle')} className="btn-secondary px-8 py-3 rounded-2xl">Return</button>
+                        <button onClick={() => navigate('/lobby')} className="btn-secondary px-8 py-3 rounded-2xl">Return to Lobby</button>
                     </motion.div>
                 )}
 
@@ -257,9 +259,14 @@ const LogicPuzzles: React.FC = () => {
                                 <div className="text-4xl font-black text-secondary">+{Math.floor(score / 10)}</div>
                             </div>
                         </div>
-                        <button onClick={startGame} className="btn-primary bg-indigo-500 border-indigo-700 w-full text-xl px-10 rounded-2xl flex items-center justify-center gap-2">
-                            <RefreshCw /> Try More Puzzles
-                        </button>
+                        <div className="flex flex-col gap-4">
+                            <button onClick={startGame} className="btn-primary bg-indigo-500 border-indigo-700 w-full text-xl px-10 rounded-2xl flex items-center justify-center gap-2">
+                                <RefreshCw /> Try More Puzzles
+                            </button>
+                            <button onClick={() => navigate('/lobby')} className="btn-secondary w-full text-xl px-10 rounded-2xl flex items-center justify-center gap-2">
+                                Return to Lobby
+                            </button>
+                        </div>
                     </motion.div>
                 )}
             </AnimatePresence>

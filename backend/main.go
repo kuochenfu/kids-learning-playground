@@ -162,7 +162,10 @@ func main() {
 					return
 				}
 
-				log.Printf("Fetched %d questions for category: %s", len(questions), category)
+				var totalInCategory int64
+				db.Model(&models.Question{}).Where("category = ?", category).Count(&totalInCategory)
+				log.Printf("Question Fetch: category=%s, found=%d (limit=%d), total_available=%d", category, len(questions), limitInt, totalInCategory)
+
 				c.JSON(http.StatusOK, questions)
 			})
 		}
@@ -229,6 +232,20 @@ func seedQuestions(db *gorm.DB) {
 	if err := db.CreateInBatches(questions, 100).Error; err != nil {
 		log.Printf("CRITICAL: Failed to batch insert questions: %v", err)
 	} else {
-		log.Printf("Successfully seeded %d questions!", len(questions))
+		scienceCount := 0
+		logicCount := 0
+		metaCount := 0
+		for _, q := range questions {
+			if q.Category == "science" {
+				scienceCount++
+			}
+			if q.Category == "logic" {
+				logicCount++
+			}
+			if q.Category == "meta" {
+				metaCount++
+			}
+		}
+		log.Printf("✅ Seeding Success: Total=%d, Science=%d, Logic=%d, Meta=%d", len(questions), scienceCount, logicCount, metaCount)
 	}
 }
