@@ -34,18 +34,25 @@ func main() {
 		log.Println("Database migrated successfully")
 	}
 
-	// Initial Seeding
+	// Initial Seeding v4 (Aggressive Overwrite)
+	var firstQ models.Question
+	db.First(&firstQ)
+
+	// Check if we need to force update (v4 contains "Truth or Myth" or "Logic Master Step")
+	needsUpdate := strings.Contains(firstQ.Text, "Science Question") || strings.Contains(firstQ.Text, "Logic Puzzle") || strings.Contains(firstQ.Text, "Science Quiz") || firstQ.ID == 0
+
 	var count int64
 	db.Model(&models.Question{}).Count(&count)
-	log.Printf("🔥 Question count in database: %d", count)
 
-	if count < 500 { // Increased to force re-seed for the new diverse data
-		log.Printf("⚠️ Question count low or updating (%d). Resetting and re-seeding database...", count)
-		// Use Unscoped().Delete with condition to clear table safely
-		db.Session(&gorm.Session{AllowGlobalUpdate: true}).Unscoped().Where("1 = 1").Delete(&models.Question{})
+	if needsUpdate || count != 500 {
+		log.Printf("🔄 Data update required (found %d items). Dropping and recreating Questions table...", count)
+		db.Migrator().DropTable(&models.Question{})
+		db.AutoMigrate(&models.Question{})
 		seedQuestions(db)
 		db.Model(&models.Question{}).Count(&count)
-		log.Printf("✅ Re-seeding finished with diverse data. Final count: %d", count)
+		log.Printf("✅ DB fully overwritten with 500 unique questions! Count: %d", count)
+	} else {
+		log.Printf("✅ Data version v4 verified. Count: %d", count)
 	}
 
 	authService := services.NewAuthService(db, cfg)
