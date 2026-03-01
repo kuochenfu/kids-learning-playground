@@ -34,15 +34,15 @@ func main() {
 		log.Println("Database migrated successfully")
 	}
 
-	// Initial Seeding v9 (Version-based)
-	const TargetVersion = "DB_VERSION_V9_FULL"
+	// Initial Seeding v10 (High Quality Stable)
+	const TargetVersion = "DB_VERSION_V10_STABLE"
 	var metaQ models.Question
 	db.Where("category = ? AND text = ?", "meta", TargetVersion).First(&metaQ)
 
 	var count int64
 	db.Model(&models.Question{}).Count(&count)
 
-	if metaQ.ID == 0 || count < 500 {
+	if metaQ.ID == 0 || count < 100 {
 		log.Printf("🔄 DB Version Mismatch or Incomplete (Count: %d). Force Overwriting with %s...", count, TargetVersion)
 		// More robust table reset
 		db.Migrator().DropTable(&models.Question{})
@@ -150,7 +150,7 @@ func main() {
 
 			protected.GET("/questions", func(c *gin.Context) {
 				category := c.Query("category")
-				limitInt := 15 // Increased from 10 to 15 to provide more variety to the frontend shuffle
+				limitInt := 10 // Reset to 10 for better pace
 
 				var questions []models.Question
 				// Ensure meta records aren't returned to players

@@ -1,219 +1,519 @@
 [
   {
     "category": "science",
-    "text": "What is the brain of a computer?",
+    "text": "What is the central processing unit (CPU) often called?",
     "options": [
-      "CPU",
-      "RAM",
-      "GPU",
-      "Monitor"
+      "The Brain",
+      "The Heart",
+      "The Stomach",
+      "The Legs"
     ],
-    "answer": "CPU",
-    "fact": "CPU handles all instructions."
+    "answer": "The Brain",
+    "fact": "The CPU handles all instructions from your computer."
   },
   {
     "category": "science",
-    "text": "What does AI stand for?",
+    "text": "What does AI (Artificial Intelligence) help computers do?",
     "options": [
-      "Artificial Intelligence",
-      "All Internet",
-      "Auto Input",
-      "App Info"
+      "Think and solve problems",
+      "Eat food",
+      "Sleep at night",
+      "Play soccer"
     ],
-    "answer": "Artificial Intelligence",
-    "fact": "AI simulates human thinking."
+    "answer": "Think and solve problems",
+    "fact": "AI allows machines to learn from experience and adjust to new inputs."
   },
   {
     "category": "science",
-    "text": "What do we call a robot's eyes?",
+    "text": "How does a touch screen sense your finger?",
     "options": [
-      "Sensors",
-      "Wires",
-      "Motors",
-      "Battery"
+      "Electricity from your body",
+      "Color of your skin",
+      "Pressure of your nail",
+      "The air from your breath"
     ],
-    "answer": "Sensors",
-    "fact": "Cameras and Lasers are sensors."
+    "answer": "Electricity from your body",
+    "fact": "Capacitive touch screens use the electrical charge of your skin to work."
   },
   {
     "category": "science",
-    "text": "What allow drones to hover?",
+    "text": "What is the global network that connects computers worldwide?",
     "options": [
-      "Rotors",
-      "Wheels",
-      "Tires",
-      "Tracks"
+      "The Internet",
+      "The Local Web",
+      "The Home Box",
+      "The Phone Link"
     ],
-    "answer": "Rotors",
-    "fact": "Most drones have 4 or more rotors."
+    "answer": "The Internet",
+    "fact": "The Internet is a massive network of networks that connects billions of devices."
   },
   {
     "category": "science",
-    "text": "What is the global network of computers?",
+    "text": "What type of robot is used to fly and take aerial photos?",
     "options": [
-      "Internet",
-      "Web",
-      "Cloud",
-      "Link"
+      "Drone",
+      "Vacuum Robot",
+      "Medical Robot",
+      "Factory Arm"
     ],
-    "answer": "Internet",
-    "fact": "The Internet connects billions of devices."
+    "answer": "Drone",
+    "fact": "Drones use multiple rotors to fly and stay very stable for cameras."
   },
   {
     "category": "science",
-    "text": "What code do computers speak natively?",
+    "text": "Which part of the computer stores files permanently?",
+    "options": [
+      "Hard Drive (SSD)",
+      "Keyboard",
+      "Power Cable",
+      "Mouse"
+    ],
+    "answer": "Hard Drive (SSD)",
+    "fact": "SSDs store your pictures, games, and os even when the power is off."
+  },
+  {
+    "category": "science",
+    "text": "What language do computer chips speak natively?",
     "options": [
       "Binary",
-      "ASCII",
-      "Logic",
-      "Java"
+      "English",
+      "French",
+      "Music"
     ],
     "answer": "Binary",
-    "fact": "Binary uses only 0s and 1s."
+    "fact": "Computers only understand 0s and 1s, which represent 'Off' and 'On'."
   },
   {
     "category": "science",
-    "text": "Which part of a cell stores DNA?",
+    "text": "What is a 'Bug' in computer coding?",
     "options": [
-      "Nucleus",
-      "Wall",
-      "Fiber",
-      "Salt"
+      "An error in the program",
+      "A real beetle inside",
+      "A cool feature",
+      "A fast mouse"
     ],
-    "answer": "Nucleus",
-    "fact": "Nucleus is the control center."
+    "answer": "An error in the program",
+    "fact": "Bugs are mistakes that make software behave in unexpected ways."
   },
   {
     "category": "science",
-    "text": "What gas do humans breathe in?",
+    "text": "What part of a robot acts like its 'eyes'?",
+    "options": [
+      "Sensors",
+      "Wheels",
+      "Battery",
+      "Metal case"
+    ],
+    "answer": "Sensors",
+    "fact": "Cameras and light sensors help robots 'see' the world around them."
+  },
+  {
+    "category": "science",
+    "text": "What technology allows you to wear special glasses to see a virtual world?",
+    "options": [
+      "Virtual Reality (VR)",
+      "Radio Wave",
+      "Flashlight",
+      "3D Printing"
+    ],
+    "answer": "Virtual Reality (VR)",
+    "fact": "VR creates a computer-generated environment with scenes that appear to be real."
+  },
+  {
+    "category": "science",
+    "text": "Which planet is the fourth from the sun and is called the 'Red Planet'?",
+    "options": [
+      "Mars",
+      "Venus",
+      "Saturn",
+      "Jupiter"
+    ],
+    "answer": "Mars",
+    "fact": "Mars is red because its surface is covered in iron oxide (rust)."
+  },
+  {
+    "category": "science",
+    "text": "What force keeps us on the ground and causes objects to fall?",
+    "options": [
+      "Gravity",
+      "Wind",
+      "Magnetism",
+      "Static Electricity"
+    ],
+    "answer": "Gravity",
+    "fact": "Everything with mass has gravity, which pulls things toward each other."
+  },
+  {
+    "category": "science",
+    "text": "What is the primary gas we breathe in to survive?",
     "options": [
       "Oxygen",
       "Carbon Dioxide",
       "Nitrogen",
-      "Argon"
-    ],
-    "answer": "Oxygen",
-    "fact": "Oxygen is vital for life."
-  },
-  {
-    "category": "science",
-    "text": "What is the hardest natural substance?",
-    "options": [
-      "Diamond",
-      "Gold",
-      "Iron",
-      "Sand"
-    ],
-    "answer": "Diamond",
-    "fact": "It's made of pure carbon."
-  },
-  {
-    "category": "science",
-    "text": "Which planet is the closest to the Sun?",
-    "options": [
-      "Mercury",
-      "Venus",
-      "Earth",
-      "Mars"
-    ],
-    "answer": "Mercury",
-    "fact": "It's a small, hot planet."
-  },
-  {
-    "category": "science",
-    "text": "What is H2O better known as?",
-    "options": [
-      "Water",
-      "Salt",
-      "Air",
-      "Oil"
-    ],
-    "answer": "Water",
-    "fact": "Two Hydrogen, one Oxygen."
-  },
-  {
-    "category": "science",
-    "text": "Which animal is the largest mammal?",
-    "options": [
-      "Blue Whale",
-      "Elephant",
-      "Giraffe",
-      "Shark"
-    ],
-    "answer": "Blue Whale",
-    "fact": "It lives in the ocean."
-  },
-  {
-    "category": "science",
-    "text": "What force pulls things to the ground?",
-    "options": [
-      "Gravity",
-      "Magnetism",
-      "Wind",
-      "Friction"
-    ],
-    "answer": "Gravity",
-    "fact": "Everything with mass has gravity."
-  },
-  {
-    "category": "science",
-    "text": "What is the boiling point of water (C)?",
-    "options": [
-      "100\u00b0C",
-      "0\u00b0C",
-      "50\u00b0C",
-      "200\u00b0C"
-    ],
-    "answer": "100\u00b0C",
-    "fact": "At sea level, it boils at 100\u00b0C."
-  },
-  {
-    "category": "science",
-    "text": "Which star is at the center of our system?",
-    "options": [
-      "The Sun",
-      "North Star",
-      "Mars",
-      "Alpha Centuri"
-    ],
-    "answer": "The Sun",
-    "fact": "The Sun is a medium yellow star."
-  },
-  {
-    "category": "science",
-    "text": "What gas is released during photosynthesis?",
-    "options": [
-      "Oxygen",
-      "CO2",
-      "Nitrogen",
       "Helium"
     ],
     "answer": "Oxygen",
-    "fact": "Plants make food and release Oxygen."
+    "fact": "Our bodies use oxygen to break down food and create energy."
   },
   {
     "category": "science",
-    "text": "Which part of the plant absorbs water?",
+    "text": "What process do plants use to make food from sunlight?",
     "options": [
-      "Roots",
-      "Leaves",
-      "Seeds",
-      "Flowers"
+      "Photosynthesis",
+      "Digestion",
+      "Evaporation",
+      "Melting"
     ],
-    "answer": "Roots",
-    "fact": "Roots also anchor the plant."
+    "answer": "Photosynthesis",
+    "fact": "Plants take in CO2 and release Oxygen while making sugar from light."
   },
   {
     "category": "science",
-    "text": "How many planets are in our solar system?",
+    "text": "What is the largest animal to ever live on Earth?",
+    "options": [
+      "Blue Whale",
+      "Dinosaur",
+      "Elephant",
+      "Giraffe"
+    ],
+    "answer": "Blue Whale",
+    "fact": "The Blue Whale can grow up to 100 feet long and weigh as much as 30 elephants."
+  },
+  {
+    "category": "science",
+    "text": "What are the building blocks of everything in the universe?",
+    "options": [
+      "Atoms",
+      "Cells",
+      "Blocks",
+      "Sand"
+    ],
+    "answer": "Atoms",
+    "fact": "Everything you touch is made of tiny atoms too small to see with your eyes."
+  },
+  {
+    "category": "science",
+    "text": "What part of the cell holds the 'instructions' for life (DNA)?",
+    "options": [
+      "Nucleus",
+      "Shell",
+      "Water",
+      "Skin"
+    ],
+    "answer": "Nucleus",
+    "fact": "The nucleus acts like the control center for the whole cell."
+  },
+  {
+    "category": "science",
+    "text": "What happens to water when it reaches 100 degrees Celsius?",
+    "options": [
+      "It Boils",
+      "It Freezes",
+      "It Disappears",
+      "It Turns Blue"
+    ],
+    "answer": "It Boils",
+    "fact": "At 100\u00b0C, water turns from liquid into gas (steam)."
+  },
+  {
+    "category": "science",
+    "text": "Which star provides heat and light to our solar system?",
+    "options": [
+      "The Sun",
+      "The North Star",
+      "The Moon",
+      "The Red Giant"
+    ],
+    "answer": "The Sun",
+    "fact": "The Sun is a medium-sized star that holds 99% of our solar system's mass."
+  },
+  {
+    "category": "science",
+    "text": "How many planets are currently in our solar system?",
     "options": [
       "8",
       "7",
       "9",
-      "10"
+      "12"
     ],
     "answer": "8",
-    "fact": "Pluto is now a dwarf planet."
+    "fact": "Pluto was reclassified as a dwarf planet in 2006."
+  },
+  {
+    "category": "science",
+    "text": "What does a solar panel do?",
+    "options": [
+      "Turns sunlight into electricity",
+      "Makes the sun brighter",
+      "Cools down the house",
+      "Plays music"
+    ],
+    "answer": "Turns sunlight into electricity",
+    "fact": "Solar panels capture photons and convert them into electrical power."
+  },
+  {
+    "category": "science",
+    "text": "Which of these is a fast-growing plant that pandas love to eat?",
+    "options": [
+      "Bamboo",
+      "Oak tree",
+      "Rose",
+      "Grass"
+    ],
+    "answer": "Bamboo",
+    "fact": "Bamboo can grow over 3 feet in a single day!"
+  },
+  {
+    "category": "science",
+    "text": "What do we call the path Earth takes around the Sun?",
+    "options": [
+      "Orbit",
+      "Spin",
+      "Zip",
+      "Twirl"
+    ],
+    "answer": "Orbit",
+    "fact": "It takes 365 days for the Earth to complete one full orbit."
+  },
+  {
+    "category": "science",
+    "text": "What protects the Earth from the Sun's harmful UV rays?",
+    "options": [
+      "Ozone Layer",
+      "Clouds",
+      "Rain",
+      "Wind"
+    ],
+    "answer": "Ozone Layer",
+    "fact": "The ozone layer is a gas shield in the upper atmosphere."
+  },
+  {
+    "category": "science",
+    "text": "What kind of animal is a frog?",
+    "options": [
+      "Amphibian",
+      "Mammal",
+      "Bird",
+      "Fish"
+    ],
+    "answer": "Amphibian",
+    "fact": "Amphibians usually spend part of their life in water and part on land."
+  },
+  {
+    "category": "science",
+    "text": "Which human organ filters blood and is shaped like a bean?",
+    "options": [
+      "Kidney",
+      "Brain",
+      "Heart",
+      "Stomach"
+    ],
+    "answer": "Kidney",
+    "fact": "You have two kidneys that help clean your body's fluids."
+  },
+  {
+    "category": "science",
+    "text": "What is the hardest natural mineral found on Earth?",
+    "options": [
+      "Diamond",
+      "Gold",
+      "Silver",
+      "Iron"
+    ],
+    "answer": "Diamond",
+    "fact": "Diamonds are made of carbon atoms packed extremely tight."
+  },
+  {
+    "category": "science",
+    "text": "Which part of a plant absorbs water from the soil?",
+    "options": [
+      "Roots",
+      "Leaves",
+      "Stem",
+      "Flower"
+    ],
+    "answer": "Roots",
+    "fact": "Roots also help anchor the plant so it doesn't blow away."
+  },
+  {
+    "category": "science",
+    "text": "What is the boiling point of water in Fahrenheit?",
+    "options": [
+      "212\u00b0F",
+      "32\u00b0F",
+      "100\u00b0F",
+      "500\u00b0F"
+    ],
+    "answer": "212\u00b0F",
+    "fact": "In the Fahrenheit system, water boils at 212 degrees."
+  },
+  {
+    "category": "science",
+    "text": "What does 'Wi-Fi' stand for?",
+    "options": [
+      "Wireless Fidelity",
+      "Wide Fire",
+      "Wire Finish",
+      "Web Finder"
+    ],
+    "answer": "Wireless Fidelity",
+    "fact": "Wi-Fi is technology for radio wireless local area networking of devices."
+  },
+  {
+    "category": "science",
+    "text": "What do we call the tiny organisms that can cause sickness?",
+    "options": [
+      "Bacteria",
+      "Plants",
+      "Animals",
+      "Rocks"
+    ],
+    "answer": "Bacteria",
+    "fact": "While some bacteria make us sick, many are actually helpful!"
+  },
+  {
+    "category": "science",
+    "text": "What color is the sky on Mars?",
+    "options": [
+      "Yellowish-brown",
+      "Blue",
+      "Black",
+      "Green"
+    ],
+    "answer": "Yellowish-brown",
+    "fact": "Dust in the Martian atmosphere gives the sky a butterscotch tint."
+  },
+  {
+    "category": "science",
+    "text": "Which bird is known for being able to fly backwards?",
+    "options": [
+      "Hummingbird",
+      "Eagle",
+      "Owl",
+      "Penguin"
+    ],
+    "answer": "Hummingbird",
+    "fact": "A hummingbird's wings move in a figure-eight pattern."
+  },
+  {
+    "category": "science",
+    "text": "What is the state of matter of a rock?",
+    "options": [
+      "Solid",
+      "Liquid",
+      "Gas",
+      "Plasma"
+    ],
+    "answer": "Solid",
+    "fact": "Solids have a fixed shape and volume."
+  },
+  {
+    "category": "science",
+    "text": "What is the molten rock inside a volcano called?",
+    "options": [
+      "Magma",
+      "Lava",
+      "Ash",
+      "Mud"
+    ],
+    "answer": "Magma",
+    "fact": "It's called magma when underground, and lava when it erupts."
+  },
+  {
+    "category": "science",
+    "text": "Which ocean is the largest on Earth?",
+    "options": [
+      "Pacific",
+      "Atlantic",
+      "Indian",
+      "Arctic"
+    ],
+    "answer": "Pacific",
+    "fact": "The Pacific covers about one-third of the entire surface of the Earth."
+  },
+  {
+    "category": "science",
+    "text": "What do we call a scientist who studies stars and space?",
+    "options": [
+      "Astronomer",
+      "Geologist",
+      "Biologist",
+      "Chemist"
+    ],
+    "answer": "Astronomer",
+    "fact": "Astronomers use telescopes and math to understand the universe."
+  },
+  {
+    "category": "science",
+    "text": "What is the name of our galaxy?",
+    "options": [
+      "Milky Way",
+      "Andromeda",
+      "Orion",
+      "Centaurus"
+    ],
+    "answer": "Milky Way",
+    "fact": "Our solar system is located in one of the spiral arms of the Milky Way."
+  },
+  {
+    "category": "science",
+    "text": "How many legs does an insect usually have?",
+    "options": [
+      "6",
+      "8",
+      "4",
+      "10"
+    ],
+    "answer": "6",
+    "fact": "Spiders have 8 legs, but insects always have 6."
+  },
+  {
+    "category": "science",
+    "text": "What is the main ingredient in glass?",
+    "options": [
+      "Sand (Silica)",
+      "Water",
+      "Wood",
+      "Metal"
+    ],
+    "answer": "Sand (Silica)",
+    "fact": "Glass is made by melting sand at very high temperatures."
+  },
+  {
+    "category": "science",
+    "text": "What do we call the electricity that makes your hair stand up?",
+    "options": [
+      "Static Electricity",
+      "Battery Power",
+      "Light",
+      "Magnetism"
+    ],
+    "answer": "Static Electricity",
+    "fact": "Static electricity is the buildup of an electrical charge on an object's surface."
+  },
+  {
+    "category": "science",
+    "text": "Which part of the body is responsible for pumping blood?",
+    "options": [
+      "Heart",
+      "Brain",
+      "Lungs",
+      "Stomach"
+    ],
+    "answer": "Heart",
+    "fact": "Your heart is a strong muscle that works non-stop."
+  },
+  {
+    "category": "science",
+    "text": "What gas do plants need to take in for photosynthesis?",
+    "options": [
+      "Carbon Dioxide",
+      "Oxygen",
+      "Helium",
+      "Neon"
+    ],
+    "answer": "Carbon Dioxide",
+    "fact": "Plants breathe in CO2 that humans and animals breathe out."
   },
   {
     "category": "science",
@@ -222,5790 +522,690 @@
       "Cheetah",
       "Lion",
       "Horse",
-      "Leopard"
+      "Greyhound"
     ],
     "answer": "Cheetah",
-    "fact": "It can reach 70 mph."
+    "fact": "A cheetah can reach speeds up to 70 miles per hour."
   },
   {
     "category": "science",
-    "text": "What part of a computer handles graphics?",
+    "text": "Which of these is used to measure temperature?",
     "options": [
-      "GPU",
-      "CPU",
-      "RAM",
-      "SSD"
+      "Thermometer",
+      "Ruler",
+      "Scale",
+      "Clock"
     ],
-    "answer": "GPU",
-    "fact": "Graphics Processing Unit."
+    "answer": "Thermometer",
+    "fact": "Thermometers can use liquid or digital sensors to find heat levels."
   },
   {
     "category": "science",
-    "text": "What is 'Coding'?",
-    "options": [
-      "Writing instructions for computers",
-      "Drawing pictures",
-      "Speaking English",
-      "Building a desk"
-    ],
-    "answer": "Writing instructions for computers",
-    "fact": "We use code to build apps."
-  },
-  {
-    "category": "science",
-    "text": "What is a computer monitor's tiny dot called?",
-    "options": [
-      "Pixel",
-      "Point",
-      "Spot",
-      "Bit"
-    ],
-    "answer": "Pixel",
-    "fact": "Pixels form the screen image."
-  },
-  {
-    "category": "science",
-    "text": "Which of these is a mobile OS?",
-    "options": [
-      "Android",
-      "Excel",
-      "Chrome",
-      "Spotify"
-    ],
-    "answer": "Android",
-    "fact": "Android and iOS are mobile platforms."
-  },
-  {
-    "category": "science",
-    "text": "What helps a computer stay cool?",
-    "options": [
-      "Fan",
-      "Light",
-      "Speaker",
-      "Case"
-    ],
-    "answer": "Fan",
-    "fact": "Fans prevent overheating."
-  },
-  {
-    "category": "science",
-    "text": "What is Virtual Reality (VR)?",
-    "options": [
-      "Computer-simulated world",
-      "A movie",
-      "A real place",
-      "A dream"
-    ],
-    "answer": "Computer-simulated world",
-    "fact": "Usually accessed via headset."
-  },
-  {
-    "category": "science",
-    "text": "Which metal is liquid at room temp?",
+    "text": "What is the closest planet to the Sun?",
     "options": [
       "Mercury",
-      "Gold",
-      "Iron",
-      "Silver"
+      "Venus",
+      "Earth",
+      "Mars"
     ],
     "answer": "Mercury",
-    "fact": "It's used in some thermometers."
+    "fact": "Mercury is very small and has almost no atmosphere."
   },
   {
     "category": "science",
-    "text": "What process turns water to steam?",
+    "text": "What do we call the sound made by a lightning bolt?",
     "options": [
-      "Evaporation",
-      "Freezing",
-      "Melting",
-      "Rain"
+      "Thunder",
+      "Boom",
+      "Zap",
+      "Flash"
     ],
-    "answer": "Evaporation",
-    "fact": "Sunlight causes evaporation."
+    "answer": "Thunder",
+    "fact": "Thunder is the sound of the air expanding rapidly due to heat."
   },
   {
     "category": "science",
-    "text": "Which planet is the 'Red Planet'?",
+    "text": "What is 'Coding' in simple terms?",
     "options": [
-      "Mars",
-      "Venus",
-      "Saturn",
-      "Jupiter"
+      "Writing instructions for a computer",
+      "Drawing a picture",
+      "Building a desk",
+      "Cleaning a room"
     ],
-    "answer": "Mars",
-    "fact": "Due to iron oxide on surface."
+    "answer": "Writing instructions for a computer",
+    "fact": "Code tells a computer exactly what to do step by step."
   },
   {
     "category": "science",
-    "text": "What is the shortest unit of computer data?",
+    "text": "Who was the first person to walk on the moon?",
     "options": [
-      "Bit",
-      "Byte",
-      "Pixel",
-      "Code"
+      "Neil Armstrong",
+      "Buzz Aldrin",
+      "Yuri Gagarin",
+      "Elon Musk"
     ],
-    "answer": "Bit",
-    "fact": "A bit is a 0 or a 1."
+    "answer": "Neil Armstrong",
+    "fact": "He famously said, 'One small step for man, one giant leap for mankind.'"
   },
   {
     "category": "science",
-    "text": "What does Wi-Fi use to send data?",
+    "text": "What part of the tree tells us how old it is?",
     "options": [
-      "Radio waves",
-      "Light",
-      "Magnets",
-      "Laser"
+      "The rings inside the trunk",
+      "The number of leaves",
+      "The height",
+      "The width"
     ],
-    "answer": "Radio waves",
-    "fact": "Wi-Fi is a wireless tech."
-  },
-  {
-    "category": "science",
-    "text": "Which part of a computer saves data permanently?",
-    "options": [
-      "SSD/Hard Drive",
-      "RAM",
-      "CPU",
-      "Monitor"
-    ],
-    "answer": "SSD/Hard Drive",
-    "fact": "Non-volatile storage."
-  },
-  {
-    "category": "science",
-    "text": "What are the building blocks of matter?",
-    "options": [
-      "Atoms",
-      "Cells",
-      "Blocks",
-      "Bricks"
-    ],
-    "answer": "Atoms",
-    "fact": "Everything is made of atoms."
-  },
-  {
-    "category": "science",
-    "text": "Which gas makes up most of our air?",
-    "options": [
-      "Nitrogen",
-      "Oxygen",
-      "Argon",
-      "CO2"
-    ],
-    "answer": "Nitrogen",
-    "fact": "Nitrogen is about 78%."
-  },
-  {
-    "category": "science",
-    "text": "Which organ in the body is for thinking?",
-    "options": [
-      "Brain",
-      "Heart",
-      "Stomach",
-      "Liver"
-    ],
-    "answer": "Brain",
-    "fact": "The brain is the command center."
-  },
-  {
-    "category": "science",
-    "text": "What do we call a scientist studying space?",
-    "options": [
-      "Astronomer",
-      "Geologist",
-      "Biologist",
-      "Chemist"
-    ],
-    "answer": "Astronomer",
-    "fact": "They use telescopes to see stars."
-  },
-  {
-    "category": "science",
-    "text": "How long does Earth take to rotate once?",
-    "options": [
-      "24 hours",
-      "365 days",
-      "30 days",
-      "1 hour"
-    ],
-    "answer": "24 hours",
-    "fact": "One full day."
-  },
-  {
-    "category": "science",
-    "text": "How long does Earth take to orbit the Sun?",
-    "options": [
-      "365 days",
-      "24 hours",
-      "30 days",
-      "1 year"
-    ],
-    "answer": "365 days",
-    "fact": "Also known as a year."
-  },
-  {
-    "category": "science",
-    "text": "What protects Earth from UV rays?",
-    "options": [
-      "Ozone Layer",
-      "Clouds",
-      "Ocean",
-      "Moon"
-    ],
-    "answer": "Ozone Layer",
-    "fact": "It's high in the atmosphere."
-  },
-  {
-    "category": "science",
-    "text": "What is the largest continent?",
-    "options": [
-      "Asia",
-      "Africa",
-      "NA",
-      "Europe"
-    ],
-    "answer": "Asia",
-    "fact": "Highest land area and population."
-  },
-  {
-    "category": "science",
-    "text": "Which of these is an amphibian?",
-    "options": [
-      "Frog",
-      "Snake",
-      "Fish",
-      "Bird"
-    ],
-    "answer": "Frog",
-    "fact": "Lives on land and in water."
-  },
-  {
-    "category": "science",
-    "text": "What do humans breathe OUT?",
-    "options": [
-      "Carbon Dioxide",
-      "Oxygen",
-      "Nitrogen",
-      "Methane"
-    ],
-    "answer": "Carbon Dioxide",
-    "fact": "Waste product of metabolism."
-  },
-  {
-    "category": "science",
-    "text": "Which planet has a Great Red Spot?",
-    "options": [
-      "Jupiter",
-      "Saturn",
-      "Mars",
-      "Venus"
-    ],
-    "answer": "Jupiter",
-    "fact": "The spot is a storm."
-  },
-  {
-    "category": "science",
-    "text": "What are trees made of mostly?",
-    "options": [
-      "Wood",
-      "Iron",
-      "Plastic",
-      "Stone"
-    ],
-    "answer": "Wood",
-    "fact": "Plants make it from CO2."
-  },
-  {
-    "category": "science",
-    "text": "What is the moon of the Earth?",
-    "options": [
-      "The Moon",
-      "Phobos",
-      "Europa",
-      "Titan"
-    ],
-    "answer": "The Moon",
-    "fact": "Earth has only one."
-  },
-  {
-    "category": "science",
-    "text": "What is an 'App'?",
-    "options": [
-      "Application",
-      "An Apple",
-      "An Appointment",
-      "A Name"
-    ],
-    "answer": "Application",
-    "fact": "Program for a task."
-  },
-  {
-    "category": "science",
-    "text": "What is 'Cloud Storage'?",
-    "options": [
-      "Storing data remotely",
-      "Storing data in the sky",
-      "A weather app",
-      "A new computer"
-    ],
-    "answer": "Storing data remotely",
-    "fact": "Servers via internet."
-  },
-  {
-    "category": "science",
-    "text": "What do robots use for energy?",
-    "options": [
-      "Electricity/Battery",
-      "Food",
-      "Water",
-      "Air"
-    ],
-    "answer": "Electricity/Battery",
-    "fact": "Most are electric."
-  },
-  {
-    "category": "science",
-    "text": "What turns light into electricity?",
-    "options": [
-      "Solar Panel",
-      "Battery",
-      "Fan",
-      "Speaker"
-    ],
-    "answer": "Solar Panel",
-    "fact": "Renewable energy."
-  },
-  {
-    "category": "science",
-    "text": "Which part of the cell is the wall?",
-    "options": [
-      "Cell Wall",
-      "Nucleus",
-      "Cytoplasm",
-      "Ribosome"
-    ],
-    "answer": "Cell Wall",
-    "fact": "Only in plants."
-  },
-  {
-    "category": "science",
-    "text": "What is the center of the earth called?",
-    "options": [
-      "Core",
-      "Mantle",
-      "Crust",
-      "Atmosphere"
-    ],
-    "answer": "Core",
-    "fact": "It's hot."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-50: Is 50 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 50 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-51: Is 51 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 51 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-52: Is 52 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 52 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-53: Is 53 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 53 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-54: Is 54 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 54 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-55: Is 55 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 55 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-56: Is 56 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 56 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-57: Is 57 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 57 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-58: Is 58 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 58 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-59: Is 59 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 59 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-60: Is 60 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 60 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-61: Is 61 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 61 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-62: Is 62 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 62 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-63: Is 63 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 63 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-64: Is 64 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 64 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-65: Is 65 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 65 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-66: Is 66 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 66 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-67: Is 67 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 67 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-68: Is 68 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 68 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-69: Is 69 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 69 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-70: Is 70 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 70 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-71: Is 71 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 71 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-72: Is 72 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 72 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-73: Is 73 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 73 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-74: Is 74 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 74 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-75: Is 75 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 75 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-76: Is 76 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 76 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-77: Is 77 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 77 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-78: Is 78 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 78 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-79: Is 79 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 79 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-80: Is 80 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 80 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-81: Is 81 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 81 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-82: Is 82 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 82 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-83: Is 83 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 83 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-84: Is 84 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 84 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-85: Is 85 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 85 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-86: Is 86 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 86 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-87: Is 87 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 87 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-88: Is 88 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 88 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-89: Is 89 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 89 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-90: Is 90 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 90 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-91: Is 91 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 91 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-92: Is 92 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 92 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-93: Is 93 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 93 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-94: Is 94 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 94 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-95: Is 95 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 95 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-96: Is 96 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 96 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-97: Is 97 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 97 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-98: Is 98 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 98 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-99: Is 99 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 99 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-100: Is 100 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 100 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-101: Is 101 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 101 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-102: Is 102 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 102 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-103: Is 103 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 103 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-104: Is 104 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 104 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-105: Is 105 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 105 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-106: Is 106 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 106 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-107: Is 107 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 107 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-108: Is 108 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 108 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-109: Is 109 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 109 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-110: Is 110 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 110 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-111: Is 111 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 111 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-112: Is 112 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 112 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-113: Is 113 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 113 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-114: Is 114 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 114 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-115: Is 115 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 115 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-116: Is 116 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 116 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-117: Is 117 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 117 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-118: Is 118 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 118 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-119: Is 119 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 119 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-120: Is 120 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 120 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-121: Is 121 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 121 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-122: Is 122 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 122 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-123: Is 123 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 123 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-124: Is 124 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 124 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-125: Is 125 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 125 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-126: Is 126 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 126 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-127: Is 127 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 127 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-128: Is 128 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 128 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-129: Is 129 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 129 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-130: Is 130 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 130 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-131: Is 131 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 131 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-132: Is 132 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 132 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-133: Is 133 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 133 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-134: Is 134 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 134 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-135: Is 135 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 135 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-136: Is 136 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 136 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-137: Is 137 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 137 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-138: Is 138 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 138 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-139: Is 139 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 139 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-140: Is 140 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 140 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-141: Is 141 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 141 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-142: Is 142 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 142 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-143: Is 143 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 143 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-144: Is 144 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 144 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-145: Is 145 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 145 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-146: Is 146 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 146 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-147: Is 147 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 147 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-148: Is 148 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 148 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-149: Is 149 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 149 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-150: Is 150 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 150 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-151: Is 151 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 151 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-152: Is 152 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 152 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-153: Is 153 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 153 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-154: Is 154 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 154 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-155: Is 155 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 155 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-156: Is 156 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 156 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-157: Is 157 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 157 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-158: Is 158 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 158 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-159: Is 159 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 159 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-160: Is 160 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 160 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-161: Is 161 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 161 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-162: Is 162 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 162 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-163: Is 163 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 163 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-164: Is 164 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 164 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-165: Is 165 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 165 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-166: Is 166 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 166 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-167: Is 167 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 167 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-168: Is 168 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 168 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-169: Is 169 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 169 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-170: Is 170 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 170 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-171: Is 171 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 171 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-172: Is 172 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 172 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-173: Is 173 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 173 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-174: Is 174 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 174 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-175: Is 175 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 175 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-176: Is 176 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 176 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-177: Is 177 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 177 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-178: Is 178 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 178 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-179: Is 179 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 179 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-180: Is 180 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 180 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-181: Is 181 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 181 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-182: Is 182 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 182 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-183: Is 183 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 183 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-184: Is 184 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 184 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-185: Is 185 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 185 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-186: Is 186 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 186 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-187: Is 187 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 187 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-188: Is 188 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 188 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-189: Is 189 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 189 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-190: Is 190 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 190 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-191: Is 191 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 191 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-192: Is 192 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 192 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-193: Is 193 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 193 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-194: Is 194 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 194 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-195: Is 195 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 195 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-196: Is 196 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 196 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-197: Is 197 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 197 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-198: Is 198 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 198 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-199: Is 199 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 199 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-200: Is 200 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 200 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-201: Is 201 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 201 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-202: Is 202 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 202 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-203: Is 203 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 203 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-204: Is 204 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 204 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-205: Is 205 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 205 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-206: Is 206 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 206 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-207: Is 207 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 207 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-208: Is 208 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 208 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-209: Is 209 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 209 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-210: Is 210 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 210 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-211: Is 211 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 211 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-212: Is 212 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 212 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-213: Is 213 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 213 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-214: Is 214 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 214 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-215: Is 215 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 215 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-216: Is 216 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 216 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-217: Is 217 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 217 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-218: Is 218 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 218 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-219: Is 219 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 219 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-220: Is 220 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 220 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-221: Is 221 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 221 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-222: Is 222 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 222 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-223: Is 223 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 223 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-224: Is 224 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 224 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-225: Is 225 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 225 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-226: Is 226 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 226 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-227: Is 227 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 227 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-228: Is 228 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 228 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-229: Is 229 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 229 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-230: Is 230 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 230 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-231: Is 231 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 231 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-232: Is 232 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 232 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-233: Is 233 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 233 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-234: Is 234 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 234 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-235: Is 235 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 235 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-236: Is 236 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 236 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-237: Is 237 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 237 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-238: Is 238 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 238 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-239: Is 239 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 239 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-240: Is 240 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 240 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-241: Is 241 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 241 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-242: Is 242 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 242 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-243: Is 243 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 243 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-244: Is 244 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 244 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-245: Is 245 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 245 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-246: Is 246 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 246 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-247: Is 247 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 247 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-248: Is 248 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 248 is a special number study."
-  },
-  {
-    "category": "science",
-    "text": "Science Study Fact S-249: Is 249 a prime number?",
-    "options": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Depends"
-    ],
-    "answer": "No",
-    "fact": "Point 249 is a special number study."
+    "answer": "The rings inside the trunk",
+    "fact": "Each ring usually represents one year of growth."
   },
   {
     "category": "logic",
     "text": "What has a face and two hands but no arms or legs?",
     "options": [
-      "Clock",
-      "Ghost",
-      "Mirror",
-      "Statue"
+      "A Clock",
+      "A Ghost",
+      "A Mirror",
+      "A Statue"
     ],
-    "answer": "Clock",
-    "fact": "Ticks away."
+    "answer": "A Clock",
+    "fact": "Clocks show time with their hands and faces."
   },
   {
     "category": "logic",
     "text": "What has many keys but can\u2019t open a single lock?",
     "options": [
-      "Piano",
-      "Lock",
-      "Key",
-      "Car"
+      "A Piano",
+      "A Computer",
+      "A Locksmith",
+      "A Car"
     ],
-    "answer": "Piano",
-    "fact": "Makes music."
+    "answer": "A Piano",
+    "fact": "A piano has 88 keys, but they only make music."
   },
   {
     "category": "logic",
-    "text": "What month has 28 days?",
+    "text": "What month of the year has 28 days?",
     "options": [
-      "All",
-      "Feb",
-      "Jan",
-      "Mar"
+      "All of them",
+      "February",
+      "January",
+      "August"
     ],
-    "answer": "All",
-    "fact": "Every month has 28."
+    "answer": "All of them",
+    "fact": "Every single month has at least 28 days!"
   },
   {
     "category": "logic",
-    "text": "I\u2019m tall when young, short when old?",
+    "text": "I\u2019m tall when I\u2019m young, and I\u2019m short when I\u2019m old. What am I?",
     "options": [
-      "Candle",
-      "Tree",
-      "Man",
-      "Pencil"
+      "A Candle",
+      "A Tree",
+      "A Person",
+      "A Pencil"
     ],
-    "answer": "Candle",
-    "fact": "Melts down."
+    "answer": "A Candle",
+    "fact": "Candles get shorter as the wax melts away."
   },
   {
     "category": "logic",
-    "text": "Broken before used?",
+    "text": "What has to be broken before you can use it?",
     "options": [
-      "Egg",
-      "Pencil",
-      "Milk",
-      "Ice"
+      "An Egg",
+      "A Pencil",
+      "A Silence",
+      "A Promise"
     ],
-    "answer": "Egg",
-    "fact": "Crack it."
+    "answer": "An Egg",
+    "fact": "You have to crack the shell to cook or eat an egg."
   },
   {
     "category": "logic",
-    "text": "Catch but not throw?",
+    "text": "What can you catch but not throw?",
     "options": [
-      "Cold",
-      "Ball",
-      "Wind",
-      "Sun"
+      "A Cold",
+      "A Ball",
+      "A Fish",
+      "A Frisbee"
     ],
-    "answer": "Cold",
-    "fact": "Sickness."
+    "answer": "A Cold",
+    "fact": "You catch a sickness, but it isn't an object you can throw."
   },
   {
     "category": "logic",
-    "text": "Goes up never comes down?",
+    "text": "What goes up but never comes down?",
     "options": [
-      "Age",
-      "Balloon",
+      "Your Age",
+      "A Balloon",
       "Smoke",
-      "Plane"
+      "A Plane"
     ],
-    "answer": "Age",
-    "fact": "Only older."
+    "answer": "Your Age",
+    "fact": "Time only moves forward, so you keep getting older."
   },
   {
     "category": "logic",
-    "text": "Wet while drying?",
+    "text": "What gets wet while drying?",
     "options": [
-      "Towel",
-      "Rain",
-      "Sea",
-      "Cloud"
+      "A Towel",
+      "An Umbrella",
+      "A Raincoat",
+      "The Ocean"
     ],
-    "answer": "Towel",
-    "fact": "Dries you."
+    "answer": "A Towel",
+    "fact": "A towel dries you and absorbs your water, becoming wet."
   },
   {
     "category": "logic",
-    "text": "Yours but used by others?",
+    "text": "What belongs to you, but others use it more than you do?",
     "options": [
-      "Name",
-      "Phone",
-      "Bed",
-      "Money"
+      "Your Name",
+      "Your Phone",
+      "Your Money",
+      "Your Bed"
     ],
-    "answer": "Name",
-    "fact": "They call you."
+    "answer": "Your Name",
+    "fact": "Other people call you by your name more than you say it."
   },
   {
     "category": "logic",
-    "text": "Corner while traveling?",
+    "text": "What can travel around the world while staying in a corner?",
     "options": [
-      "Stamp",
-      "Plane",
-      "Moon",
-      "Coin"
+      "A Stamp",
+      "A Plane",
+      "The Moon",
+      "A Postcard"
     ],
-    "answer": "Stamp",
-    "fact": "On envelope."
+    "answer": "A Stamp",
+    "fact": "A stamp stays in the corner of an envelope as it travels in the mail."
   },
   {
     "category": "logic",
-    "text": "Cities no houses, mountains no trees?",
+    "text": "What has cities, but no houses; mountains, but no trees; and water, but no fish?",
     "options": [
-      "Map",
-      "Globe",
-      "Pic",
-      "Book"
+      "A Map",
+      "The Internet",
+      "A Globe",
+      "A Cloud"
     ],
-    "answer": "Map",
-    "fact": "Drawing."
+    "answer": "A Map",
+    "fact": "A map shows where things are without the real objects."
   },
   {
     "category": "logic",
-    "text": "Branches no fruit?",
+    "text": "I have branches, but no fruit, trunk, or leaves. What am I?",
     "options": [
-      "Bank",
-      "Tree",
-      "Bush",
-      "River"
+      "A Bank",
+      "A Tree",
+      "A Road",
+      "A River"
     ],
-    "answer": "Bank",
-    "fact": "Offices."
+    "answer": "A Bank",
+    "fact": "Banks have offices in different locations called branches."
   },
   {
     "category": "logic",
-    "text": "Neck no head?",
+    "text": "What has a neck but no head?",
     "options": [
-      "Bottle",
-      "Shirt",
-      "Guitar",
-      "All"
+      "A Bottle",
+      "A Shirt",
+      "A Guitar",
+      "All of these"
     ],
-    "answer": "All",
-    "fact": "Common name."
+    "answer": "All of these",
+    "fact": "Bottles, shirts, and guitars all have a part called a 'neck'."
   },
   {
     "category": "logic",
-    "text": "More is less vision?",
+    "text": "The more of this there is, the less you see. What is it?",
     "options": [
-      "Dark",
+      "Darkness",
       "Fog",
       "Light",
       "Air"
     ],
-    "answer": "Dark",
-    "fact": "No light."
+    "answer": "Darkness",
+    "fact": "In total darkness, your eyes can't see anything."
   },
   {
     "category": "logic",
-    "text": "Future in front?",
+    "text": "I\u2019m always in front of you but can\u2019t be seen. What am I?",
     "options": [
-      "Future",
-      "Wind",
-      "Past",
-      "Rain"
+      "The Future",
+      "The Wind",
+      "A Shadow",
+      "A Ghost"
     ],
-    "answer": "Future",
-    "fact": "Ahead."
+    "answer": "The Future",
+    "fact": "The future hasn't happened yet, so it stays ahead of you."
   },
   {
     "category": "logic",
-    "text": "Shadow follows day?",
+    "text": "What follows you all day long but disappears at night?",
     "options": [
-      "Shadow",
-      "Ghost",
-      "Friend",
-      "Dog"
+      "Your Shadow",
+      "Your Best Friend",
+      "A Little Dog",
+      "Your Name"
     ],
-    "answer": "Shadow",
-    "fact": "Needs light."
+    "answer": "Your Shadow",
+    "fact": "Shadows need light to exist, so they vanish in the dark."
   },
   {
     "category": "logic",
-    "text": "One eye no sight?",
+    "text": "What has one eye but can\u2019t see anything at all?",
     "options": [
-      "Needle",
-      "Potato",
-      "Storm",
-      "All"
+      "A Needle",
+      "A Storm",
+      "A Potato",
+      "All of these"
     ],
-    "answer": "All",
-    "fact": "Eyed items."
+    "answer": "All of these",
+    "fact": "A needle has an 'eye' for thread, and storms and potatoes have parts called 'eyes'."
   },
   {
     "category": "logic",
-    "text": "Wrongly in dictionary?",
+    "text": "Which word is spelled wrongly in every single dictionary?",
     "options": [
       "Wrongly",
-      "Right",
+      "Correct",
       "English",
-      "Word"
+      "Dictionary"
     ],
     "answer": "Wrongly",
-    "fact": "Literally."
+    "fact": "The word 'Wrongly' is always spelled W-R-O-N-G-L-Y."
   },
   {
     "category": "logic",
-    "text": "Left hand hold, right can't?",
+    "text": "What can you hold in your left hand but not in your right hand?",
     "options": [
-      "Right Elbow",
-      "Ball",
-      "Coin",
-      "Pen"
+      "Your Right Elbow",
+      "A Ball",
+      "A Coin",
+      "A Smartphone"
     ],
-    "answer": "Right Elbow",
-    "fact": "Can't reach same arm."
+    "answer": "Your Right Elbow",
+    "fact": "You can't reach your right elbow with your right hand!"
   },
   {
     "category": "logic",
-    "text": "Thousands of letters P...E?",
+    "text": "What starts with P, ends with E, and has thousands of letters?",
     "options": [
-      "Post Office",
-      "Paper",
-      "Pencil",
-      "Page"
+      "A Post Office",
+      "A Paper",
+      "A Pencil",
+      "A Poem"
     ],
-    "answer": "Post Office",
-    "fact": "Mail."
+    "answer": "A Post Office",
+    "fact": "A Post Office handles thousands of mail letters every day."
   },
   {
     "category": "logic",
     "text": "What has hands but cannot clap?",
     "options": [
-      "Clock",
-      "Person",
-      "Tree",
-      "Robot"
+      "A Clock",
+      "A Person",
+      "A Tree",
+      "A Robot"
     ],
-    "answer": "Clock",
-    "fact": "Its hands only move."
+    "answer": "A Clock",
+    "fact": "A clock's hands only point to the time."
   },
   {
     "category": "logic",
-    "text": "What takes up space but has no mass?",
+    "text": "What is so fragile that saying its name breaks it?",
     "options": [
-      "Thought",
-      "Air",
-      "Shadow",
-      "Light"
+      "Silence",
+      "Glass",
+      "Ice",
+      "A Bubble"
     ],
-    "answer": "Thought",
-    "fact": "Thoughts take mental space!"
+    "answer": "Silence",
+    "fact": "The moment someone speaks, the silence is gone."
+  },
+  {
+    "category": "logic",
+    "text": "What has a thumb and four fingers but is not alive?",
+    "options": [
+      "A Glove",
+      "A Hand",
+      "A Robot",
+      "A Statue"
+    ],
+    "answer": "A Glove",
+    "fact": "A glove has the shape of a hand but no life."
+  },
+  {
+    "category": "logic",
+    "text": "Which weighs more: a pound of feathers or a pound of iron?",
+    "options": [
+      "They weigh the same",
+      "Feathers",
+      "Iron",
+      "None"
+    ],
+    "answer": "They weigh the same",
+    "fact": "A pound is a pound, no matter what material it is!"
+  },
+  {
+    "category": "logic",
+    "text": "If an electric train is moving north, which way is the smoke blowing?",
+    "options": [
+      "There is no smoke",
+      "North",
+      "South",
+      "East"
+    ],
+    "answer": "There is no smoke",
+    "fact": "Electric trains don't produce any smoke."
+  },
+  {
+    "category": "logic",
+    "text": "What word becomes shorter when you add two letters to it?",
+    "options": [
+      "Short",
+      "Tall",
+      "Long",
+      "Big"
+    ],
+    "answer": "Short",
+    "fact": "Adding 'er' to 'short' makes it 'shorter'."
+  },
+  {
+    "category": "logic",
+    "text": "What is full of holes but still holds water?",
+    "options": [
+      "A Sponge",
+      "A Net",
+      "A Sieve",
+      "A Cloud"
+    ],
+    "answer": "A Sponge",
+    "fact": "Sponges are very porous and absorb liquid."
+  },
+  {
+    "category": "logic",
+    "text": "The more you take, the more you leave behind. What are they?",
+    "options": [
+      "Footsteps",
+      "Steps",
+      "Time",
+      "Photos"
+    ],
+    "answer": "Footsteps",
+    "fact": "As you walk, you leave your footprints behind you."
+  },
+  {
+    "category": "logic",
+    "text": "What has a head and a tail but no body?",
+    "options": [
+      "A Coin",
+      "A Snake",
+      "A Cat",
+      "A Ghost"
+    ],
+    "answer": "A Coin",
+    "fact": "Most coins have a 'head' side and a 'tails' side."
   },
   {
     "category": "logic",
     "text": "What kind of room has no doors or windows?",
     "options": [
-      "Mushroom",
-      "Kitchen",
-      "Attic",
-      "Box"
+      "A Mushroom",
+      "A Kitchen",
+      "An Attic",
+      "A Box"
     ],
-    "answer": "Mushroom",
-    "fact": "It's a fungus!"
+    "answer": "A Mushroom",
+    "fact": "A mushroom is a fungus, not a real room."
   },
   {
     "category": "logic",
-    "text": "What is yours, but your friends use it more?",
+    "text": "What stays where it is even after it goes out?",
     "options": [
-      "Your name",
-      "Phone",
-      "Car",
-      "Bed"
+      "A Light",
+      "A Fire",
+      "A Candle",
+      "A Door"
     ],
-    "answer": "Your name",
-    "fact": "Duplicate but classic."
+    "answer": "A Light",
+    "fact": "A light fixture stays on the wall even when turned off."
   },
   {
     "category": "logic",
-    "text": "What goes around the yard without moving?",
+    "text": "What has a bed but never sleeps?",
     "options": [
-      "Fence",
-      "Dog",
-      "Path",
-      "Garden"
+      "A River",
+      "A Baby",
+      "A Dog",
+      "A Truck"
     ],
-    "answer": "Fence",
-    "fact": "It surrounds the yard."
+    "answer": "A River",
+    "fact": "A river flows in a channel called a riverbed."
+  },
+  {
+    "category": "logic",
+    "text": "What has a mouth but never eats?",
+    "options": [
+      "A River",
+      "A Person",
+      "A Lion",
+      "A Cave"
+    ],
+    "answer": "A River",
+    "fact": "The end of a river is called its mouth."
+  },
+  {
+    "category": "logic",
+    "text": "I have one head, one foot, and four legs. What am I?",
+    "options": [
+      "A Bed",
+      "A Dog",
+      "A Table",
+      "A Chair"
+    ],
+    "answer": "A Bed",
+    "fact": "A bed has a headboard, a footboard, and four support legs."
+  },
+  {
+    "category": "logic",
+    "text": "What has 13 hearts but no other organs?",
+    "options": [
+      "A Deck of Cards",
+      "An Octopus",
+      "A Human",
+      "A Hospital"
+    ],
+    "answer": "A Deck of Cards",
+    "fact": "A standard deck has a 'Suit of Hearts' with 13 cards."
+  },
+  {
+    "category": "logic",
+    "text": "What can you break without even touching it?",
+    "options": [
+      "A Promise",
+      "A Glass",
+      "A Mirror",
+      "A Branch"
+    ],
+    "answer": "A Promise",
+    "fact": "You break a promise by not doing what you said."
+  },
+  {
+    "category": "logic",
+    "text": "What goes around the entire yard without ever moving?",
+    "options": [
+      "A Fence",
+      "A Dog",
+      "A Path",
+      "A Garden"
+    ],
+    "answer": "A Fence",
+    "fact": "A fence surrounds the yard but stays in the same place."
+  },
+  {
+    "category": "logic",
+    "text": "What has a thumb but no fingers?",
+    "options": [
+      "A Mitten",
+      "A Hand",
+      "A Glove",
+      "A Sock"
+    ],
+    "answer": "A Mitten",
+    "fact": "Mittens keep fingers together and have a separate spot for the thumb."
+  },
+  {
+    "category": "logic",
+    "text": "What has 4 eyes but can't see anything?",
+    "options": [
+      "Mississippi",
+      "A Potato",
+      "A Storm",
+      "None"
+    ],
+    "answer": "Mississippi",
+    "fact": "The name Mississippi has four 'i's in it."
+  },
+  {
+    "category": "logic",
+    "text": "What follows you everywhere but is completely invisible?",
+    "options": [
+      "Your Past",
+      "A Ghost",
+      "Air",
+      "Your Shadow"
+    ],
+    "answer": "Your Past",
+    "fact": "Your history and memories are always with you."
   },
   {
     "category": "logic",
     "text": "What is at the end of a rainbow?",
     "options": [
       "The letter W",
-      "Pot of gold",
-      "Sky",
-      "Color"
+      "A pot of gold",
+      "The sky",
+      "A cloud"
     ],
     "answer": "The letter W",
-    "fact": "RainboW!"
+    "fact": "The very last letter of the word 'Rainbow' is 'W'."
   },
   {
     "category": "logic",
-    "text": "What can you lose and still keep?",
+    "text": "What can you lose and still keep at the same time?",
     "options": [
       "Your Temper",
       "Your Money",
       "Your Phone",
-      "A Promise"
+      "Your Luggage"
     ],
     "answer": "Your Temper",
-    "fact": "If you stay calm, you lose nothing."
+    "fact": "When you 'lose' your temper, you still have the emotion!"
   },
   {
     "category": "logic",
-    "text": "What has words, but never speaks?",
+    "text": "What has words, but never speaks a sound?",
     "options": [
-      "Book",
-      "Baby",
-      "Dog",
-      "Sign"
+      "A Book",
+      "A Baby",
+      "A Dog",
+      "A Sign"
     ],
-    "answer": "Book",
-    "fact": "Silent stories."
+    "answer": "A Book",
+    "fact": "Books tell stories through written words, not voices."
   },
   {
     "category": "logic",
-    "text": "What runs but never walks?",
+    "text": "If you drop a yellow hat in the Blue Sea, what does it become?",
     "options": [
-      "River",
-      "Dog",
-      "Person",
-      "Clock"
+      "Wet",
+      "Green",
+      "Sunken",
+      "Dirty"
     ],
-    "answer": "River",
-    "fact": "Rivers flow (run)."
+    "answer": "Wet",
+    "fact": "No matter the color, the water makes it wet."
   },
   {
     "category": "logic",
-    "text": "What has a bed but never sleeps?",
+    "text": "What has a spine but no bones inside?",
     "options": [
-      "River",
-      "Baby",
-      "Pet",
-      "Truck"
+      "A Book",
+      "A Snake",
+      "A Fish",
+      "A Chair"
     ],
-    "answer": "River",
-    "fact": "Rivers have a riverbed."
+    "answer": "A Book",
+    "fact": "The binding of a book is called its spine."
   },
   {
     "category": "logic",
-    "text": "What has a mouth but never eats?",
+    "text": "What starts with T, ends with T, and has T in it?",
     "options": [
-      "River",
-      "Person",
-      "Lion",
-      "Cave"
+      "A Teapot",
+      "A Tent",
+      "A Toast",
+      "A Ticket"
     ],
-    "answer": "River",
-    "fact": "The mouth of a river."
+    "answer": "A Teapot",
+    "fact": "T-E-A-P-O-T!"
   },
   {
     "category": "logic",
-    "text": "What has a head and a tail but no body?",
+    "text": "What has 88 keys but cannot open any door?",
     "options": [
-      "Coin",
-      "Snake",
-      "Cat",
-      "Sperm"
+      "A Piano",
+      "An Apartment",
+      "A Keyboard",
+      "A Manager"
     ],
-    "answer": "Coin",
-    "fact": "Heads or tails!"
+    "answer": "A Piano",
+    "fact": "Musical keys make sounds, not unlock things."
   },
   {
     "category": "logic",
-    "text": "What is easy to get into but hard to get out of?",
+    "text": "What goes up and down but stays in the same place?",
     "options": [
-      "Trouble",
-      "Mud",
-      "Bed",
-      "Car"
+      "Stairs",
+      "A Ball",
+      "An Elevator",
+      "A Bird"
     ],
-    "answer": "Trouble",
-    "fact": "Mistakes stay with you."
+    "answer": "Stairs",
+    "fact": "Stairs lead up and down but don't move themselves."
   },
   {
     "category": "logic",
-    "text": "Logic Puzzle Riddle L-33: If you have 33 apples and take 2, how many do you have?",
+    "text": "What can travel through water but never get wet?",
     "options": [
-      "2",
-      "33",
-      "31",
-      "0"
+      "A Reflection",
+      "A Ship",
+      "A Fish",
+      "A Diver"
     ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
+    "answer": "A Reflection",
+    "fact": "Light reflecting on water isn't affected by the wetness."
   },
   {
     "category": "logic",
-    "text": "Logic Puzzle Riddle L-34: If you have 34 apples and take 2, how many do you have?",
+    "text": "What has a heart that doesn't beat?",
     "options": [
-      "2",
-      "34",
-      "32",
-      "0"
+      "An Artichoke",
+      "A Human",
+      "A Dog",
+      "A Clock"
     ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-35: If you have 35 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "35",
-      "33",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-36: If you have 36 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "36",
-      "34",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-37: If you have 37 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "37",
-      "35",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-38: If you have 38 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "38",
-      "36",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-39: If you have 39 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "39",
-      "37",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-40: If you have 40 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "40",
-      "38",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-41: If you have 41 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "41",
-      "39",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-42: If you have 42 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "42",
-      "40",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-43: If you have 43 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "43",
-      "41",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-44: If you have 44 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "44",
-      "42",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-45: If you have 45 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "45",
-      "43",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-46: If you have 46 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "46",
-      "44",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-47: If you have 47 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "47",
-      "45",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-48: If you have 48 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "48",
-      "46",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-49: If you have 49 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "49",
-      "47",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-50: If you have 50 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "50",
-      "48",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-51: If you have 51 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "51",
-      "49",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-52: If you have 52 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "52",
-      "50",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-53: If you have 53 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "53",
-      "51",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-54: If you have 54 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "54",
-      "52",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-55: If you have 55 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "55",
-      "53",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-56: If you have 56 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "56",
-      "54",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-57: If you have 57 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "57",
-      "55",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-58: If you have 58 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "58",
-      "56",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-59: If you have 59 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "59",
-      "57",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-60: If you have 60 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "60",
-      "58",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-61: If you have 61 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "61",
-      "59",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-62: If you have 62 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "62",
-      "60",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-63: If you have 63 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "63",
-      "61",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-64: If you have 64 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "64",
-      "62",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-65: If you have 65 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "65",
-      "63",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-66: If you have 66 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "66",
-      "64",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-67: If you have 67 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "67",
-      "65",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-68: If you have 68 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "68",
-      "66",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-69: If you have 69 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "69",
-      "67",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-70: If you have 70 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "70",
-      "68",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-71: If you have 71 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "71",
-      "69",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-72: If you have 72 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "72",
-      "70",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-73: If you have 73 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "73",
-      "71",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-74: If you have 74 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "74",
-      "72",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-75: If you have 75 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "75",
-      "73",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-76: If you have 76 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "76",
-      "74",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-77: If you have 77 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "77",
-      "75",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-78: If you have 78 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "78",
-      "76",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-79: If you have 79 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "79",
-      "77",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-80: If you have 80 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "80",
-      "78",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-81: If you have 81 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "81",
-      "79",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-82: If you have 82 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "82",
-      "80",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-83: If you have 83 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "83",
-      "81",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-84: If you have 84 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "84",
-      "82",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-85: If you have 85 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "85",
-      "83",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-86: If you have 86 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "86",
-      "84",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-87: If you have 87 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "87",
-      "85",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-88: If you have 88 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "88",
-      "86",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-89: If you have 89 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "89",
-      "87",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-90: If you have 90 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "90",
-      "88",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-91: If you have 91 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "91",
-      "89",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-92: If you have 92 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "92",
-      "90",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-93: If you have 93 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "93",
-      "91",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-94: If you have 94 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "94",
-      "92",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-95: If you have 95 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "95",
-      "93",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-96: If you have 96 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "96",
-      "94",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-97: If you have 97 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "97",
-      "95",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-98: If you have 98 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "98",
-      "96",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-99: If you have 99 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "99",
-      "97",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-100: If you have 100 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "100",
-      "98",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-101: If you have 101 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "101",
-      "99",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-102: If you have 102 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "102",
-      "100",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-103: If you have 103 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "103",
-      "101",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-104: If you have 104 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "104",
-      "102",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-105: If you have 105 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "105",
-      "103",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-106: If you have 106 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "106",
-      "104",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-107: If you have 107 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "107",
-      "105",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-108: If you have 108 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "108",
-      "106",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-109: If you have 109 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "109",
-      "107",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-110: If you have 110 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "110",
-      "108",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-111: If you have 111 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "111",
-      "109",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-112: If you have 112 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "112",
-      "110",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-113: If you have 113 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "113",
-      "111",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-114: If you have 114 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "114",
-      "112",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-115: If you have 115 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "115",
-      "113",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-116: If you have 116 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "116",
-      "114",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-117: If you have 117 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "117",
-      "115",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-118: If you have 118 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "118",
-      "116",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-119: If you have 119 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "119",
-      "117",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-120: If you have 120 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "120",
-      "118",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-121: If you have 121 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "121",
-      "119",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-122: If you have 122 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "122",
-      "120",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-123: If you have 123 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "123",
-      "121",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-124: If you have 124 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "124",
-      "122",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-125: If you have 125 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "125",
-      "123",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-126: If you have 126 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "126",
-      "124",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-127: If you have 127 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "127",
-      "125",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-128: If you have 128 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "128",
-      "126",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-129: If you have 129 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "129",
-      "127",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-130: If you have 130 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "130",
-      "128",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-131: If you have 131 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "131",
-      "129",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-132: If you have 132 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "132",
-      "130",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-133: If you have 133 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "133",
-      "131",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-134: If you have 134 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "134",
-      "132",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-135: If you have 135 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "135",
-      "133",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-136: If you have 136 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "136",
-      "134",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-137: If you have 137 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "137",
-      "135",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-138: If you have 138 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "138",
-      "136",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-139: If you have 139 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "139",
-      "137",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-140: If you have 140 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "140",
-      "138",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-141: If you have 141 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "141",
-      "139",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-142: If you have 142 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "142",
-      "140",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-143: If you have 143 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "143",
-      "141",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-144: If you have 144 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "144",
-      "142",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-145: If you have 145 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "145",
-      "143",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-146: If you have 146 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "146",
-      "144",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-147: If you have 147 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "147",
-      "145",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-148: If you have 148 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "148",
-      "146",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-149: If you have 149 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "149",
-      "147",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-150: If you have 150 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "150",
-      "148",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-151: If you have 151 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "151",
-      "149",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-152: If you have 152 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "152",
-      "150",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-153: If you have 153 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "153",
-      "151",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-154: If you have 154 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "154",
-      "152",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-155: If you have 155 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "155",
-      "153",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-156: If you have 156 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "156",
-      "154",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-157: If you have 157 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "157",
-      "155",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-158: If you have 158 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "158",
-      "156",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-159: If you have 159 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "159",
-      "157",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-160: If you have 160 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "160",
-      "158",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-161: If you have 161 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "161",
-      "159",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-162: If you have 162 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "162",
-      "160",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-163: If you have 163 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "163",
-      "161",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-164: If you have 164 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "164",
-      "162",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-165: If you have 165 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "165",
-      "163",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-166: If you have 166 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "166",
-      "164",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-167: If you have 167 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "167",
-      "165",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-168: If you have 168 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "168",
-      "166",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-169: If you have 169 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "169",
-      "167",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-170: If you have 170 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "170",
-      "168",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-171: If you have 171 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "171",
-      "169",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-172: If you have 172 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "172",
-      "170",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-173: If you have 173 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "173",
-      "171",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-174: If you have 174 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "174",
-      "172",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-175: If you have 175 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "175",
-      "173",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-176: If you have 176 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "176",
-      "174",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-177: If you have 177 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "177",
-      "175",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-178: If you have 178 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "178",
-      "176",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-179: If you have 179 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "179",
-      "177",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-180: If you have 180 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "180",
-      "178",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-181: If you have 181 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "181",
-      "179",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-182: If you have 182 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "182",
-      "180",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-183: If you have 183 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "183",
-      "181",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-184: If you have 184 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "184",
-      "182",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-185: If you have 185 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "185",
-      "183",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-186: If you have 186 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "186",
-      "184",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-187: If you have 187 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "187",
-      "185",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-188: If you have 188 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "188",
-      "186",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-189: If you have 189 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "189",
-      "187",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-190: If you have 190 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "190",
-      "188",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-191: If you have 191 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "191",
-      "189",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-192: If you have 192 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "192",
-      "190",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-193: If you have 193 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "193",
-      "191",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-194: If you have 194 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "194",
-      "192",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-195: If you have 195 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "195",
-      "193",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-196: If you have 196 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "196",
-      "194",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-197: If you have 197 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "197",
-      "195",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-198: If you have 198 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "198",
-      "196",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-199: If you have 199 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "199",
-      "197",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-200: If you have 200 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "200",
-      "198",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-201: If you have 201 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "201",
-      "199",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-202: If you have 202 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "202",
-      "200",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-203: If you have 203 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "203",
-      "201",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-204: If you have 204 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "204",
-      "202",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-205: If you have 205 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "205",
-      "203",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-206: If you have 206 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "206",
-      "204",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-207: If you have 207 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "207",
-      "205",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-208: If you have 208 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "208",
-      "206",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-209: If you have 209 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "209",
-      "207",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-210: If you have 210 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "210",
-      "208",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-211: If you have 211 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "211",
-      "209",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-212: If you have 212 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "212",
-      "210",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-213: If you have 213 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "213",
-      "211",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-214: If you have 214 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "214",
-      "212",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-215: If you have 215 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "215",
-      "213",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-216: If you have 216 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "216",
-      "214",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-217: If you have 217 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "217",
-      "215",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-218: If you have 218 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "218",
-      "216",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-219: If you have 219 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "219",
-      "217",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-220: If you have 220 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "220",
-      "218",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-221: If you have 221 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "221",
-      "219",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-222: If you have 222 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "222",
-      "220",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-223: If you have 223 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "223",
-      "221",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-224: If you have 224 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "224",
-      "222",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-225: If you have 225 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "225",
-      "223",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-226: If you have 226 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "226",
-      "224",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-227: If you have 227 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "227",
-      "225",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-228: If you have 228 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "228",
-      "226",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-229: If you have 229 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "229",
-      "227",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-230: If you have 230 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "230",
-      "228",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-231: If you have 231 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "231",
-      "229",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-232: If you have 232 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "232",
-      "230",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-233: If you have 233 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "233",
-      "231",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-234: If you have 234 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "234",
-      "232",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-235: If you have 235 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "235",
-      "233",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-236: If you have 236 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "236",
-      "234",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-237: If you have 237 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "237",
-      "235",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-238: If you have 238 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "238",
-      "236",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-239: If you have 239 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "239",
-      "237",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-240: If you have 240 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "240",
-      "238",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-241: If you have 241 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "241",
-      "239",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-242: If you have 242 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "242",
-      "240",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-243: If you have 243 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "243",
-      "241",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-244: If you have 244 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "244",
-      "242",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-245: If you have 245 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "245",
-      "243",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-246: If you have 246 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "246",
-      "244",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-247: If you have 247 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "247",
-      "245",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-248: If you have 248 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "248",
-      "246",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
-  },
-  {
-    "category": "logic",
-    "text": "Logic Puzzle Riddle L-249: If you have 249 apples and take 2, how many do you have?",
-    "options": [
-      "2",
-      "249",
-      "247",
-      "0"
-    ],
-    "answer": "2",
-    "fact": "You have the 2 you took!"
+    "answer": "An Artichoke",
+    "fact": "The center of an artichoke is called its 'heart'."
   },
   {
     "category": "meta",
-    "text": "DB_VERSION_V9_FULL",
+    "text": "DB_VERSION_V10_STABLE",
     "options": [
-      "v9"
+      "v10"
     ],
-    "answer": "v9",
-    "fact": "v9"
+    "answer": "v10",
+    "fact": "v10"
   }
 ]
