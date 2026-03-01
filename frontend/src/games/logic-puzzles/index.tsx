@@ -24,6 +24,16 @@ const LogicPuzzles: React.FC = () => {
     const [loading, setLoading] = useState(false);
     const [fetchError, setFetchError] = useState<string | null>(null);
 
+    // Shuffle utility
+    const shuffleArray = (array: any[]) => {
+        const result = [...array];
+        for (let i = result.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [result[i], result[j]] = [result[j], result[i]];
+        }
+        return result;
+    };
+
     useEffect(() => {
         const fetchQuestions = async () => {
             if (!token) {
@@ -34,10 +44,12 @@ const LogicPuzzles: React.FC = () => {
             try {
                 setLoading(true);
                 setFetchError(null);
-                const res = await axios.get(`${API_BASE_URL}/api/questions?category=logic`, {
+                // Added timestamp _t to bypass potential caching
+                const res = await axios.get(`${API_BASE_URL}/api/questions?category=logic&_t=${Date.now()}`, {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
-                setQuestions(res.data);
+                // Double randomness: Backend is random, Client shuffles again
+                setQuestions(shuffleArray(res.data));
             } catch (err: any) {
                 console.error('Failed to fetch questions:', err);
                 setFetchError(err.response?.data?.error || err.message || 'Connection failed');

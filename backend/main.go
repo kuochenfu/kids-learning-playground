@@ -34,25 +34,25 @@ func main() {
 		log.Println("Database migrated successfully")
 	}
 
-	// Initial Seeding v4 (Aggressive Overwrite)
+	// Initial Seeding v5 (Diverse CS update)
 	var firstQ models.Question
 	db.First(&firstQ)
 
-	// Check if we need to force update (v4 contains "Truth or Myth" or "Logic Master Step")
-	needsUpdate := strings.Contains(firstQ.Text, "Science Question") || strings.Contains(firstQ.Text, "Logic Puzzle") || strings.Contains(firstQ.Text, "Science Quiz") || firstQ.ID == 0
+	// Check if we need to force update (v5 includes specific terms like 'Drone' or 'CPU')
+	needsUpdate := strings.Contains(firstQ.Text, "Science Quest") || strings.Contains(firstQ.Text, "Logic Master Step") || firstQ.ID == 0 || !strings.Contains(firstQ.Text, "CPU")
 
 	var count int64
 	db.Model(&models.Question{}).Count(&count)
 
 	if needsUpdate || count != 500 {
-		log.Printf("🔄 Data update required (found %d items). Dropping and recreating Questions table...", count)
+		log.Printf("🔄 Data update required v5 (current: %d). Overwriting database...", count)
 		db.Migrator().DropTable(&models.Question{})
 		db.AutoMigrate(&models.Question{})
 		seedQuestions(db)
 		db.Model(&models.Question{}).Count(&count)
-		log.Printf("✅ DB fully overwritten with 500 unique questions! Count: %d", count)
+		log.Printf("✅ DB fully refreshed with v5 Diverse CS content! Final Count: %d", count)
 	} else {
-		log.Printf("✅ Data version v4 verified. Count: %d", count)
+		log.Printf("✅ DB v5 Verified. Count: %d", count)
 	}
 
 	authService := services.NewAuthService(db, cfg)
