@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence, useAnimation, useMotionValue } from 'framer-motion';
 import { Timer, Eye, RotateCcw, Star, Trophy, Home, Plus, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
@@ -29,6 +29,8 @@ const PuzzleTime: React.FC = () => {
     const [puzzleImages, setPuzzleImages] = useState<string[]>([]);
     const [selectedImageIndex, setSelectedImageIndex] = useState(0);
     const [isUploading, setIsUploading] = useState(false);
+    const carouselRef = useRef<HTMLDivElement>(null);
+    const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
     const boardSize = 600; // 600px square board
     const trayWidth = 180;
 
@@ -147,6 +149,17 @@ const PuzzleTime: React.FC = () => {
 
     const currentPuzzleImage = resolveImageUrl(puzzleImages[selectedImageIndex] || '/assets/puzzle/kitten.png');
 
+    // Auto-scroll logic
+    useEffect(() => {
+        if (itemRefs.current[selectedImageIndex]) {
+            itemRefs.current[selectedImageIndex]?.scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest',
+                inline: 'center'
+            });
+        }
+    }, [selectedImageIndex, puzzleImages]);
+
     const lockPiece = (id: number) => {
         setPieces(prev => prev.map(p => p.id === id ? { ...p, isLocked: true } : p));
     };
@@ -165,21 +178,25 @@ const PuzzleTime: React.FC = () => {
                         {/* Image Selection Carousel */}
                         <div className="relative w-full max-w-4xl px-12">
                             <h3 className="text-2xl font-black text-slate-800 mb-2">Choose your puzzle!</h3>
-                            <div className="flex items-center justify-center gap-6 overflow-x-auto py-8 snap-x no-scrollbar scroll-smooth">
+                            <div
+                                ref={carouselRef}
+                                className="flex items-center gap-8 overflow-x-auto py-10 px-[35%] snap-x no-scrollbar scroll-smooth"
+                            >
                                 {puzzleImages.map((img, idx) => (
                                     <motion.div
                                         key={img}
+                                        ref={el => { itemRefs.current[idx] = el; }}
                                         onClick={() => setSelectedImageIndex(idx)}
-                                        className={`relative flex-shrink-0 w-32 h-32 rounded-[2rem] cursor-pointer transition-all snap-center ${selectedImageIndex === idx
-                                            ? 'ring-8 ring-[#FFB7CE] shadow-playful scale-110 z-10'
-                                            : 'opacity-50 grayscale hover:grayscale-0 hover:opacity-100 hover:scale-105'
+                                        className={`relative flex-shrink-0 w-40 h-40 rounded-[2.5rem] cursor-pointer transition-all snap-center ${selectedImageIndex === idx
+                                            ? 'ring-[12px] ring-[#FFB7CE] shadow-popping scale-110 z-10'
+                                            : 'opacity-40 grayscale hover:grayscale-0 hover:opacity-100 hover:scale-105'
                                             }`}
                                         initial={{ opacity: 0, scale: 0.8 }}
                                         animate={{ opacity: 1, scale: selectedImageIndex === idx ? 1.1 : 1 }}
                                     >
                                         <img
                                             src={resolveImageUrl(img)}
-                                            className="w-full h-full object-cover rounded-[1.8rem]"
+                                            className="w-full h-full object-cover rounded-[2.2rem]"
                                             alt={`Puzzle ${idx + 1}`}
                                         />
                                         {selectedImageIndex === idx && (
@@ -195,15 +212,15 @@ const PuzzleTime: React.FC = () => {
                                 ))}
 
                                 {/* Upload Button */}
-                                <label className="flex-shrink-0 w-32 h-32 rounded-[2rem] border-2 border-dashed border-slate-300 flex flex-col items-center justify-center cursor-pointer hover:bg-slate-50 transition-colors p-2 text-center">
+                                <label className="flex-shrink-0 w-40 h-40 rounded-[2.5rem] border-4 border-dashed border-slate-200 flex flex-col items-center justify-center cursor-pointer hover:bg-slate-50 transition-colors p-4 text-center snap-center">
                                     <input type="file" className="hidden" accept="image/*" onChange={handleFileUpload} disabled={isUploading} />
                                     {isUploading ? (
-                                        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#FFB7CE]"></div>
+                                        <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-[#FFB7CE]"></div>
                                     ) : (
                                         <>
-                                            <Plus size={24} className="text-slate-300" />
-                                            <span className="text-[10px] font-black text-slate-400 uppercase mt-1">Upload Card</span>
-                                            <span className="text-[8px] font-bold text-slate-300 mt-0.5 leading-tight">JPG/PNG/WEBP<br />Max 5MB</span>
+                                            <Plus size={32} className="text-slate-300" />
+                                            <span className="text-xs font-black text-slate-400 uppercase mt-2">New Card</span>
+                                            <span className="text-[10px] font-bold text-slate-300 mt-1 leading-tight">JPG / PNG / WEBP<br />Max 5MB</span>
                                         </>
                                     )}
                                 </label>
