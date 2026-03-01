@@ -62,13 +62,21 @@ func main() {
 	r := gin.Default()
 
 	// CORS Configuration
+	allowedOrigins := []string{"http://localhost:5173", "https://kids-learning-playground.pages.dev"}
+	if envOrigins := os.Getenv("ALLOWED_ORIGINS"); envOrigins != "" {
+		allowedOrigins = strings.Split(envOrigins, ",")
+	}
 	r.Use(cors.New(cors.Config{
-		AllowOrigins:     []string{"http://localhost:5173", "https://kids-learning-playground.pages.dev"},
+		AllowOrigins:     allowedOrigins,
 		AllowMethods:     []string{"GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"},
 		AllowHeaders:     []string{"Origin", "Content-Type", "Accept", "Authorization"},
 		ExposeHeaders:    []string{"Content-Length"},
 		AllowCredentials: true,
 	}))
+
+	if cfg.JWTSecret == "yui-default-secret" {
+		log.Println("⚠️  WARNING: Using default JWT secret! Please set JWT_SECRET environment variable in production.")
+	}
 
 	// Static files for uploaded images
 	r.Static("/uploads", "./uploads")

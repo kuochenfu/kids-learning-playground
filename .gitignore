@@ -32,3 +32,7 @@ yarn-debug.log*
 yarn-error.log*
 logs/
 *.log
+
+# Uploads
+backend/uploads/**/*
+!backend/uploads/.gitkeep
