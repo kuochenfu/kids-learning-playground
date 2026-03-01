@@ -207,7 +207,7 @@ const PuzzleTime: React.FC = () => {
                                     className="absolute inset-0 transition-opacity duration-1000"
                                     style={{
                                         backgroundImage: `url(${PUZZLE_IMAGE})`,
-                                        backgroundSize: 'cover',
+                                        backgroundSize: `${boardSize}px ${boardSize}px`,
                                         opacity: showPeek ? 1 : hintOpacity
                                     }}
                                 />
@@ -303,11 +303,10 @@ const PuzzlePiece: React.FC<{
 
         const rect = boardRef.current.getBoundingClientRect();
 
-        // Calculate position relative to board
-        // info.point is centered on mouse/touch. 
-        // We want the top-left of the piece to be near piece.x * pieceSize
-        const relativeX = info.point.x - rect.left - (pieceSize / 2);
-        const relativeY = info.point.y - rect.top - (pieceSize / 2);
+        // Calculate position relative to board inner-content area (ignoring the 8px border)
+        const borderSize = 8;
+        const relativeX = info.point.x - rect.left - borderSize - (pieceSize / 2);
+        const relativeY = info.point.y - rect.top - borderSize - (pieceSize / 2);
 
         const targetX = piece.x * pieceSize;
         const targetY = piece.y * pieceSize;
@@ -353,8 +352,8 @@ const PuzzlePiece: React.FC<{
                 backgroundSize: `${boardSize}px ${boardSize}px`,
                 backgroundPosition: `-${piece.x * pieceSize}px -${piece.y * pieceSize}px`,
                 boxShadow: isPlaced ? 'none' : '0 10px 20px rgba(0,0,0,0.1)',
-                border: isPlaced ? '1px solid rgba(255,255,255,0.2)' : '2px solid white',
-                borderRadius: '8px'
+                border: isPlaced ? '0.5px solid rgba(255,255,255,0.1)' : '2px solid white',
+                borderRadius: isPlaced ? '0' : '8px'
             }}
         >
             {showMeow && (
