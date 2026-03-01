@@ -182,16 +182,30 @@ func main() {
 			// 3. Puzzle Image Management
 			protected.GET("/puzzles", func(c *gin.Context) {
 				var images []string
-				// Always start with the default kitten
-				images = append(images, "/assets/puzzle/kitten.png")
+				// Always start with the default kittens
+				images = append(images,
+					"/assets/puzzle/kitten.png",
+					"/assets/puzzle/space_kitten.png",
+					"/assets/puzzle/artist_kitten.png",
+					"/assets/puzzle/sleeping_kitten.png",
+					"/assets/puzzle/garden_kitten.png",
+					"/assets/puzzle/royal_kitten.png",
+				)
 
 				files, err := os.ReadDir("./uploads/puzzle")
 				if err == nil {
 					for _, f := range files {
 						if !f.IsDir() {
-							ext := strings.ToLower(filepath.Ext(f.Name()))
+							// Avoid duplicates if they happen to have same name
+							name := f.Name()
+							if name == "default_kitten.png" || name == "space_kitten.png" ||
+								name == "artist_kitten.png" || name == "sleeping_kitten.png" ||
+								name == "garden_kitten.png" || name == "royal_kitten.png" {
+								continue
+							}
+							ext := strings.ToLower(filepath.Ext(name))
 							if ext == ".png" || ext == ".jpg" || ext == ".jpeg" || ext == ".webp" {
-								images = append(images, "/uploads/puzzle/"+f.Name())
+								images = append(images, "/uploads/puzzle/"+name)
 							}
 						}
 					}
