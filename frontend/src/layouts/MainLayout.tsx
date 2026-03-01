@@ -1,9 +1,8 @@
 import React from 'react';
 import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { LogOut, Star, Trophy, Gamepad2 } from 'lucide-react';
+import { LogOut, Trophy, Gamepad2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import axios from 'axios'; // Added axios import
 
 const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const { user, logout } = useAuth();

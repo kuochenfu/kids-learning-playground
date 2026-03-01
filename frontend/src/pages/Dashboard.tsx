@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Trophy, Star, Calendar } from 'lucide-react';
+import { ArrowLeft, Trophy, Star } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import axios from 'axios';
 
