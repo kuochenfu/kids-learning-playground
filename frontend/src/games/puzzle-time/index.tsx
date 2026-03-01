@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { motion, AnimatePresence, useAnimation } from 'framer-motion';
+import { motion, AnimatePresence, useAnimation, useMotionValue } from 'framer-motion';
 import { Timer, Eye, RotateCcw, Star, Trophy, Home } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import axios from 'axios';
@@ -27,9 +27,8 @@ const PuzzleTime: React.FC = () => {
     const [score, setScore] = useState(0);
     const [showPeek, setShowPeek] = useState(false);
     const [hintOpacity] = useState(0.1);
-    const boardSize = 500; // 500px square board
-    const trayWidth = 200;
-    const boardRef = React.useRef<HTMLDivElement>(null);
+    const boardSize = 600; // 600px square board
+    const trayWidth = 180;
 
     const pieceSize = boardSize / gridSize;
 
@@ -37,13 +36,16 @@ const PuzzleTime: React.FC = () => {
         const newPieces: Piece[] = [];
         for (let y = 0; y < size; y++) {
             for (let x = 0; x < size; x++) {
+                const margin = 20;
                 newPieces.push({
                     id: y * size + x,
                     x,
                     y,
-                    // Random starting position in the trays
-                    currentX: Math.random() > 0.5 ? -trayWidth + Math.random() * (trayWidth - pieceSize) : boardSize + Math.random() * (trayWidth - pieceSize),
-                    currentY: Math.random() * (boardSize - pieceSize),
+                    // Random starting position in the trays, ensuring they are mostly visible
+                    currentX: Math.random() > 0.5
+                        ? -trayWidth + margin + Math.random() * (trayWidth - pieceSize - margin * 2)
+                        : boardSize + margin + Math.random() * (trayWidth - pieceSize - margin * 2),
+                    currentY: margin + Math.random() * (boardSize - pieceSize - margin * 2),
                     isLocked: false,
                 });
             }
@@ -198,7 +200,6 @@ const PuzzleTime: React.FC = () => {
                         <div className="relative flex items-center justify-center gap-12 mt-4 select-none">
                             {/* Board */}
                             <div
-                                ref={boardRef}
                                 className="relative bg-white shadow-popping rounded-2xl border-8 border-white overflow-visible box-content"
                                 style={{ width: boardSize, height: boardSize }}
                             >
@@ -226,7 +227,6 @@ const PuzzleTime: React.FC = () => {
                                         piece={piece}
                                         pieceSize={pieceSize}
                                         boardSize={boardSize}
-                                        boardRef={boardRef}
                                         onLock={() => lockPiece(piece.id)}
                                     />
                                 ))}
@@ -291,40 +291,42 @@ const PuzzlePiece: React.FC<{
     piece: Piece;
     pieceSize: number;
     boardSize: number;
-    boardRef: React.RefObject<HTMLDivElement | null>;
     onLock: () => void;
-}> = ({ piece, pieceSize, boardSize, boardRef, onLock }) => {
+}> = ({ piece, pieceSize, boardSize, onLock }) => {
     const controls = useAnimation();
+    const x = useMotionValue(piece.currentX);
+    const y = useMotionValue(piece.currentY);
     const [isPlaced, setIsPlaced] = useState(false);
     const [showMeow, setShowMeow] = useState(false);
 
-    const handleDragEnd = (_: any, info: { point: { x: number; y: number } }) => {
-        if (isPlaced || !boardRef.current) return;
+    const handleDragEnd = () => {
+        if (isPlaced) return;
 
-        const rect = boardRef.current.getBoundingClientRect();
-        const borderSize = 8;
+        const currentX = x.get();
+        const currentY = y.get();
 
-        // Target center relative to viewport
-        const targetCenterX = rect.left + borderSize + (piece.x * pieceSize) + (pieceSize / 2);
-        const targetCenterY = rect.top + borderSize + (piece.y * pieceSize) + (pieceSize / 2);
+        const targetX = piece.x * pieceSize;
+        const targetY = piece.y * pieceSize;
 
-        // Distance from pointer to target center
         const distance = Math.sqrt(
-            Math.pow(info.point.x - targetCenterX, 2) +
-            Math.pow(info.point.y - targetCenterY, 2)
+            Math.pow(currentX - targetX, 2) +
+            Math.pow(currentY - targetY, 2)
         );
 
-        if (distance < 40) { // Increased snap zone
+        if (distance < 60) { // Very generous snap radius
             setIsPlaced(true);
             setShowMeow(true);
             onLock();
             controls.start({
-                x: piece.x * pieceSize,
-                y: piece.y * pieceSize,
+                x: targetX,
+                y: targetY,
                 scale: 1,
                 rotate: 0,
-                transition: { type: 'spring', stiffness: 600, damping: 30 }
+                transition: { type: 'spring', stiffness: 600, damping: 35 }
             });
+            // Update physical values so we don't jump on next state hit
+            x.set(targetX);
+            y.set(targetY);
             setTimeout(() => setShowMeow(false), 1000);
         }
     };
@@ -344,6 +346,7 @@ const PuzzlePiece: React.FC<{
             whileDrag={{ scale: 1.1, rotate: 0, zIndex: 100 }}
             className={`absolute cursor-grab active:cursor-grabbing ${isPlaced ? 'pointer-events-none z-0' : 'z-10'}`}
             style={{
+                x, y,
                 width: pieceSize,
                 height: pieceSize,
                 backgroundImage: `url(${PUZZLE_IMAGE})`,
