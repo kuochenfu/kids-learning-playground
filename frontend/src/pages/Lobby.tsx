@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Calculator, Book, Beaker, GraduationCap, Zap, Star } from 'lucide-react';
+import { Calculator, Book, Beaker, GraduationCap, Zap, Star, Puzzle } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import axios from 'axios';
 import type { GameMetadata } from '../../../shared/types';
@@ -71,6 +71,14 @@ const GAMES: GameMetadata[] = [
         color: 'bg-playful-purple',
         category: 'Logic',
     },
+    {
+        id: 'puzzle-time',
+        title: 'Puzzle Time!',
+        description: 'Assemble the pieces of a cute kitten dreams!',
+        icon: 'puzzle',
+        color: 'bg-playful-pink',
+        category: 'English', // Or Arts/Logic, putting in English list for now
+    },
 ];
 
 const Lobby: React.FC = () => {
@@ -100,6 +108,7 @@ const Lobby: React.FC = () => {
             case 'english': return <Book size={32} />;
             case 'science': return <Beaker size={32} />;
             case 'logic': return <GraduationCap size={32} />;
+            case 'puzzle': return <Puzzle size={32} />;
             default: return <Zap size={32} />;
         }
     };
