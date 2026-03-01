@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Trophy, ArrowRight, HelpCircle, RefreshCw, MessageCircle, CheckCircle2, XCircle } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
@@ -7,18 +8,78 @@ import axios from 'axios';
 const MYSTERIES = [
     {
         answer: "Elephant",
-        facts: { isAnimal: true, canFly: false, isBig: true, hasFur: false, livesInWater: false, hasTrunk: true },
+        facts: { isAnimal: true, canFly: false, isBig: true, hasFur: false, livesInWater: false, hasTrunk: true, isHeavy: true },
         hints: ["It's very large.", "It has a long nose.", "It lives in the savannah."]
     },
     {
         answer: "Banana",
-        facts: { isAnimal: false, canFly: false, isBig: false, isYellow: true, isFruit: true, growsOnTree: true },
+        facts: { isAnimal: false, canFly: false, isBig: false, isYellow: true, isFruit: true, growsOnTree: true, canEat: true },
         hints: ["It's curved and yellow.", "Monkeys love it.", "You have to peel it."]
     },
     {
         answer: "Airplane",
-        facts: { isAnimal: false, canFly: true, isBig: true, isMachine: true, carriesPeople: true },
+        facts: { isAnimal: false, canFly: true, isBig: true, isMachine: true, carriesPeople: true, hasWings: true, needsElectricity: true },
         hints: ["It has wings.", "It flies in the sky.", "It has a pilot."]
+    },
+    {
+        answer: "Pizza",
+        facts: { isAnimal: false, isBig: false, canEat: true, isFruit: false, isYellow: false, canBeFoundInside: true },
+        hints: ["It's round and cut into slices.", "It has cheese and tomato sauce.", "Italian favorite."]
+    },
+    {
+        answer: "Bicycle",
+        facts: { isAnimal: false, isBig: false, hasWheels: true, isMachine: true, needsElectricity: false },
+        hints: ["It has two wheels.", "You peddle it with your legs.", "It has a bell."]
+    },
+    {
+        answer: "Cat",
+        facts: { isAnimal: true, isBig: false, hasFur: true, hasLegs: true, canBePet: true },
+        hints: ["It says 'Meow'.", "It likes to chase mice.", "It has sharp claws."]
+    },
+    {
+        answer: "Computer",
+        facts: { isAnimal: false, isMachine: true, needsElectricity: true, canBeFoundInside: true, hasScreen: true },
+        hints: ["You can play games on it.", "It has a keyboard.", "Connected to the internet."]
+    },
+    {
+        answer: "Tree",
+        facts: { isAnimal: false, growsOnGround: true, isBig: true, hasLeaves: true, isWood: true },
+        hints: ["It has a trunk.", "Birds build nests in it.", "It changes colors in autumn."]
+    },
+    {
+        answer: "Robot",
+        facts: { isAnimal: false, isMachine: true, needsElectricity: true, madeOfMetal: true },
+        hints: ["It's built by engineers.", "It can follow commands.", "Think of Wall-E."]
+    },
+    {
+        answer: "Moon",
+        facts: { isAnimal: false, isBig: true, canFly: true, glowsAtNight: true },
+        hints: ["It orbits the Earth.", "It's not a star.", "Astronauts walked on it."]
+    },
+    {
+        answer: "Book",
+        facts: { isAnimal: false, isBig: false, madeOfPaper: true, canBeFoundInside: true, isWood: false },
+        hints: ["It has many pages.", "You read it.", "It has a cover."]
+    },
+    {
+        answer: "Goldfish",
+        facts: { isAnimal: true, livesInWater: true, isYellow: true, isBig: false },
+        hints: ["It lives in a bowl.", "It's a popular first pet.", "It has fins."]
+    },
+    {
+        answer: "Violin",
+        facts: { isAnimal: false, isWood: true, makesNoise: true, canBeFoundInside: true, isMachine: false },
+        hints: ["It's a musical instrument.", "You use a bow to play it.", "It has four strings."]
+    },
+    {
+        answer: "T-Shirt",
+        facts: { isAnimal: false, canWear: true, canBeFoundInside: true, isBig: false },
+        hints: ["You wear it on your body.", "It has short sleeves.", "Made of fabric."]
+    },
+    {
+        answer: "Basketball",
+        facts: { isAnimal: false, isBig: false, isRound: true, forSports: true },
+        hints: ["It's orange.", "You bounce it.", "You throw it into a hoop."]
     }
 ];
 
@@ -28,14 +89,29 @@ const QUESTIONS = [
     { id: 'isBig', text: "Is it bigger than a car?" },
     { id: 'hasFur', text: "Does it have fur?" },
     { id: 'isYellow', text: "Is it yellow?" },
-    { id: 'isFruit', text: "Is it something you can eat?" },
-    { id: 'isMachine', text: "Is it a machine?" }
+    { id: 'canEat', text: "Can you eat it?" },
+    { id: 'isMachine', text: "Is it a machine?" },
+    { id: 'needsElectricity', text: "Does it need electricity?" },
+    { id: 'hasWheels', text: "Does it have wheels?" },
+    { id: 'hasLegs', text: "Does it have legs?" },
+    { id: 'madeOfMetal', text: "Is it made of metal?" },
+    { id: 'isWood', text: "Is it made of wood?" },
+    { id: 'hasScreen', text: "Does it have a screen?" },
+    { id: 'canBeFoundInside', text: "Can it be found inside a house?" },
+    { id: 'glowsAtNight', text: "Does it glow at night?" },
+    { id: 'madeOfPaper', text: "Is it made of paper?" },
+    { id: 'livesInWater', text: "Does it live in water?" },
+    { id: 'makesNoise', text: "Does it make noise?" },
+    { id: 'canWear', text: "Can you wear it?" },
+    { id: 'isRound', text: "Is it round?" },
+    { id: 'forSports', text: "Is it used for sports?" }
 ];
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080';
 
 const TwentyQuestions: React.FC = () => {
     const { token } = useAuth();
+    const navigate = useNavigate();
     const [gameState, setGameState] = useState<'idle' | 'playing' | 'guessing' | 'finished'>('idle');
     const [mystery, setMystery] = useState(MYSTERIES[0]);
     const [askedCount, setAskedCount] = useState(0);
@@ -62,13 +138,13 @@ const TwentyQuestions: React.FC = () => {
     const handleGuess = (e: React.FormEvent) => {
         e.preventDefault();
         if (guess.toLowerCase().trim() === mystery.answer.toLowerCase()) {
-            const bonus = Math.max(0, (20 - askedCount) * 10);
-            const missionScore = 500 + bonus;
-            setScore(prev => prev + missionScore);
-            finishGame(score + missionScore);
+            // Scoring: Efficiency bonus. Max 1000, drops by 40 for each question asked.
+            const missionScore = Math.max(200, 1000 - (askedCount * 40));
+            setScore(missionScore);
+            finishGame(missionScore);
         } else {
             setGameState('finished');
-            finishGame(score);
+            finishGame(0);
         }
     };
 
@@ -106,9 +182,14 @@ const TwentyQuestions: React.FC = () => {
                         <p className="text-xl font-bold text-slate-500 max-w-md mx-auto leading-relaxed">
                             Form interrogative sentences to find the secret object! Can you solve it in under 20 tries?
                         </p>
-                        <button onClick={startNewMystery} className="btn-secondary text-2xl px-12 py-5 rounded-3xl group">
-                            Start Guessing! <ArrowRight className="group-hover:translate-x-2 transition-transform" />
-                        </button>
+                        <div className="flex flex-col gap-4 items-center">
+                            <button onClick={startNewMystery} className="btn-secondary text-2xl px-12 py-5 rounded-3xl group w-fit">
+                                Start Guessing! <ArrowRight className="group-hover:translate-x-2 transition-transform" />
+                            </button>
+                            <button onClick={() => navigate('/lobby')} className="text-slate-400 font-bold hover:text-slate-600 transition-colors">
+                                Return to Lobby
+                            </button>
+                        </div>
                     </motion.div>
                 )}
 
@@ -231,9 +312,14 @@ const TwentyQuestions: React.FC = () => {
                                 <div className="text-4xl font-black text-primary">+{Math.floor(score / 10)}</div>
                             </div>
                         </div>
-                        <button onClick={startNewMystery} className="btn-secondary w-full text-xl py-5 rounded-3xl flex items-center justify-center gap-2">
-                            <RefreshCw /> Play Again
-                        </button>
+                        <div className="flex flex-col gap-4">
+                            <button onClick={startNewMystery} className="btn-secondary w-full text-xl py-5 rounded-3xl flex items-center justify-center gap-2">
+                                <RefreshCw /> Play Again
+                            </button>
+                            <button onClick={() => navigate('/lobby')} className="btn-primary w-full text-xl py-5 rounded-3xl flex items-center justify-center gap-2">
+                                Return to Lobby
+                            </button>
+                        </div>
                     </motion.div>
                 )}
             </AnimatePresence>
