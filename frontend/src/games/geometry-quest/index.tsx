@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
-import { Target, Shapes, RotateCcw, Trophy, Zap, Info, ChevronLeft, LayoutGrid, Calculator } from 'lucide-react';
+import { Target, Shapes, RotateCcw, Trophy, Zap, Info, ChevronLeft, Calculator } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import axios from 'axios';
 
@@ -20,7 +19,6 @@ interface GeometricShape {
 
 const GeometryQuest: React.FC = () => {
     const { token } = useAuth();
-    const navigate = useNavigate();
 
     // UI State
     const [viewMode, setViewMode] = useState<ViewMode>('main');
