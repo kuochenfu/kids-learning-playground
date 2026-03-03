@@ -10,7 +10,7 @@ type Level = 1 | 2 | 3;
 type ViewMode = 'main' | 'game' | 'solver';
 
 interface GeometricShape {
-    type: 'triangle' | 'circle' | 'semicircle';
+    type: 'triangle' | 'circle' | 'semicircle' | 'right_triangle' | 'square' | 'equilateral' | 'isosceles';
     params: any;
     targetValue: number;
     questionText: string;
@@ -26,6 +26,7 @@ const GeometryQuest: React.FC = () => {
 
     // Game State
     const [level, setLevel] = useState<Level>(1);
+    const [questionIndex, setQuestionIndex] = useState(0); // 0-4
     const [score, setScore] = useState(0);
     const [timeLeft, setTimeLeft] = useState(180);
     const [currentShape, setCurrentShape] = useState<GeometricShape | null>(null);
@@ -43,40 +44,89 @@ const GeometryQuest: React.FC = () => {
     // --- GAME LOGIC ---
     const generateQuestion = useCallback((targetLevel: Level) => {
         let shape: GeometricShape;
+
         if (targetLevel === 1) {
-            const a1 = Math.floor(Math.random() * 80) + 20;
-            const a2 = Math.floor(Math.random() * (160 - a1)) + 10;
-            const target = 180 - a1 - a2;
-            shape = {
-                type: 'triangle',
-                params: { a1, a2 },
-                targetValue: target,
-                questionText: `Angle 1 is ${a1}°, Angle 2 is ${a2}°. Find the 3rd angle!`,
-                unit: '°'
-            };
+            const types = ['triangle', 'square', 'circle_radius'];
+            const type = types[Math.floor(Math.random() * types.length)];
+
+            if (type === 'triangle') {
+                const a1 = Math.floor(Math.random() * 40) + 40;
+                const a2 = Math.floor(Math.random() * 40) + 40;
+                const target = 180 - a1 - a2;
+                shape = {
+                    type: 'triangle', params: { a1, a2 }, targetValue: target,
+                    questionText: `Angle 1 is ${a1}°, Angle 2 is ${a2}°. Find the 3rd angle!`, unit: '°'
+                };
+            } else if (type === 'square') {
+                const side = Math.floor(Math.random() * 10) + 2;
+                const mode = Math.random() > 0.5 ? 'area' : 'perimeter';
+                shape = {
+                    type: 'square', params: { side }, targetValue: mode === 'area' ? side * side : side * 4,
+                    questionText: `A square has side ${side}. Find its ${mode}!`, unit: ''
+                };
+            } else {
+                const diameter = (Math.floor(Math.random() * 5) + 1) * 2;
+                shape = {
+                    type: 'circle', params: { diameter }, targetValue: diameter / 2,
+                    questionText: `A circle has diameter ${diameter}. What is its radius?`, unit: ''
+                };
+            }
         } else if (targetLevel === 2) {
-            const diameter = (Math.floor(Math.random() * 4) + 2) * 10;
-            const radius = diameter / 2;
-            const target = 3.14 * radius * radius;
-            shape = {
-                type: 'circle',
-                params: { diameter },
-                targetValue: target,
-                questionText: `Diameter is ${diameter}. Find the Area (π = 3.14).`,
-                unit: ''
-            };
+            const types = ['equilateral', 'semicircle', 'right_triangle_pythagorean'];
+            const type = types[Math.floor(Math.random() * types.length)];
+
+            if (type === 'equilateral') {
+                const side = Math.floor(Math.random() * 5) + 2;
+                const target = parseFloat(((side * Math.sqrt(3)) / 2).toFixed(1));
+                shape = {
+                    type: 'equilateral', params: { side }, targetValue: target,
+                    questionText: `An equilateral triangle has side ${side}. Find its height (round to 1 decimal).`, unit: ''
+                };
+            } else if (type === 'semicircle') {
+                const diameter = (Math.floor(Math.random() * 3) + 1) * 10;
+                const r = diameter / 2;
+                const target = parseFloat(((3.14 * r) + diameter).toFixed(2));
+                shape = {
+                    type: 'semicircle', params: { diameter }, targetValue: target,
+                    questionText: `Diameter is ${diameter}. Find the total Perimeter (π = 3.14).`, unit: ''
+                };
+            } else {
+                // Easy Pythagorean Triple (3,4,5 or 6,8,10)
+                const base = Math.random() > 0.5 ? 3 : 6;
+                const height = base === 3 ? 4 : 8;
+                shape = {
+                    type: 'right_triangle', params: { a: height, b: base }, targetValue: base === 3 ? 5 : 10,
+                    questionText: `Right triangle has legs ${height} and ${base}. Find the hypotenuse!`, unit: ''
+                };
+            }
         } else {
-            const diameter = (Math.floor(Math.random() * 5) + 2) * 10;
-            const radius = diameter / 2;
-            const target = parseFloat(((3.14 * radius) + diameter).toFixed(2));
-            shape = {
-                type: 'semicircle',
-                params: { diameter },
-                targetValue: target,
-                questionText: `Diameter is ${diameter}. Find the Perimeter (π = 3.14).`,
-                unit: ''
-            };
+            // Level 3: Hard
+            const types = ['isosceles_area', 'right_triangle_trig', 'circle_complex'];
+            const type = types[Math.floor(Math.random() * types.length)];
+
+            if (type === 'isosceles_area') {
+                const side = 10;
+                const base = 12; // h = sqrt(10^2 - 6^2) = 8
+                shape = {
+                    type: 'isosceles', params: { a: side, b: base }, targetValue: 48,
+                    questionText: `Isosceles triangle: sides are ${side}, ${side}, and base is ${base}. Find the Area!`, unit: ''
+                };
+            } else if (type === 'right_triangle_trig') {
+                const angle = 30;
+                const hyp = 20;
+                shape = {
+                    type: 'right_triangle', params: { hyp, angle }, targetValue: 10,
+                    questionText: `Right triangle has hypotenuse ${hyp} and an angle of ${angle}°. Find the side opposite to it! (Hint: sin ${angle}° = 0.5)`, unit: ''
+                };
+            } else {
+                const circumference = 31.4; // d=10, r=5
+                shape = {
+                    type: 'circle', params: { circumference }, targetValue: 78.5,
+                    questionText: `A circle has circumference 31.4. Find its Area (π = 3.14)!`, unit: ''
+                };
+            }
         }
+
         setCurrentShape(shape);
         setUserInput('');
         setIsCorrect(null);
@@ -87,6 +137,7 @@ const GeometryQuest: React.FC = () => {
         setViewMode('game');
         setGameState('playing');
         setLevel(1);
+        setQuestionIndex(0);
         setScore(0);
         setTimeLeft(180);
         generateQuestion(1);
@@ -111,10 +162,21 @@ const GeometryQuest: React.FC = () => {
         if (correct) {
             setScore(prev => prev + 10 * level);
             setTimeout(() => {
-                const nextLvl = (level < 3 ? level + 1 : 3) as Level;
-                setLevel(nextLvl);
-                generateQuestion(nextLvl);
-                setGameState('playing');
+                if (questionIndex >= 4) {
+                    if (level < 3) {
+                        const nextLvl = (level + 1) as Level;
+                        setLevel(nextLvl);
+                        setQuestionIndex(0);
+                        generateQuestion(nextLvl);
+                    } else {
+                        setGameState('finished');
+                        saveScore();
+                    }
+                } else {
+                    setQuestionIndex(prev => prev + 1);
+                    generateQuestion(level);
+                }
+                if (gameState !== 'finished') setGameState('playing');
             }, 1800);
         } else {
             setTimeout(() => {
@@ -124,17 +186,21 @@ const GeometryQuest: React.FC = () => {
         }
     };
 
+    const saveScore = async () => {
+        if (token) {
+            axios.post(`${API_BASE_URL}/api/score`, {
+                gameId: 'geometry-quest', score, duration: 180 - timeLeft
+            }, { headers: { Authorization: `Bearer ${token}` } }).catch(console.error);
+        }
+    };
+
     useEffect(() => {
         let timer: any;
         if (viewMode === 'game' && gameState === 'playing' && timeLeft > 0) {
             timer = setInterval(() => setTimeLeft(t => t - 1), 1000);
         } else if (timeLeft === 0 && gameState !== 'finished' && viewMode === 'game') {
             setGameState('finished');
-            if (token) {
-                axios.post(`${API_BASE_URL}/api/score`, {
-                    gameId: 'geometry-quest', score, duration: 180 - timeLeft
-                }, { headers: { Authorization: `Bearer ${token}` } }).catch(console.error);
-            }
+            saveScore();
         }
         return () => clearInterval(timer);
     }, [gameState, timeLeft, score, token, viewMode]);
@@ -160,15 +226,12 @@ const GeometryQuest: React.FC = () => {
                 const alpha = (Math.atan(a / b) * 180) / Math.PI;
                 const beta = 90 - alpha;
                 results = {
-                    c: c.toFixed(2),
-                    area: area.toFixed(2),
-                    perimeter: p.toFixed(2),
-                    alpha: alpha.toFixed(1),
-                    beta: beta.toFixed(1),
+                    c: c.toFixed(2), area: area.toFixed(2), perimeter: p.toFixed(2),
+                    alpha: alpha.toFixed(1), beta: beta.toFixed(1),
                     steps: [
                         `c = √(a² + b²) = √(${a}² + ${b}²) = ${c.toFixed(2)}`,
                         `Area = (a * b) / 2 = (${a} * ${b}) / 2 = ${area.toFixed(2)}`,
-                        `Perimeter = a + b + c = ${a} + ${b} + ${c.toFixed(2)} = ${p.toFixed(2)}`,
+                        `Perimeter = a + b + c = ${p.toFixed(2)}`,
                         `α = atan(a/b) = ${alpha.toFixed(1)}°`,
                         `β = 90° - α = ${beta.toFixed(1)}°`
                     ]
@@ -180,9 +243,7 @@ const GeometryQuest: React.FC = () => {
                 const h = (a * Math.sqrt(3)) / 2;
                 const area = (a * a * Math.sqrt(3)) / 4;
                 results = {
-                    h: h.toFixed(2),
-                    area: area.toFixed(2),
-                    perimeter: (3 * a).toFixed(2),
+                    h: h.toFixed(2), area: area.toFixed(2), perimeter: (3 * a).toFixed(2),
                     steps: [
                         `h = (a * √3) / 2 = ${h.toFixed(2)}`,
                         `Area = (a² * √3) / 4 = ${area.toFixed(2)}`,
@@ -195,9 +256,7 @@ const GeometryQuest: React.FC = () => {
             if (a > 0) {
                 const d = a * Math.sqrt(2);
                 results = {
-                    area: (a * a).toFixed(2),
-                    perimeter: (4 * a).toFixed(2),
-                    diagonal: d.toFixed(2),
+                    area: (a * a).toFixed(2), perimeter: (4 * a).toFixed(2), diagonal: d.toFixed(2),
                     steps: [
                         `Area = a² = ${a * a}`,
                         `Perimeter = 4 * a = ${4 * a}`,
@@ -212,9 +271,7 @@ const GeometryQuest: React.FC = () => {
                 const area = 3.14 * r * r;
                 const c = 3.14 * d;
                 results = {
-                    r: r.toFixed(2),
-                    area: area.toFixed(2),
-                    circumference: c.toFixed(2),
+                    r: r.toFixed(2), area: area.toFixed(2), circumference: c.toFixed(2),
                     steps: [
                         `r = d / 2 = ${r.toFixed(2)}`,
                         `Area = π * r² = 3.14 * ${r.toFixed(2)}² = ${area.toFixed(2)}`,
@@ -224,13 +281,11 @@ const GeometryQuest: React.FC = () => {
             }
         } else if (selectedSolverShape === 'isosceles') {
             const a = parseFloat(inputs.a || '0');
-            const b = parseFloat(inputs.b || '0'); // base
+            const b = parseFloat(inputs.b || '0');
             if (a > (b / 2) && b > 0) {
                 const h = Math.sqrt(a * a - (b / 2) * (b / 2));
                 results = {
-                    h: h.toFixed(2),
-                    area: (0.5 * b * h).toFixed(2),
-                    perimeter: (2 * a + b).toFixed(2),
+                    h: h.toFixed(2), area: (0.5 * b * h).toFixed(2), perimeter: (2 * a + b).toFixed(2),
                     steps: [
                         `h = √(a² - (b/2)²) = ${h.toFixed(2)}`,
                         `Area = (b * h) / 2 = ${((b * h) / 2).toFixed(2)}`,
@@ -249,41 +304,77 @@ const GeometryQuest: React.FC = () => {
         const size = 300;
         const center = size / 2;
 
-        if (currentShape.type === 'triangle') {
-            const { a1, a2 } = currentShape.params;
-            const a3_val = isCorrect === false ? (parseFloat(userInput) || 1) : (180 - a1 - a2);
-            const baseW = 180;
-            const x1 = center - baseW / 2, y1 = center + 50, x2 = center + baseW / 2, y2 = y1;
-            const rad1 = (a1 * Math.PI) / 180, rad2 = (a2 * Math.PI) / 180;
-            const visualA3 = isCorrect === false ? a3_val : (180 - a1 - a2);
-            const radV3 = (visualA3 * Math.PI) / 180;
-            const sideC = (baseW * Math.sin(rad2)) / Math.sin(radV3);
-            const x3 = x1 + sideC * Math.cos(rad1), y3 = y1 - sideC * Math.sin(rad1);
+        if (currentShape.type === 'triangle' || currentShape.type === 'equilateral' || currentShape.type === 'isosceles') {
+            let x1, y1, x2, y2, x3, y3;
+            const baseW = 160;
+            x1 = center - baseW / 2; y1 = center + 50;
+            x2 = center + baseW / 2; y2 = y1;
+
+            if (currentShape.type === 'triangle') {
+                const { a1, a2 } = currentShape.params;
+                const rad1 = (a1 * Math.PI) / 180, rad2 = (a2 * Math.PI) / 180;
+                const rad3 = Math.PI - rad1 - rad2;
+                const sideC = (baseW * Math.sin(rad2)) / Math.sin(rad3);
+                x3 = x1 + sideC * Math.cos(rad1); y3 = y1 - sideC * Math.sin(rad1);
+            } else if (currentShape.type === 'equilateral') {
+                x3 = center; y3 = y1 - (baseW * Math.sqrt(3)) / 2;
+            } else {
+                // Isosceles
+                const a = 120, b = 160; // visual
+                const h = Math.sqrt(a * a - (b / 2) * (b / 2));
+                x3 = center; y3 = y1 - h;
+            }
 
             return (
                 <svg width={size} height={size}>
                     <motion.polygon animate={{ points: `${x1},${y1} ${x2},${y2} ${x3},${y3}` }} className={`${isCorrect === null ? 'fill-primary/20 stroke-primary' : isCorrect ? 'fill-green-100 stroke-green-500' : 'fill-red-100 stroke-red-500'} stroke-4 transition-colors`} />
-                    <text x={x1 - 10} y={y1 + 20} className="text-[10px] font-bold fill-slate-400">{a1}°</text>
-                    <text x={x2 - 10} y={y2 + 20} className="text-[10px] font-bold fill-slate-400">{a2}°</text>
-                    <text x={x3 - 10} y={y3 - 10} className="text-2xl font-black fill-primary">?</text>
+                    {currentShape.type === 'triangle' && (
+                        <>
+                            <text x={x1 - 10} y={y1 + 20} className="text-[10px] font-bold fill-slate-400">{currentShape.params.a1}°</text>
+                            <text x={x2 - 10} y={y2 + 20} className="text-[10px] font-bold fill-slate-400">{currentShape.params.a2}°</text>
+                            <text x={x3 - 10} y={y3 - 10} className="text-2xl font-black fill-primary">?</text>
+                        </>
+                    )}
                 </svg>
             );
         }
+
+        if (currentShape.type === 'right_triangle') {
+            const w = 150, h = 100;
+            const x1 = center - w / 2, y1 = center + h / 2;
+            const x2 = x1 + w, y2 = y1;
+            const x3 = x1, y3 = y1 - h;
+            return (
+                <svg width={size} height={size}>
+                    <path d={`M ${x1},${y1} L ${x2},${y2} L ${x3},${y3} Z`} className={`${isCorrect === null ? 'fill-primary/20 stroke-primary' : isCorrect ? 'fill-green-100 stroke-green-500' : 'fill-red-100 stroke-red-500'} stroke-4 transition-colors`} />
+                    <rect x={x1} y={y1 - 10} width={10} height={10} className="stroke-slate-300 fill-none" />
+                </svg>
+            );
+        }
+
+        if (currentShape.type === 'square') {
+            const s = 120;
+            return (
+                <svg width={size} height={size}>
+                    <rect x={center - s / 2} y={center - s / 2} width={s} height={s} className={`${isCorrect === null ? 'fill-playful-purple/20 stroke-playful-purple' : isCorrect ? 'fill-green-100 stroke-green-500' : 'fill-red-100 stroke-red-500'} stroke-4 transition-colors`} />
+                </svg>
+            );
+        }
+
         if (currentShape.type === 'circle') {
-            const r = currentShape.params.diameter * 1.5;
+            const r = 80;
             return (
                 <svg width={size} height={size}>
                     <circle cx={center} cy={center} r={r} className={`${isCorrect === null ? 'fill-secondary/20 stroke-secondary' : isCorrect ? 'fill-green-100 stroke-green-500' : 'fill-red-100 stroke-red-500'} stroke-4 transition-colors`} />
                     <line x1={center - r} y1={center} x2={center + r} y2={center} className="stroke-slate-300 stroke-2" strokeDasharray="4" />
-                    <text x={center - 15} y={center - 5} className="text-xs font-bold fill-slate-500">d={currentShape.params.diameter}</text>
                 </svg>
             );
         }
-        const r_s = currentShape.params.diameter * 1.5;
+
+        const r_s = 80;
         return (
             <svg width={size} height={size}>
                 <path d={`M ${center - r_s},${center} A ${r_s},${r_s} 0 0 1 ${center + r_s},${center} Z`} className={`${isCorrect === null ? 'fill-playful-purple/20 stroke-playful-purple' : isCorrect ? 'fill-green-100 stroke-green-500' : 'fill-red-100 stroke-red-500'} stroke-4 transition-colors`} />
-                <text x={center - 20} y={center + 20} className="text-xs font-bold fill-slate-500">d={currentShape.params.diameter}</text>
             </svg>
         );
     };
@@ -348,28 +439,13 @@ const GeometryQuest: React.FC = () => {
                         <p className="text-xl font-bold text-slate-400 mb-12 uppercase tracking-widest">Choose Your Path</p>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-3xl mx-auto">
-                            {/* Adventure Mode */}
-                            <motion.div
-                                onClick={startGame}
-                                whileHover={{ y: -8, scale: 1.02 }}
-                                className="bg-gradient-to-br from-primary/10 to-primary/5 p-10 rounded-[3rem] cursor-pointer border-b-8 border-primary/20 hover:shadow-popping transition-all group"
-                            >
-                                <div className="w-20 h-20 bg-primary text-white rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-playful group-hover:rotate-6 transition-transform">
-                                    <Shapes size={40} />
-                                </div>
+                            <motion.div onClick={startGame} whileHover={{ y: -8, scale: 1.02 }} className="bg-gradient-to-br from-primary/10 to-primary/5 p-10 rounded-[3rem] cursor-pointer border-b-8 border-primary/20 hover:shadow-popping transition-all group">
+                                <div className="w-20 h-20 bg-primary text-white rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-playful group-hover:rotate-6 transition-transform"><Shapes size={40} /></div>
                                 <h2 className="text-3xl font-black text-slate-800 mb-2">Adventure</h2>
                                 <p className="text-slate-500 font-bold leading-tight">Master angles & area in a leveling game!</p>
                             </motion.div>
-
-                            {/* Solver Mode */}
-                            <motion.div
-                                onClick={() => setViewMode('solver')}
-                                whileHover={{ y: -8, scale: 1.02 }}
-                                className="bg-gradient-to-br from-secondary/10 to-secondary/5 p-10 rounded-[3rem] cursor-pointer border-b-8 border-secondary/20 hover:shadow-popping transition-all group"
-                            >
-                                <div className="w-20 h-20 bg-secondary text-white rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-playful group-hover:-rotate-6 transition-transform">
-                                    <Calculator size={40} />
-                                </div>
+                            <motion.div onClick={() => setViewMode('solver')} whileHover={{ y: -8, scale: 1.02 }} className="bg-gradient-to-br from-secondary/10 to-secondary/5 p-10 rounded-[3rem] cursor-pointer border-b-8 border-secondary/20 hover:shadow-popping transition-all group">
+                                <div className="w-20 h-20 bg-secondary text-white rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-playful group-hover:-rotate-6 transition-transform"><Calculator size={40} /></div>
                                 <h2 className="text-3xl font-black text-slate-800 mb-2">Lab Tools</h2>
                                 <p className="text-slate-500 font-bold leading-tight">Solve any geometric problem step-by-step.</p>
                             </motion.div>
@@ -380,12 +456,9 @@ const GeometryQuest: React.FC = () => {
                 {viewMode === 'solver' && (
                     <motion.div key="solver" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex flex-col w-full h-full p-6">
                         <div className="flex items-center gap-4 mb-6">
-                            <button onClick={() => { setViewMode('main'); setSelectedSolverShape(null); }} className="p-3 bg-slate-50 hover:bg-slate-100 rounded-2xl text-slate-400">
-                                <ChevronLeft size={24} />
-                            </button>
+                            <button onClick={() => { setViewMode('main'); setSelectedSolverShape(null); }} className="p-3 bg-slate-50 hover:bg-slate-100 rounded-2xl text-slate-400"><ChevronLeft size={24} /></button>
                             <h2 className="text-3xl font-black text-slate-800">Geometry Solver</h2>
                         </div>
-
                         {!selectedSolverShape ? (
                             <div className="grid grid-cols-2 md:grid-cols-3 gap-6 p-4">
                                 {[
@@ -395,117 +468,45 @@ const GeometryQuest: React.FC = () => {
                                     { id: 'square', label: 'Square', color: 'bg-playful-purple' },
                                     { id: 'circle', label: 'Circle', color: 'bg-accent-dark' },
                                 ].map(s => (
-                                    <button
-                                        key={s.id}
-                                        onClick={() => { setSelectedSolverShape(s.id); setSolverInputs({}); }}
-                                        className="aspect-square bg-slate-50 hover:bg-white hover:shadow-playful rounded-[2.5rem] flex flex-col items-center justify-center gap-4 transition-all group border-b-4 border-slate-100"
-                                    >
-                                        <div className={`p-4 rounded-2xl ${s.color} text-white group-hover:scale-110 transition-transform`}>
-                                            <Shapes size={32} />
-                                        </div>
+                                    <button key={s.id} onClick={() => setSelectedSolverShape(s.id)} className="aspect-square bg-slate-50 hover:bg-white hover:shadow-playful rounded-[2.5rem] flex flex-col items-center justify-center gap-4 transition-all group border-b-4 border-slate-100">
+                                        <div className={`p-4 rounded-2xl ${s.color} text-white group-hover:scale-110 transition-transform`}><Shapes size={32} /></div>
                                         <span className="font-black text-slate-700">{s.label}</span>
                                     </button>
                                 ))}
                             </div>
                         ) : (
                             <div className="flex flex-col md:flex-row gap-8 items-stretch">
-                                {/* Details Column */}
                                 <div className="flex-1 space-y-6">
                                     <div className="bg-slate-50 rounded-[2.5rem] p-8 border-b-4 border-slate-100 min-h-[250px] flex flex-col justify-center">
                                         <h3 className="text-center font-black text-slate-800 mb-4 uppercase tracking-widest">{selectedSolverShape.replace('_', ' ')}</h3>
                                         {renderSolverShape()}
                                     </div>
-
-                                    {/* Inputs */}
                                     <div className="grid grid-cols-2 gap-4">
                                         {(selectedSolverShape === 'right_triangle' || selectedSolverShape === 'isosceles') && (
                                             <>
-                                                <div className="space-y-2">
-                                                    <label className="text-xs font-black text-slate-400 uppercase ml-2">Side a</label>
-                                                    <input
-                                                        type="number" value={solverInputs.a || ''}
-                                                        onChange={e => setSolverInputs(p => ({ ...p, a: e.target.value }))}
-                                                        className="w-full p-4 bg-white border-4 border-slate-50 rounded-2xl font-black text-xl" placeholder="0"
-                                                    />
-                                                </div>
-                                                <div className="space-y-2">
-                                                    <label className="text-xs font-black text-slate-400 uppercase ml-2">{selectedSolverShape === 'isosceles' ? 'Base b' : 'Side b'}</label>
-                                                    <input
-                                                        type="number" value={solverInputs.b || ''}
-                                                        onChange={e => setSolverInputs(p => ({ ...p, b: e.target.value }))}
-                                                        className="w-full p-4 bg-white border-4 border-slate-50 rounded-2xl font-black text-xl" placeholder="0"
-                                                    />
-                                                </div>
+                                                <div className="space-y-2"><label className="text-xs font-black text-slate-400 uppercase ml-2">Side a</label><input type="number" value={solverInputs.a || ''} onChange={e => setSolverInputs(p => ({ ...p, a: e.target.value }))} className="w-full p-4 bg-white border-4 border-slate-50 rounded-2xl font-black text-xl" /></div>
+                                                <div className="space-y-2"><label className="text-xs font-black text-slate-400 uppercase ml-2">Base b</label><input type="number" value={solverInputs.b || ''} onChange={e => setSolverInputs(p => ({ ...p, b: e.target.value }))} className="w-full p-4 bg-white border-4 border-slate-50 rounded-2xl font-black text-xl" /></div>
                                             </>
                                         )}
-                                        {selectedSolverShape === 'equilateral' && (
-                                            <div className="space-y-2 col-span-2">
-                                                <label className="text-xs font-black text-slate-400 uppercase ml-2">Side a</label>
-                                                <input
-                                                    type="number" value={solverInputs.a || ''}
-                                                    onChange={e => setSolverInputs(p => ({ ...p, a: e.target.value }))}
-                                                    className="w-full p-4 bg-white border-4 border-slate-50 rounded-2xl font-black text-xl" placeholder="0"
-                                                />
-                                            </div>
-                                        )}
-                                        {selectedSolverShape === 'square' && (
-                                            <div className="space-y-2 col-span-2">
-                                                <label className="text-xs font-black text-slate-400 uppercase ml-2">Side a</label>
-                                                <input
-                                                    type="number" value={solverInputs.a || ''}
-                                                    onChange={e => setSolverInputs(p => ({ ...p, a: e.target.value }))}
-                                                    className="w-full p-4 bg-white border-4 border-slate-50 rounded-2xl font-black text-xl" placeholder="0"
-                                                />
-                                            </div>
+                                        {(selectedSolverShape === 'equilateral' || selectedSolverShape === 'square') && (
+                                            <div className="space-y-2 col-span-2"><label className="text-xs font-black text-slate-400 uppercase ml-2">Side a</label><input type="number" value={solverInputs.a || ''} onChange={e => setSolverInputs(p => ({ ...p, a: e.target.value }))} className="w-full p-4 bg-white border-4 border-slate-50 rounded-2xl font-black text-xl" /></div>
                                         )}
                                         {selectedSolverShape === 'circle' && (
-                                            <div className="space-y-2 col-span-2">
-                                                <label className="text-xs font-black text-slate-400 uppercase ml-2">Diameter d</label>
-                                                <input
-                                                    type="number" value={solverInputs.d || ''}
-                                                    onChange={e => setSolverInputs(p => ({ ...p, d: e.target.value }))}
-                                                    className="w-full p-4 bg-white border-4 border-slate-50 rounded-2xl font-black text-xl" placeholder="0"
-                                                />
-                                            </div>
+                                            <div className="space-y-2 col-span-2"><label className="text-xs font-black text-slate-400 uppercase ml-2">Diameter d</label><input type="number" value={solverInputs.d || ''} onChange={e => setSolverInputs(p => ({ ...p, d: e.target.value }))} className="w-full p-4 bg-white border-4 border-slate-50 rounded-2xl font-black text-xl" /></div>
                                         )}
                                     </div>
-
-                                    <button onClick={() => { setSelectedSolverShape(null); setSolverResults(null); }} className="w-full p-4 text-slate-400 font-black hover:text-primary transition-colors">
-                                        Back to Shape List
-                                    </button>
+                                    <button onClick={() => setSelectedSolverShape(null)} className="w-full p-4 text-slate-400 font-black hover:text-primary transition-colors">Back to Shape List</button>
                                 </div>
-
-                                {/* Results Column */}
-                                <div className="w-full md:w-96 bg-slate-50 rounded-[2.5rem] p-8 space-y-8 overflow-y-auto max-h-[500px] border-b-8 border-slate-100">
-                                    <div className="flex items-center gap-3 text-slate-800">
-                                        <Info size={20} />
-                                        <h4 className="font-black uppercase tracking-widest text-sm">Step-by-Step Solution</h4>
-                                    </div>
-
+                                <div className="w-full md:w-96 bg-slate-50 rounded-[2.5rem] p-8 space-y-4 overflow-y-auto max-h-[500px]">
+                                    <div className="flex items-center gap-2 text-slate-800"><Info size={20} /><h4 className="font-black uppercase tracking-widest text-xs">Steps</h4></div>
                                     {solverResults ? (
-                                        <div className="space-y-6">
+                                        <div className="space-y-4">
                                             {solverResults.steps.map((step: string, i: number) => (
-                                                <motion.div
-                                                    key={i} initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.1 }}
-                                                    className="bg-white p-5 rounded-3xl border-l-8 border-primary shadow-sm font-bold text-slate-600 font-mono text-sm"
-                                                >
-                                                    {step}
-                                                </motion.div>
+                                                <motion.div key={i} initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} className="bg-white p-4 rounded-2xl border-l-4 border-primary shadow-sm font-bold text-slate-600 text-xs font-mono">{step}</motion.div>
                                             ))}
-
-                                            <div className="pt-6 border-t border-slate-200 grid grid-cols-2 gap-4">
-                                                {Object.entries(solverResults).map(([k, v]) => k !== 'steps' && (
-                                                    <div key={k} className="text-center p-4 bg-secondary/10 rounded-2xl shadow-inner">
-                                                        <div className="text-[10px] font-black text-secondary uppercase mb-1">{k}</div>
-                                                        <div className="text-xl font-black text-slate-800">{String(v)}</div>
-                                                    </div>
-                                                ))}
-                                            </div>
                                         </div>
                                     ) : (
-                                        <div className="h-40 flex items-center justify-center text-slate-400 font-bold italic text-center leading-tight">
-                                            Enter values to see <br /> the magic procedure! ✨
-                                        </div>
+                                        <div className="h-40 flex items-center justify-center text-slate-300 font-bold italic text-center">Enter values to see procedure ✨</div>
                                     )}
                                 </div>
                             </div>
@@ -520,7 +521,14 @@ const GeometryQuest: React.FC = () => {
                                 <motion.div key="playing" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex flex-col md:flex-row gap-6 w-full h-full">
                                     <div className="flex-1 space-y-4">
                                         <div className="flex justify-between items-center bg-slate-50 p-4 rounded-2xl border-b-4 border-slate-100">
-                                            <div><div className="text-[10px] font-black uppercase text-slate-400">Level</div><div className="text-xl font-black text-primary">{level}</div></div>
+                                            <div className="flex items-center gap-4">
+                                                <div><div className="text-[10px] font-black uppercase text-slate-400">Level</div><div className="text-xl font-black text-primary">{level}</div></div>
+                                                <div className="flex gap-1">
+                                                    {[0, 1, 2, 3, 4].map(idx => (
+                                                        <div key={idx} className={`w-3 h-3 rounded-full ${idx < questionIndex ? 'bg-green-500' : 'bg-slate-200'}`} />
+                                                    ))}
+                                                </div>
+                                            </div>
                                             <div className="text-center font-black text-2xl text-slate-700">{score}</div>
                                             <div className="text-right"><div className="text-[10px] font-black uppercase text-slate-400">Time</div><div className="text-xl font-black text-orange-500">{timeLeft}s</div></div>
                                         </div>
@@ -545,7 +553,6 @@ const GeometryQuest: React.FC = () => {
                                         <button onClick={checkAnswer} disabled={!userInput || gameState === 'feedback'} className={`py-6 rounded-2xl font-black text-xl shadow-playful flex items-center justify-center gap-3 transition-colors ${!userInput || gameState === 'feedback' ? 'bg-slate-100 text-slate-300' : 'bg-accent text-accent-dark hover:scale-102'}`}>Check <Zap size={20} className="fill-current" /></button>
                                         <button onClick={() => setViewMode('main')} className="p-3 text-slate-400 font-black text-sm uppercase">Exit Game</button>
                                     </div>
-
                                     <AnimatePresence>
                                         {isCorrect !== null && (
                                             <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} exit={{ scale: 0 }} className="absolute inset-0 flex items-center justify-center z-50 pointer-events-none">
@@ -559,7 +566,6 @@ const GeometryQuest: React.FC = () => {
                                     </AnimatePresence>
                                 </motion.div>
                             )}
-
                             {gameState === 'finished' && (
                                 <motion.div key="finished" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center p-8">
                                     <Trophy size={80} className="text-accent mx-auto mb-4" />
