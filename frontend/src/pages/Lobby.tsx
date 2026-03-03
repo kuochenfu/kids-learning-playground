@@ -77,7 +77,15 @@ const GAMES: GameMetadata[] = [
         description: 'Assemble the pieces of a cute kitten dreams!',
         icon: 'puzzle',
         color: 'bg-playful-pink',
-        category: 'English', // Or Arts/Logic, putting in English list for now
+        category: 'Logic',
+    },
+    {
+        id: 'geometry-quest',
+        title: 'Geometry Quest',
+        description: 'Master shapes & angles to unlock the secrets!',
+        icon: 'math',
+        color: 'bg-primary',
+        category: 'Math',
     },
 ];
 
