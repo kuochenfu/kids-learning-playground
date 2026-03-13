@@ -18,6 +18,8 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        // Clean up legacy token key left by old auth code
+        localStorage.removeItem('token');
         const storedUser = localStorage.getItem('user');
         if (storedUser) {
             try {
@@ -59,6 +61,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         }
         setUser(null);
         localStorage.removeItem('user');
+        localStorage.removeItem('token'); // remove legacy key from old auth code
     };
 
     return (
