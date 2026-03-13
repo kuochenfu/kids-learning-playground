@@ -35,25 +35,34 @@ func (s *AuthService) VerifyGoogleToken(idToken string) (*models.User, error) {
 	name := claims["name"].(string)
 	picture := claims["picture"].(string)
 
+	// Determine role from config on every login so env var changes take effect immediately
+	intendedRole := models.RoleChild
+	for _, parentEmail := range s.cfg.ParentEmails {
+		if email == parentEmail {
+			intendedRole = models.RoleParent
+			break
+		}
+	}
+
 	var user models.User
 	result := s.db.Where("email = ?", email).First(&user)
 	if errors.Is(result.Error, gorm.ErrRecordNotFound) {
-		// New User - default to child for now unless specific logic for parent is needed
+		// New user
 		user = models.User{
 			Email:   email,
 			Name:    name,
 			Picture: picture,
-			Role:    models.RoleChild, 
+			Role:    intendedRole,
 		}
-		
-		for _, parentEmail := range s.cfg.ParentEmails {
-			if email == parentEmail {
-				user.Role = models.RoleParent
-				break
-			}
-		}
-
 		if err := s.db.Create(&user).Error; err != nil {
+			return nil, err
+		}
+	} else {
+		// Existing user — re-evaluate role and refresh profile from Google
+		user.Name = name
+		user.Picture = picture
+		user.Role = intendedRole
+		if err := s.db.Save(&user).Error; err != nil {
 			return nil, err
 		}
 	}
