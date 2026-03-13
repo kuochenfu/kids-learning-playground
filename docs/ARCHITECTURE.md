@@ -5,15 +5,15 @@
 Kids Learning Playground is a **stateless monorepo** with three separate deployment targets:
 
 ```
-┌─────────────────────┐     HTTPS      ┌──────────────────────┐
-│   React 19 (SPA)    │ ─────────────► │   Go / Gin API       │
-│   Cloudflare Pages  │ ◄───────────── │   Render.com         │
-└─────────────────────┘   JSON + JWT   └──────────┬───────────┘
-                                                   │ SQL (GORM)
-                                         ┌─────────▼────────┐
-                                         │  PostgreSQL 17    │
-                                         │  Neon.tech (SG)   │
-                                         └──────────────────┘
+┌─────────────────────┐     HTTPS + cookie     ┌──────────────────────┐
+│   React 19 (SPA)    │ ──────────────────────► │   Go / Gin API       │
+│   Cloudflare Pages  │ ◄────────────────────── │   Render.com         │
+└─────────────────────┘   JSON (withCredentials) └──────────┬───────────┘
+                                                             │ SQL (GORM)
+                                                   ┌─────────▼────────┐
+                                                   │  PostgreSQL 17    │
+                                                   │  Neon.tech (SG)   │
+                                                   └──────────────────┘
 ```
 
 ---
@@ -24,24 +24,33 @@ Kids Learning Playground is a **stateless monorepo** with three separate deploym
 User clicks "Sign in with Google"
         │
         ▼
-@react-oauth/google opens OAuth popup
+@react-oauth/google opens OAuth popup (or One Tap)
         │
         ▼  Google ID Token (JWT)
-Frontend POSTs token → POST /api/auth/google
+Frontend POSTs credential → POST /api/auth/google
         │
         ▼
 Backend validates token via google.golang.org/api/idtoken
         │
         ▼
-Backend upserts User row in PostgreSQL (email, name, picture)
+Backend upserts User row in PostgreSQL
+  - re-evaluates role from PARENT_EMAILS env var on every login
         │
         ▼
 Backend signs app JWT (HS256, 72h TTL)
   claims: { sub: userID, email, role, exp }
         │
         ▼
-Frontend stores JWT in localStorage
-All subsequent requests include: Authorization: Bearer <token>
+Backend sets httpOnly cookie:
+  Name=jwt, HttpOnly=true, Path=/
+  SameSite=Lax (dev) | SameSite=None;Secure (prod, COOKIE_SECURE=true)
+        │
+        ▼
+Frontend stores only user profile object in localStorage (no token)
+All subsequent requests send the cookie automatically (withCredentials: true)
+
+Logout: POST /api/auth/logout → backend clears cookie (MaxAge=-1)
+        → frontend clears localStorage user + navigates to /login
 ```
 
 ---
@@ -93,15 +102,16 @@ kids-learning-playground/
 GET  /api/ping                       Public — liveness probe
 GET  /api/health                     Public — DB status + question count
 
-POST /api/auth/google                Public — Google ID token → App JWT
+POST /api/auth/google                Public — Google ID token → sets httpOnly jwt cookie
+POST /api/auth/logout                Public — clears jwt cookie (MaxAge=-1)
 
---- Protected (Authorization: Bearer <jwt>) ---
+--- Protected (jwt httpOnly cookie required) ---
 POST /api/score                      Save GameSession to DB
-GET  /api/achievements               Get current user's game sessions
+GET  /api/scores                     Get current user's game sessions
 GET  /api/questions?category=<c>     Fetch 10 random questions (RANDOM() + Fisher-Yates)
 GET  /api/puzzles                    List puzzle images (canonical + uploads)
-POST /api/puzzles/upload             Upload image (admin: kuochenfu@gmail.com only)
-DELETE /api/puzzles/:filename        Delete image (admin only)
+POST /api/puzzles/upload             Upload image (ADMIN_EMAIL only)
+DELETE /api/puzzles/:filename        Delete image (ADMIN_EMAIL only)
 ```
 
 ---
@@ -154,10 +164,12 @@ CREATE INDEX idx_questions_category ON questions(category);
 
 ## Frontend State Management
 
-- **Auth state:** `AuthContext` (React Context) — `user`, `token`, `isLoading`
+- **Auth state:** `AuthContext` (React Context) — `user`, `loading`, `isAuthenticated`
 - **Game state:** Local `useState` within each game component
-- **Persistence:** JWT in `localStorage` — read on mount, cleared on logout
+- **Persistence:** User profile object in `localStorage` — read on mount, cleared on logout. No token stored in the browser (it lives in the httpOnly cookie, inaccessible to JS)
+- **API calls:** Centralized `src/utils/api.ts` axios instance with `withCredentials: true` — cookie is sent automatically on every request
 - **Routing:** React Router v7 with `ProtectedRoute` wrapper that redirects unauthenticated users to `/login`
+- **Error handling:** `ErrorBoundary` component wraps the entire router — catches unhandled render errors and shows a friendly recovery UI
 
 ---
 
@@ -193,8 +205,12 @@ POST /api/puzzles/upload
 |---|---|
 | Auth | Google ID token validated via Google's public keys |
 | JWT signing | HS256 with `JWT_SECRET` env var |
-| CORS | Whitelist only (`ALLOWED_ORIGINS` env, defaults to localhost + production) |
+| JWT transport | httpOnly cookie — inaccessible to JavaScript, XSS-resistant |
+| Cookie flags | `SameSite=Lax` (dev) / `SameSite=None;Secure` (prod via `COOKIE_SECURE=true`) |
+| CORS | Whitelist only (`ALLOWED_ORIGINS` env) + `AllowCredentials: true` |
+| Rate limiting | 60 req/min general, 10 req/min on `/api/auth/google` (in-process, sync.Map) |
 | Path traversal | Delete endpoint rejects filenames containing `..` or `/` |
-| File uploads | 5 MB limit, extension allowlist |
-| Admin actions | JWT email check for upload/delete endpoints |
-| Sensitive config | All secrets via env vars, never in source |
+| File uploads | 5 MB limit, extension allowlist (jpg, png, webp) |
+| Admin actions | `ADMIN_EMAIL` env var check for upload/delete endpoints |
+| Role assignment | `PARENT_EMAILS` env var re-evaluated on every login — no hardcoded emails |
+| Sensitive config | All secrets via env vars; `.env.example` committed, `.env` gitignored |
