@@ -46,10 +46,11 @@ func (s *AuthService) VerifyGoogleToken(idToken string) (*models.User, error) {
 			Role:    models.RoleChild, 
 		}
 		
-		// If email matches your typical parent email pattern or explicitly specified
-		// You might want to hardcode your email as parent for now
-		if email == "frankuo@gmail.com" { // Placeholder for your email
-			user.Role = models.RoleParent
+		for _, parentEmail := range s.cfg.ParentEmails {
+			if email == parentEmail {
+				user.Role = models.RoleParent
+				break
+			}
 		}
 
 		if err := s.db.Create(&user).Error; err != nil {

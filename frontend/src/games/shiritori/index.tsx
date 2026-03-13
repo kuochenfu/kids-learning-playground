@@ -1,8 +1,7 @@
 import React, { useState, useCallback, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, Trophy, ArrowRight, RefreshCw, Send, AlertCircle, CheckCircle2 } from 'lucide-react';
-import { useAuth } from '../../context/AuthContext';
-import axios from 'axios';
+import api from '../../utils/api';
 
 // A small dictionary for the computer matching
 const DICTIONARY: Record<string, string[]> = {
@@ -34,10 +33,7 @@ const DICTIONARY: Record<string, string[]> = {
     z: ["zebra", "zoo", "zero", "zigzag", "zipper"]
 };
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080';
-
 const Shiritori: React.FC = () => {
-    const { token } = useAuth();
     const [gameState, setGameState] = useState<'idle' | 'playing' | 'finished'>('idle');
     const [chain, setChain] = useState<{ word: string; user: boolean }[]>([]);
     const [input, setInput] = useState("");
@@ -56,19 +52,16 @@ const Shiritori: React.FC = () => {
     const finishGame = useCallback(async (finalScore: number) => {
         setGameState('finished');
         try {
-            await axios.post(`${API_BASE_URL}/api/score`, {
+            await api.post('/api/score', {
                 gameId: 'shiritori',
                 score: finalScore,
                 duration: 0,
                 wrongAnswers: [],
-                timestamp: new Date().toISOString(),
-            }, {
-                headers: { Authorization: `Bearer ${token}` }
             });
         } catch (err) {
             console.error('Failed to save score:', err);
         }
-    }, [token]);
+    }, []);
 
     useEffect(() => {
         if (scrollRef.current) {

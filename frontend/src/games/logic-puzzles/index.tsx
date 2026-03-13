@@ -2,10 +2,8 @@ import React, { useState, useCallback, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, Trophy, ArrowRight, Brain, RefreshCw, HelpCircle, Loader2 } from 'lucide-react';
-import { useAuth } from '../../context/AuthContext';
-import axios from 'axios';
-
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080';
+import api from '../../utils/api';
+import useSound from '../../hooks/useSound';
 
 interface Question {
     text: string;
@@ -15,8 +13,8 @@ interface Question {
 }
 
 const LogicPuzzles: React.FC = () => {
-    const { token } = useAuth();
     const navigate = useNavigate();
+    const { playCorrect, playWrong, playComplete } = useSound();
     const [questions, setQuestions] = useState<Question[]>([]);
     const [gameState, setGameState] = useState<'idle' | 'playing' | 'finished'>('idle');
     const [currentIdx, setCurrentIdx] = useState(0);
@@ -27,7 +25,7 @@ const LogicPuzzles: React.FC = () => {
     const [fetchError, setFetchError] = useState<string | null>(null);
 
     // Shuffle utility
-    const shuffleArray = (array: any[]) => {
+    const shuffleArray = <T,>(array: T[]): T[] => {
         const result = [...array];
         for (let i = result.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -38,23 +36,15 @@ const LogicPuzzles: React.FC = () => {
 
     useEffect(() => {
         const fetchQuestions = async () => {
-            if (!token) {
-                setFetchError('Authentication token not found. Please log in.');
-                setLoading(false);
-                return;
-            }
             try {
                 setLoading(true);
                 setFetchError(null);
-                // Added timestamp _t to bypass potential caching
-                const res = await axios.get(`${API_BASE_URL}/api/questions?category=logic&_t=${Date.now()}`, {
-                    headers: { 'Authorization': `Bearer ${token}` }
-                });
-                // Double randomness: Backend is random, Client shuffles again
+                const res = await api.get(`/api/questions?category=logic&_t=${Date.now()}`);
                 setQuestions(shuffleArray(res.data));
-            } catch (err: any) {
+            } catch (err) {
                 console.error('Failed to fetch questions:', err);
-                setFetchError(err.response?.data?.error || err.message || 'Connection failed');
+                const e = err as { response?: { data?: { error?: string } }; message?: string };
+                setFetchError(e.response?.data?.error || e.message || 'Connection failed');
             } finally {
                 setLoading(false);
             }
@@ -62,7 +52,7 @@ const LogicPuzzles: React.FC = () => {
         if (gameState === 'playing' && questions.length === 0 && !loading && !fetchError) {
             fetchQuestions();
         }
-    }, [gameState, token, questions.length, loading, fetchError]);
+    }, [gameState, questions.length, loading, fetchError]);
 
     const startGame = () => {
         setGameState('playing');
@@ -76,20 +66,18 @@ const LogicPuzzles: React.FC = () => {
 
     const finishGame = useCallback(async (finalScore: number) => {
         setGameState('finished');
+        playComplete();
         try {
-            await axios.post(`${API_BASE_URL}/api/score`, {
+            await api.post('/api/score', {
                 gameId: 'logic-puzzles',
                 score: finalScore,
                 duration: 0,
                 wrongAnswers: [],
-                timestamp: new Date().toISOString(),
-            }, {
-                headers: { Authorization: `Bearer ${token}` }
             });
         } catch (err) {
             console.error('Failed to save score:', err);
         }
-    }, [token]);
+    }, [playComplete]);
 
     const handleAnswer = (option: string) => {
         if (feedback) return;
@@ -97,8 +85,10 @@ const LogicPuzzles: React.FC = () => {
         if (option === questions[currentIdx].answer) {
             setScore(prev => prev + 150);
             setFeedback('correct');
+            playCorrect();
         } else {
             setFeedback('wrong');
+            playWrong();
         }
         setShowExplanation(true);
     };

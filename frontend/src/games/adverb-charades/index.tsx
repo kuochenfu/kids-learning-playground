@@ -1,8 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, Trophy, ArrowRight, RefreshCw, Zap } from 'lucide-react';
-import { useAuth } from '../../context/AuthContext';
-import axios from 'axios';
+import api from '../../utils/api';
 
 const ADVERB_MISSIONS = [
     {
@@ -37,10 +36,7 @@ const ADVERB_MISSIONS = [
     }
 ];
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080';
-
 const AdverbCharades: React.FC = () => {
-    const { token } = useAuth();
     const [gameState, setGameState] = useState<'idle' | 'playing' | 'finished'>('idle');
     const [currentIdx, setCurrentIdx] = useState(0);
     const [score, setScore] = useState(0);
@@ -76,19 +72,16 @@ const AdverbCharades: React.FC = () => {
     const finishGame = useCallback(async (finalScore: number) => {
         setGameState('finished');
         try {
-            await axios.post(`${API_BASE_URL}/api/score`, {
+            await api.post('/api/score', {
                 gameId: 'adverb-charades',
                 score: finalScore,
                 duration: 0,
                 wrongAnswers: [],
-                timestamp: new Date().toISOString(),
-            }, {
-                headers: { Authorization: `Bearer ${token}` }
             });
         } catch (err) {
             console.error('Failed to save score:', err);
         }
-    }, [token]);
+    }, []);
 
     return (
         <div className="h-full flex flex-col items-center justify-center p-4">

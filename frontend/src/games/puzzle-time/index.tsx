@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence, useAnimation, useMotionValue } from 'framer-motion';
 import { Timer, Eye, RotateCcw, Star, Trophy, Home, Plus, ChevronLeft, ChevronRight, Trash2 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
-import axios from 'axios';
+import api from '../../utils/api';
 import { useNavigate } from 'react-router-dom';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080';
@@ -17,7 +17,7 @@ interface Piece {
 }
 
 const PuzzleTime: React.FC = () => {
-    const { token, user } = useAuth();
+    const { user } = useAuth();
     const navigate = useNavigate();
     const [gameState, setGameState] = useState<'idle' | 'playing' | 'finished'>('idle');
     const [gridSize, setGridSize] = useState(3); // Defaulting to 3x3 for better demo, can toggle to 5 or 7
@@ -80,15 +80,14 @@ const PuzzleTime: React.FC = () => {
             const finalScore = Math.floor((timeLeft / 180) * 1000) + (gridSize === 4 ? 400 : gridSize === 5 ? 800 : 0);
             setScore(finalScore);
             setGameState('finished');
-            if (token) {
-                axios.post(`${API_BASE_URL}/api/score`, {
-                    gameId: 'puzzle-time',
-                    score: finalScore,
-                    timestamp: new Date().toISOString(),
-                }, { headers: { Authorization: `Bearer ${token}` } }).catch(console.error);
-            }
+            api.post('/api/score', {
+                gameId: 'puzzle-time',
+                score: finalScore,
+                duration: 180 - timeLeft,
+                wrongAnswers: [],
+            }).catch(console.error);
         }
-    }, [pieces, gameState, timeLeft, gridSize, token]);
+    }, [pieces, gameState, timeLeft, gridSize]);
 
     // Timer
     useEffect(() => {
@@ -104,17 +103,15 @@ const PuzzleTime: React.FC = () => {
     useEffect(() => {
         const fetchPuzzles = async () => {
             try {
-                const res = await axios.get(`${API_BASE_URL}/api/puzzles`, {
-                    headers: { Authorization: `Bearer ${token}` }
-                });
+                const res = await api.get('/api/puzzles');
                 setPuzzleImages(res.data);
             } catch (err) {
                 console.error('Failed to fetch puzzles:', err);
                 setPuzzleImages(['/assets/puzzle/kitten.png']);
             }
         };
-        if (token) fetchPuzzles();
-    }, [token]);
+        fetchPuzzles();
+    }, []);
 
     const resolveImageUrl = (url: string) => {
         if (url.startsWith('/uploads')) return `${API_BASE_URL}${url}`;
@@ -123,25 +120,23 @@ const PuzzleTime: React.FC = () => {
 
     const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
-        if (!file || !token) return;
+        if (!file) return;
 
         setIsUploading(true);
         const formData = new FormData();
         formData.append('image', file);
 
         try {
-            const res = await axios.post(`${API_BASE_URL}/api/puzzles/upload`, formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data',
-                    Authorization: `Bearer ${token}`
-                }
+            const res = await api.post('/api/puzzles/upload', formData, {
+                headers: { 'Content-Type': 'multipart/form-data' },
             });
             const newUrl = res.data.url;
             setPuzzleImages(prev => [...prev, newUrl]);
-            setSelectedImageIndex(puzzleImages.length); // Select new upload
-        } catch (err: any) {
+            setSelectedImageIndex(puzzleImages.length);
+        } catch (err) {
             console.error('Upload failed:', err);
-            alert(err.response?.data?.error || 'Upload failed. Please check file size and format.');
+            const e = err as { response?: { data?: { error?: string } } };
+            alert(e.response?.data?.error || 'Upload failed. Please check file size and format.');
         } finally {
             setIsUploading(false);
         }
@@ -149,13 +144,11 @@ const PuzzleTime: React.FC = () => {
 
     const handleDelete = async (e: React.MouseEvent, imgUrl: string) => {
         e.stopPropagation();
-        if (!window.confirm('Are you sure you want to delete this puzzle?') || !token) return;
+        if (!window.confirm('Are you sure you want to delete this puzzle?')) return;
 
         const filename = imgUrl.split('/').pop();
         try {
-            await axios.delete(`${API_BASE_URL}/api/puzzles/${filename}`, {
-                headers: { Authorization: `Bearer ${token}` }
-            });
+            await api.delete(`/api/puzzles/${filename}`);
             setPuzzleImages(prev => prev.filter(img => img !== imgUrl));
             if (puzzleImages[selectedImageIndex] === imgUrl) {
                 setSelectedImageIndex(0);
@@ -490,6 +483,7 @@ const PuzzlePiece: React.FC<{
                 x: piece.currentX,
                 y: piece.currentY,
                 scale: 1,
+                // eslint-disable-next-line react-hooks/purity
                 rotate: (Math.random() - 0.5) * 20
             }}
             whileDrag={{ scale: 1.1, rotate: 0, zIndex: 100 }}

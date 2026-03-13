@@ -1,0 +1,24 @@
+{
+  "name": "Kids Learning Playground",
+  "short_name": "Learn & Play",
+  "description": "Fun educational games for 4th graders — math, science, logic and more!",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#7C3AED",
+  "background_color": "#F8F7FF",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

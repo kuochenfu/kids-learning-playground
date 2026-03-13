@@ -1,8 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { motion, AnimatePresence, Reorder } from 'framer-motion';
 import { Star, Trophy, ArrowRight, BookOpen, RefreshCw } from 'lucide-react';
-import { useAuth } from '../../context/AuthContext';
-import axios from 'axios';
+import api from '../../utils/api';
 
 const WORD_LIST = [
     'ADVENTURE', 'BRILLIANT', 'CHALLENGE', 'EXPLORER', 'GALAXY',
@@ -10,10 +9,7 @@ const WORD_LIST = [
     'QUARTZ', 'RAINBOW', 'SCIENCE', 'TREASURE', 'UNIVERSE'
 ];
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080';
-
 const WordBuilder: React.FC = () => {
-    const { token } = useAuth();
     const [gameState, setGameState] = useState<'idle' | 'playing' | 'finished'>('idle');
     const [currentWord, setCurrentWord] = useState('');
     const [scrambled, setScrambled] = useState<{ id: string; char: string }[]>([]);
@@ -42,19 +38,16 @@ const WordBuilder: React.FC = () => {
     const finishGame = useCallback(async (finalScore: number) => {
         setGameState('finished');
         try {
-            await axios.post(`${API_BASE_URL}/api/score`, {
+            await api.post('/api/score', {
                 gameId: 'word-builder',
                 score: finalScore,
                 duration: 0,
                 wrongAnswers: [],
-                timestamp: new Date().toISOString(),
-            }, {
-                headers: { Authorization: `Bearer ${token}` }
             });
         } catch (err) {
             console.error('Failed to save score:', err);
         }
-    }, [token]);
+    }, []);
 
     const handleReorder = (newOrder: { id: string; char: string }[]) => {
         setScrambled(newOrder);

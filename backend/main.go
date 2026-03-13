@@ -9,6 +9,7 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+	"sync"
 	"time"
 
 	"github.com/gin-contrib/cors"
@@ -20,6 +21,170 @@ import (
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
+
+// ---------------------------------------------------------------------------
+// Rate limiting — simple token bucket per IP
+// ---------------------------------------------------------------------------
+
+type ipBucket struct {
+	tokens   float64
+	lastSeen time.Time
+	mu       sync.Mutex
+}
+
+var (
+	ipBuckets   sync.Map
+	bucketMu    sync.Mutex
+	cleanupOnce sync.Once
+)
+
+func getRateLimiter(ip string) *ipBucket {
+	v, _ := ipBuckets.LoadOrStore(ip, &ipBucket{tokens: 60, lastSeen: time.Now()})
+	return v.(*ipBucket)
+}
+
+// rateLimitMiddleware allows `maxPerMin` requests per minute per IP.
+func rateLimitMiddleware(maxPerMin float64) gin.HandlerFunc {
+	// Clean up stale entries every 5 minutes
+	cleanupOnce.Do(func() {
+		go func() {
+			for {
+				time.Sleep(5 * time.Minute)
+				ipBuckets.Range(func(k, v any) bool {
+					b := v.(*ipBucket)
+					b.mu.Lock()
+					stale := time.Since(b.lastSeen) > 10*time.Minute
+					b.mu.Unlock()
+					if stale {
+						ipBuckets.Delete(k)
+					}
+					return true
+				})
+			}
+		}()
+	})
+
+	refillRate := maxPerMin / 60.0 // tokens per second
+
+	return func(c *gin.Context) {
+		ip := c.ClientIP()
+		bucket := getRateLimiter(ip)
+
+		bucket.mu.Lock()
+		now := time.Now()
+		elapsed := now.Sub(bucket.lastSeen).Seconds()
+		bucket.tokens = min(maxPerMin, bucket.tokens+elapsed*refillRate)
+		bucket.lastSeen = now
+
+		if bucket.tokens < 1 {
+			bucket.mu.Unlock()
+			retryAfter := int(60.0 / maxPerMin)
+			c.Header("Retry-After", fmt.Sprintf("%d", retryAfter))
+			c.AbortWithStatusJSON(http.StatusTooManyRequests, gin.H{"error": "rate limit exceeded"})
+			return
+		}
+		bucket.tokens--
+		bucket.mu.Unlock()
+		c.Next()
+	}
+}
+
+func min(a, b float64) float64 {
+	if a < b {
+		return a
+	}
+	return b
+}
+
+// ---------------------------------------------------------------------------
+// Auth middleware — reads httpOnly cookie
+// ---------------------------------------------------------------------------
+
+func AuthMiddleware(secret string) gin.HandlerFunc {
+	return func(c *gin.Context) {
+		tokenString, err := c.Cookie("jwt")
+		if err != nil {
+			c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"error": "not authenticated"})
+			return
+		}
+
+		token, err := jwt.Parse(tokenString, func(token *jwt.Token) (interface{}, error) {
+			if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
+				return nil, fmt.Errorf("unexpected signing method: %v", token.Header["alg"])
+			}
+			return []byte(secret), nil
+		})
+
+		if err != nil || !token.Valid {
+			c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"error": "invalid token"})
+			return
+		}
+
+		claims, ok := token.Claims.(jwt.MapClaims)
+		if !ok {
+			c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"error": "failed to parse claims"})
+			return
+		}
+
+		userID := uint(claims["sub"].(float64))
+		c.Set("userID", userID)
+		c.Set("userEmail", claims["email"])
+		c.Set("userRole", claims["role"])
+		c.Next()
+	}
+}
+
+// ---------------------------------------------------------------------------
+// Cookie helper
+// ---------------------------------------------------------------------------
+
+func setAuthCookie(c *gin.Context, token string, secure bool) {
+	sameSite := http.SameSiteLaxMode
+	if secure {
+		sameSite = http.SameSiteNoneMode
+	}
+	http.SetCookie(c.Writer, &http.Cookie{
+		Name:     "jwt",
+		Value:    token,
+		Path:     "/",
+		MaxAge:   72 * 3600,
+		HttpOnly: true,
+		Secure:   secure,
+		SameSite: sameSite,
+	})
+}
+
+func clearAuthCookie(c *gin.Context, secure bool) {
+	sameSite := http.SameSiteLaxMode
+	if secure {
+		sameSite = http.SameSiteNoneMode
+	}
+	http.SetCookie(c.Writer, &http.Cookie{
+		Name:     "jwt",
+		Value:    "",
+		Path:     "/",
+		MaxAge:   -1,
+		HttpOnly: true,
+		Secure:   secure,
+		SameSite: sameSite,
+	})
+}
+
+// ---------------------------------------------------------------------------
+// Score request validation struct
+// ---------------------------------------------------------------------------
+
+type scoreRequest struct {
+	GameID       string   `json:"gameId"       binding:"required"`
+	Score        int      `json:"score"        binding:"min=0"`
+	Duration     int      `json:"duration"     binding:"min=0"`
+	WrongAnswers []string `json:"wrongAnswers"`
+	Timestamp    string   `json:"timestamp"`
+}
+
+// ---------------------------------------------------------------------------
+// main
+// ---------------------------------------------------------------------------
 
 func main() {
 	cfg := config.LoadConfig()
@@ -47,7 +212,6 @@ func main() {
 
 	if metaQ.ID == 0 || count < 100 {
 		log.Printf("🔄 DB Version Mismatch or Incomplete (Count: %d). Force Overwriting with %s...", count, TargetVersion)
-		// More robust table reset
 		db.Migrator().DropTable(&models.Question{})
 		db.AutoMigrate(&models.Question{})
 		seedQuestions(db)
@@ -61,7 +225,7 @@ func main() {
 
 	r := gin.Default()
 
-	// CORS Configuration
+	// CORS — must list specific origins when AllowCredentials=true
 	allowedOrigins := []string{"http://localhost:5173", "https://kids-learning-playground.pages.dev"}
 	if envOrigins := os.Getenv("ALLOWED_ORIGINS"); envOrigins != "" {
 		allowedOrigins = strings.Split(envOrigins, ",")
@@ -80,7 +244,6 @@ func main() {
 
 	// Static files for uploaded images
 	r.Static("/uploads", "./uploads")
-	// Ensure uploads/puzzle exists
 	if err := os.MkdirAll("./uploads/puzzle", 0755); err != nil {
 		log.Printf("Warning: Failed to create uploads directory: %v", err)
 	}
@@ -95,10 +258,8 @@ func main() {
 		api.GET("/health", func(c *gin.Context) {
 			var qCount int64
 			db.Model(&models.Question{}).Count(&qCount)
-
 			var categories []string
 			db.Model(&models.Question{}).Distinct("category").Pluck("category", &categories)
-
 			c.JSON(http.StatusOK, gin.H{
 				"status":         "ok",
 				"database":       "connected",
@@ -107,20 +268,20 @@ func main() {
 			})
 		})
 
-		// 1. Auth Endpoint: Receives ID Token from Frontend
-		api.POST("/auth/google", func(c *gin.Context) {
+		// Auth: rate-limited to 10 req/min per IP
+		api.POST("/auth/google", rateLimitMiddleware(10), func(c *gin.Context) {
 			var body struct {
-				Credential string `json:"credential"`
+				Credential string `json:"credential" binding:"required"`
 			}
 			if err := c.ShouldBindJSON(&body); err != nil {
-				c.JSON(http.StatusBadRequest, gin.H{"error": "invalid request body"})
+				c.JSON(http.StatusBadRequest, gin.H{"error": "credential is required"})
 				return
 			}
 
 			user, err := authService.VerifyGoogleToken(body.Credential)
 			if err != nil {
 				log.Printf("Google verification failed: %v", err)
-				c.JSON(http.StatusUnauthorized, gin.H{"error": "google authentication failed", "details": err.Error()})
+				c.JSON(http.StatusUnauthorized, gin.H{"error": "google authentication failed"})
 				return
 			}
 
@@ -130,32 +291,41 @@ func main() {
 				return
 			}
 
-			c.JSON(http.StatusOK, gin.H{
-				"token": token,
-				"user":  user,
-			})
+			setAuthCookie(c, token, cfg.CookieSecure)
+			c.JSON(http.StatusOK, gin.H{"user": user})
 		})
 
-		// 2. Protected Routes (require Authorization header)
+		// Logout: clear the cookie
+		api.POST("/auth/logout", func(c *gin.Context) {
+			clearAuthCookie(c, cfg.CookieSecure)
+			c.JSON(http.StatusOK, gin.H{"message": "logged out"})
+		})
+
+		// Protected routes — rate limited to 60 req/min
 		protected := api.Group("/")
-		protected.Use(AuthMiddleware(cfg.JWTSecret))
+		protected.Use(rateLimitMiddleware(60), AuthMiddleware(cfg.JWTSecret))
 		{
 			protected.POST("/score", func(c *gin.Context) {
-				var session models.GameSession
-				if err := c.ShouldBindJSON(&session); err != nil {
+				var req scoreRequest
+				if err := c.ShouldBindJSON(&req); err != nil {
 					c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 					return
 				}
 
-				// Set UserID from context
 				userID, _ := c.Get("userID")
-				session.UserID = userID.(uint)
+				session := models.GameSession{
+					UserID:       userID.(uint),
+					GameID:       req.GameID,
+					Score:        req.Score,
+					Duration:     req.Duration,
+					WrongAnswers: req.WrongAnswers,
+					Timestamp:    time.Now(),
+				}
 
 				if err := db.Create(&session).Error; err != nil {
 					c.JSON(http.StatusInternalServerError, gin.H{"error": "failed to save score"})
 					return
 				}
-
 				c.JSON(http.StatusOK, gin.H{"status": "captured", "id": session.ID})
 			})
 
@@ -168,29 +338,23 @@ func main() {
 
 			protected.GET("/questions", func(c *gin.Context) {
 				category := c.Query("category")
-				limitInt := 10 // Reset to 10 for better pace
-
+				if category == "" {
+					c.JSON(http.StatusBadRequest, gin.H{"error": "category is required"})
+					return
+				}
+				limitInt := 10
 				var questions []models.Question
-				// Ensure meta records aren't returned to players
 				result := db.Where("category = ?", category).Order("RANDOM()").Limit(limitInt).Find(&questions)
-
 				if result.Error != nil {
 					log.Printf("Error fetching questions for %s: %v", category, result.Error)
 					c.JSON(http.StatusInternalServerError, gin.H{"error": "failed to fetch questions"})
 					return
 				}
-
-				var totalInCategory int64
-				db.Model(&models.Question{}).Where("category = ?", category).Count(&totalInCategory)
-				log.Printf("Question Fetch: category=%s, found=%d (limit=%d), total_available=%d", category, len(questions), limitInt, totalInCategory)
-
 				c.JSON(http.StatusOK, questions)
 			})
 
-			// 3. Puzzle Image Management
 			protected.GET("/puzzles", func(c *gin.Context) {
 				var images []string
-				// Always start with the default kittens
 				images = append(images,
 					"/assets/puzzle/kitten.png",
 					"/assets/puzzle/space_kitten.png",
@@ -199,33 +363,31 @@ func main() {
 					"/assets/puzzle/garden_kitten.png",
 					"/assets/puzzle/royal_kitten.png",
 				)
-
 				files, err := os.ReadDir("./uploads/puzzle")
 				if err == nil {
 					for _, f := range files {
-						if !f.IsDir() {
-							// Avoid duplicates if they happen to have same name
-							name := f.Name()
-							if name == "default_kitten.png" || name == "space_kitten.png" ||
-								name == "artist_kitten.png" || name == "sleeping_kitten.png" ||
-								name == "garden_kitten.png" || name == "royal_kitten.png" {
-								continue
-							}
-							ext := strings.ToLower(filepath.Ext(name))
-							if ext == ".png" || ext == ".jpg" || ext == ".jpeg" || ext == ".webp" {
-								images = append(images, "/uploads/puzzle/"+name)
-							}
+						if f.IsDir() {
+							continue
+						}
+						name := f.Name()
+						if name == "default_kitten.png" || name == "space_kitten.png" ||
+							name == "artist_kitten.png" || name == "sleeping_kitten.png" ||
+							name == "garden_kitten.png" || name == "royal_kitten.png" {
+							continue
+						}
+						ext := strings.ToLower(filepath.Ext(name))
+						if ext == ".png" || ext == ".jpg" || ext == ".jpeg" || ext == ".webp" {
+							images = append(images, "/uploads/puzzle/"+name)
 						}
 					}
 				}
-
 				c.JSON(http.StatusOK, images)
 			})
 
 			protected.POST("/puzzles/upload", func(c *gin.Context) {
 				email, _ := c.Get("userEmail")
-				if email != "kuochenfu@gmail.com" {
-					c.JSON(http.StatusForbidden, gin.H{"error": "only kuochenfu@gmail.com can upload puzzles"})
+				if email != cfg.AdminEmail {
+					c.JSON(http.StatusForbidden, gin.H{"error": "admin access required"})
 					return
 				}
 
@@ -234,54 +396,41 @@ func main() {
 					c.JSON(http.StatusBadRequest, gin.H{"error": "no image provided"})
 					return
 				}
-
-				// Limit: 5MB
 				if file.Size > 5*1024*1024 {
 					c.JSON(http.StatusBadRequest, gin.H{"error": "image too large (max 5MB)"})
 					return
 				}
-
 				ext := strings.ToLower(filepath.Ext(file.Filename))
 				allowed := map[string]bool{".jpg": true, ".jpeg": true, ".png": true, ".webp": true}
 				if !allowed[ext] {
 					c.JSON(http.StatusBadRequest, gin.H{"error": "invalid format (use jpg, png, or webp)"})
 					return
 				}
-
-				// Create unique filename
 				filename := fmt.Sprintf("%d%s", time.Now().UnixNano(), ext)
 				savePath := filepath.Join("./uploads/puzzle", filename)
-
 				if err := c.SaveUploadedFile(file, savePath); err != nil {
 					c.JSON(http.StatusInternalServerError, gin.H{"error": "failed to save image"})
 					return
 				}
-
-				c.JSON(http.StatusOK, gin.H{
-					"url": "/uploads/puzzle/" + filename,
-				})
+				c.JSON(http.StatusOK, gin.H{"url": "/uploads/puzzle/" + filename})
 			})
 
 			protected.DELETE("/puzzles/:filename", func(c *gin.Context) {
 				email, _ := c.Get("userEmail")
-				if email != "kuochenfu@gmail.com" {
-					c.JSON(http.StatusForbidden, gin.H{"error": "only kuochenfu@gmail.com can delete puzzles"})
+				if email != cfg.AdminEmail {
+					c.JSON(http.StatusForbidden, gin.H{"error": "admin access required"})
 					return
 				}
-
 				filename := c.Param("filename")
-				// Basic security check to prevent path traversal
 				if strings.Contains(filename, "..") || strings.Contains(filename, "/") {
 					c.JSON(http.StatusBadRequest, gin.H{"error": "invalid filename"})
 					return
 				}
-
 				filePath := filepath.Join("./uploads/puzzle", filename)
 				if err := os.Remove(filePath); err != nil {
 					c.JSON(http.StatusInternalServerError, gin.H{"error": "failed to delete file"})
 					return
 				}
-
 				c.JSON(http.StatusOK, gin.H{"message": "deleted successfully"})
 			})
 		}
@@ -290,48 +439,6 @@ func main() {
 	fmt.Printf("Server starting on port %s...\n", cfg.Port)
 	if err := r.Run(":" + cfg.Port); err != nil {
 		log.Fatal(err)
-	}
-}
-
-// AuthMiddleware ...
-func AuthMiddleware(secret string) gin.HandlerFunc {
-	return func(c *gin.Context) {
-		authHeader := c.GetHeader("Authorization")
-		if authHeader == "" {
-			c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"error": "authorization header is missing"})
-			return
-		}
-
-		parts := strings.Split(authHeader, " ")
-		if len(parts) != 2 || parts[0] != "Bearer" {
-			c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"error": "invalid authorization header format"})
-			return
-		}
-
-		tokenString := parts[1]
-		token, err := jwt.Parse(tokenString, func(token *jwt.Token) (interface{}, error) {
-			if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
-				return nil, fmt.Errorf("unexpected signing method: %v", token.Header["alg"])
-			}
-			return []byte(secret), nil
-		})
-
-		if err != nil || !token.Valid {
-			c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"error": "invalid token", "details": err.Error()})
-			return
-		}
-
-		claims, ok := token.Claims.(jwt.MapClaims)
-		if !ok {
-			c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"error": "failed to parse claims"})
-			return
-		}
-
-		userID := uint(claims["sub"].(float64))
-		c.Set("userID", userID)
-		c.Set("userEmail", claims["email"])
-		c.Set("userRole", claims["role"])
-		c.Next()
 	}
 }
 
@@ -344,22 +451,17 @@ func seedQuestions(db *gorm.DB) {
 		log.Printf("CRITICAL: Error unmarshalling embedded questions: %v", err)
 		return
 	}
-
-	// Use batch insert for efficiency
 	if err := db.CreateInBatches(questions, 100).Error; err != nil {
 		log.Printf("CRITICAL: Failed to batch insert questions: %v", err)
 	} else {
-		scienceCount := 0
-		logicCount := 0
-		metaCount := 0
+		scienceCount, logicCount, metaCount := 0, 0, 0
 		for _, q := range questions {
-			if q.Category == "science" {
+			switch q.Category {
+			case "science":
 				scienceCount++
-			}
-			if q.Category == "logic" {
+			case "logic":
 				logicCount++
-			}
-			if q.Category == "meta" {
+			case "meta":
 				metaCount++
 			}
 		}

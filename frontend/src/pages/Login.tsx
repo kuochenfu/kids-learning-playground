@@ -50,7 +50,9 @@ const Login: React.FC = () => {
                         ) : (
                             <GoogleLogin
                                 onSuccess={credentialResponse => {
-                                    login(credentialResponse);
+                                    if (credentialResponse.credential) {
+                                        login({ credential: credentialResponse.credential });
+                                    }
                                 }}
                                 onError={() => {
                                     console.log('Login Failed');

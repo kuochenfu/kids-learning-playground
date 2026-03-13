@@ -1,8 +1,7 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { motion, AnimatePresence, Reorder } from 'framer-motion';
 import { Star, Trophy, ArrowRight, Timer, RefreshCw, CheckCircle2 } from 'lucide-react';
-import { useAuth } from '../../context/AuthContext';
-import axios from 'axios';
+import api from '../../utils/api';
 
 const SENTENCES = [
     "The quick brown fox jumps over the lazy dog",
@@ -13,10 +12,7 @@ const SENTENCES = [
     "Computers are helpful tools for learning new things"
 ];
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080';
-
 const SentenceScramble: React.FC = () => {
-    const { token } = useAuth();
     const [gameState, setGameState] = useState<'idle' | 'playing' | 'finished'>('idle');
     const [currentSentence, setCurrentSentence] = useState("");
     const [scrambled, setScrambled] = useState<{ id: string; word: string }[]>([]);
@@ -47,25 +43,23 @@ const SentenceScramble: React.FC = () => {
     const finishGame = useCallback(async (finalScore: number) => {
         setGameState('finished');
         try {
-            await axios.post(`${API_BASE_URL}/api/score`, {
+            await api.post('/api/score', {
                 gameId: 'sentence-scramble',
                 score: finalScore,
                 duration: 60 - timeLeft,
                 wrongAnswers: [],
-                timestamp: new Date().toISOString(),
-            }, {
-                headers: { Authorization: `Bearer ${token}` }
             });
         } catch (err) {
             console.error('Failed to save score:', err);
         }
-    }, [token, timeLeft]);
+    }, [timeLeft]);
 
     useEffect(() => {
         let timer: NodeJS.Timeout;
         if (gameState === 'playing' && timeLeft > 0) {
             timer = setInterval(() => setTimeLeft(prev => prev - 1), 1000);
         } else if (timeLeft === 0 && gameState === 'playing') {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             finishGame(score);
         }
         return () => clearInterval(timer);

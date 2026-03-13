@@ -1,24 +1,23 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Target, Shapes, RotateCcw, Trophy, Zap, Info, ChevronLeft, Calculator } from 'lucide-react';
-import { useAuth } from '../../context/AuthContext';
-import axios from 'axios';
-
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080';
+import api from '../../utils/api';
+import { NumericKeypad } from '../../components/NumericKeypad';
+import useSound from '../../hooks/useSound';
 
 type Level = 1 | 2 | 3;
 type ViewMode = 'main' | 'game' | 'solver';
 
 interface GeometricShape {
     type: 'triangle' | 'circle' | 'semicircle' | 'right_triangle' | 'square' | 'equilateral' | 'isosceles';
-    params: any;
+    params: Record<string, number>;
     targetValue: number;
     questionText: string;
     unit: string;
 }
 
 const GeometryQuest: React.FC = () => {
-    const { token } = useAuth();
+    const { playCorrect, playWrong, playComplete } = useSound();
 
     // UI State
     const [viewMode, setViewMode] = useState<ViewMode>('main');
@@ -37,9 +36,7 @@ const GeometryQuest: React.FC = () => {
     // Solver State
     const [selectedSolverShape, setSelectedSolverShape] = useState<string | null>(null);
     const [solverInputs, setSolverInputs] = useState<Record<string, string>>({});
-    const [solverResults, setSolverResults] = useState<any>(null);
-
-    const buttons = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '.', '0', 'DEL'];
+    const [solverResults, setSolverResults] = useState<{ steps: string[]; [key: string]: string | string[] } | null>(null);
 
     // --- GAME LOGIC ---
     const generateQuestion = useCallback((targetLevel: Level) => {
@@ -143,14 +140,6 @@ const GeometryQuest: React.FC = () => {
         generateQuestion(1);
     };
 
-    const handleKeypad = (val: string) => {
-        if (val === 'DEL') {
-            setUserInput(prev => prev.slice(0, -1));
-        } else if (userInput.length < 8) {
-            setUserInput(prev => prev + val);
-        }
-    };
-
     const checkAnswer = async () => {
         if (!currentShape) return;
         const ans = parseFloat(userInput);
@@ -160,6 +149,7 @@ const GeometryQuest: React.FC = () => {
         setGameState('feedback');
 
         if (correct) {
+            playCorrect();
             setScore(prev => prev + 10 * level);
             setTimeout(() => {
                 if (questionIndex >= 4) {
@@ -170,6 +160,7 @@ const GeometryQuest: React.FC = () => {
                         generateQuestion(nextLvl);
                     } else {
                         setGameState('finished');
+                        playComplete();
                         saveScore();
                     }
                 } else {
@@ -179,6 +170,7 @@ const GeometryQuest: React.FC = () => {
                 if (gameState !== 'finished') setGameState('playing');
             }, 1800);
         } else {
+            playWrong();
             setTimeout(() => {
                 setGameState('playing');
                 setIsCorrect(null);
@@ -187,34 +179,35 @@ const GeometryQuest: React.FC = () => {
     };
 
     const saveScore = async () => {
-        if (token) {
-            axios.post(`${API_BASE_URL}/api/score`, {
-                gameId: 'geometry-quest', score, duration: 180 - timeLeft
-            }, { headers: { Authorization: `Bearer ${token}` } }).catch(console.error);
-        }
+        api.post('/api/score', {
+            gameId: 'geometry-quest', score, duration: 180 - timeLeft,
+            wrongAnswers: [],
+        }).catch(console.error);
     };
 
     useEffect(() => {
-        let timer: any;
+        let timer: ReturnType<typeof setInterval> | undefined;
         if (viewMode === 'game' && gameState === 'playing' && timeLeft > 0) {
             timer = setInterval(() => setTimeLeft(t => t - 1), 1000);
         } else if (timeLeft === 0 && gameState !== 'finished' && viewMode === 'game') {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setGameState('finished');
             saveScore();
         }
         return () => clearInterval(timer);
-    }, [gameState, timeLeft, score, token, viewMode]);
+    }, [gameState, timeLeft, score, viewMode]);
 
 
     // --- SOLVER LOGIC ---
     useEffect(() => {
         if (!selectedSolverShape) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setSolverResults(null);
             return;
         }
 
         const inputs = solverInputs;
-        let results: any = { steps: [] };
+        let results: { steps: string[]; [key: string]: string | string[] } = { steps: [] };
 
         if (selectedSolverShape === 'right_triangle') {
             const a = parseFloat(inputs.a || '0');
@@ -305,10 +298,12 @@ const GeometryQuest: React.FC = () => {
         const center = size / 2;
 
         if (currentShape.type === 'triangle' || currentShape.type === 'equilateral' || currentShape.type === 'isosceles') {
-            let x1, y1, x2, y2, x3, y3;
+            let x3, y3;
             const baseW = 160;
-            x1 = center - baseW / 2; y1 = center + 50;
-            x2 = center + baseW / 2; y2 = y1;
+            const x1 = center - baseW / 2;
+            const y1 = center + 50;
+            const x2 = center + baseW / 2;
+            const y2 = y1;
 
             if (currentShape.type === 'triangle') {
                 const { a1, a2 } = currentShape.params;
@@ -545,11 +540,14 @@ const GeometryQuest: React.FC = () => {
                                         </div>
                                     </div>
                                     <div className="w-full md:w-64 flex flex-col gap-3">
-                                        <div className="grid grid-cols-3 gap-2 flex-1">
-                                            {buttons.map(b => (
-                                                <button key={b} onClick={() => handleKeypad(b)} className="bg-slate-50 hover:bg-slate-100 active:scale-95 transition-all py-4 rounded-xl text-xl font-black text-slate-700 border-b-4 border-slate-200">{b}</button>
-                                            ))}
-                                        </div>
+                                        <NumericKeypad
+                                            onInput={(val) => {
+                                                if (userInput.length < 8) setUserInput(prev => prev + val);
+                                            }}
+                                            onDelete={() => setUserInput(prev => prev.slice(0, -1))}
+                                            allowDecimal
+                                            disabled={gameState === 'feedback'}
+                                        />
                                         <button onClick={checkAnswer} disabled={!userInput || gameState === 'feedback'} className={`py-6 rounded-2xl font-black text-xl shadow-playful flex items-center justify-center gap-3 transition-colors ${!userInput || gameState === 'feedback' ? 'bg-slate-100 text-slate-300' : 'bg-accent text-accent-dark hover:scale-102'}`}>Check <Zap size={20} className="fill-current" /></button>
                                         <button onClick={() => setViewMode('main')} className="p-3 text-slate-400 font-black text-sm uppercase">Exit Game</button>
                                     </div>

@@ -1,0 +1,58 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: kids_playground
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      PORT: 8080
+      DB_DSN: postgres://postgres:postgres@postgres:5432/kids_playground?sslmode=disable
+      JWT_SECRET: local-dev-secret-change-in-production
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
+      ADMIN_EMAIL: ${ADMIN_EMAIL:-kuochenfu@gmail.com}
+      PARENT_EMAILS: ${PARENT_EMAILS:-frankuo@gmail.com}
+      COOKIE_SECURE: "false"
+      ALLOWED_ORIGINS: http://localhost:5173
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - uploads_data:/root/uploads
+
+  frontend:
+    image: node:20-alpine
+    working_dir: /app
+    command: sh -c "npm install && npm run dev -- --host"
+    ports:
+      - "5173:5173"
+    environment:
+      VITE_GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
+      VITE_API_BASE_URL: http://localhost:8080
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
+  uploads_data:

@@ -3,112 +3,43 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calculator, Book, Beaker, GraduationCap, Zap, Star, Puzzle } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
-import axios from 'axios';
+import api from '../utils/api';
 import type { GameMetadata } from '../../../shared/types';
+import { Skeleton } from '../components/Skeleton';
 
 const GAMES: GameMetadata[] = [
-    {
-        id: 'speed-math',
-        title: 'Speed Math Challenge',
-        description: 'Master your multiplication & division skills!',
-        icon: 'math',
-        color: 'bg-primary',
-        category: 'Math',
-    },
-    {
-        id: 'word-builder',
-        title: 'Word Builder',
-        description: 'Build your vocabulary with spelling puzzles!',
-        icon: 'english',
-        color: 'bg-secondary',
-        category: 'English',
-    },
-    {
-        id: 'sentence-scramble',
-        title: 'Sentence Scramble',
-        description: 'Race against time to fix the mixed-up sentences!',
-        icon: 'english',
-        color: 'bg-secondary',
-        category: 'English',
-    },
-    {
-        id: 'shiritori',
-        title: 'Word Chain (Shiritori)',
-        description: 'How long can you keep the word chain going?',
-        icon: 'english',
-        color: 'bg-secondary',
-        category: 'English',
-    },
-    {
-        id: 'twenty-questions',
-        title: '20 Questions',
-        description: 'Ask the right questions to find the secret object!',
-        icon: 'english',
-        color: 'bg-secondary',
-        category: 'English',
-    },
-    {
-        id: 'adverb-charades',
-        title: 'Adverb Charades',
-        description: 'Learn how adverbs change the way we do things!',
-        icon: 'english',
-        color: 'bg-secondary',
-        category: 'English',
-    },
-    {
-        id: 'science-quiz',
-        title: 'Science Quiz',
-        description: 'Explore the secrets of the world!',
-        icon: 'science',
-        color: 'bg-playful-blue',
-        category: 'Science',
-    },
-    {
-        id: 'logic-puzzles',
-        title: 'Logic Puzzles',
-        description: 'Train your brain with fun challenges!',
-        icon: 'logic',
-        color: 'bg-playful-purple',
-        category: 'Logic',
-    },
-    {
-        id: 'puzzle-time',
-        title: 'Puzzle Time!',
-        description: 'Assemble the pieces of a cute kitten dreams!',
-        icon: 'puzzle',
-        color: 'bg-playful-pink',
-        category: 'Logic',
-    },
-    {
-        id: 'geometry-quest',
-        title: 'Geometry Quest',
-        description: 'Master shapes & angles to unlock the secrets!',
-        icon: 'math',
-        color: 'bg-primary',
-        category: 'Math',
-    },
+    { id: 'speed-math', title: 'Speed Math Challenge', description: 'Master your multiplication & division skills!', icon: 'math', color: 'bg-primary', category: 'Math' },
+    { id: 'word-builder', title: 'Word Builder', description: 'Build your vocabulary with spelling puzzles!', icon: 'english', color: 'bg-secondary', category: 'English' },
+    { id: 'sentence-scramble', title: 'Sentence Scramble', description: 'Race against time to fix the mixed-up sentences!', icon: 'english', color: 'bg-secondary', category: 'English' },
+    { id: 'shiritori', title: 'Word Chain (Shiritori)', description: 'How long can you keep the word chain going?', icon: 'english', color: 'bg-secondary', category: 'English' },
+    { id: 'twenty-questions', title: '20 Questions', description: 'Ask the right questions to find the secret object!', icon: 'english', color: 'bg-secondary', category: 'English' },
+    { id: 'adverb-charades', title: 'Adverb Charades', description: 'Learn how adverbs change the way we do things!', icon: 'english', color: 'bg-secondary', category: 'English' },
+    { id: 'science-quiz', title: 'Science Quiz', description: 'Explore the secrets of the world!', icon: 'science', color: 'bg-playful-blue', category: 'Science' },
+    { id: 'logic-puzzles', title: 'Logic Puzzles', description: 'Train your brain with fun challenges!', icon: 'logic', color: 'bg-playful-purple', category: 'Logic' },
+    { id: 'puzzle-time', title: 'Puzzle Time!', description: 'Assemble the pieces of a cute kitten dreams!', icon: 'puzzle', color: 'bg-playful-pink', category: 'Logic' },
+    { id: 'geometry-quest', title: 'Geometry Quest', description: 'Master shapes & angles to unlock the secrets!', icon: 'math', color: 'bg-primary', category: 'Math' },
 ];
 
 const Lobby: React.FC = () => {
-    const { user, token } = useAuth();
+    const { user } = useAuth();
     const navigate = useNavigate();
     const [totalStars, setTotalStars] = React.useState(0);
+    const [starsLoading, setStarsLoading] = React.useState(true);
 
     React.useEffect(() => {
         const fetchStars = async () => {
-            if (!token) return;
             try {
-                const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}/api/achievements`, {
-                    headers: { Authorization: `Bearer ${token}` }
-                });
-                const stars = res.data?.reduce((acc: number, s: any) => acc + Math.floor(s.score / 10), 0) || 0;
+                const res = await api.get('/api/achievements');
+                const stars = res.data?.reduce((acc: number, s: { score: number }) => acc + Math.floor(s.score / 10), 0) || 0;
                 setTotalStars(stars);
             } catch (err) {
                 console.error('Failed to fetch stars:', err);
+            } finally {
+                setStarsLoading(false);
             }
         };
         fetchStars();
-    }, [token]);
+    }, []);
 
     const getIcon = (type: string) => {
         switch (type) {
@@ -139,7 +70,10 @@ const Lobby: React.FC = () => {
                     </div>
                     <div>
                         <div className="text-sm font-bold text-slate-400 uppercase tracking-widest leading-none mb-1">Total Stars</div>
-                        <div className="text-3xl font-black text-slate-800 leading-none">{totalStars}</div>
+                        {starsLoading
+                            ? <Skeleton className="h-8 w-16 mt-1" />
+                            : <div className="text-3xl font-black text-slate-800 leading-none">{totalStars}</div>
+                        }
                     </div>
                 </div>
             </div>
@@ -157,7 +91,6 @@ const Lobby: React.FC = () => {
                         <div className={`p-6 rounded-3xl ${game.color} text-white shadow-playful group-hover:rotate-6 transition-transform duration-300`}>
                             {getIcon(game.icon)}
                         </div>
-
                         <div className="flex-1">
                             <div className="flex items-center gap-3 mb-2">
                                 <span className="text-xs font-black uppercase tracking-widest text-slate-400 bg-slate-50 px-3 py-1 rounded-full">
@@ -170,10 +103,7 @@ const Lobby: React.FC = () => {
                             <h3 className="text-2xl font-black text-slate-800 mb-3 group-hover:text-primary transition-colors">
                                 {game.title}
                             </h3>
-                            <p className="text-slate-500 font-bold leading-relaxed">
-                                {game.description}
-                            </p>
-
+                            <p className="text-slate-500 font-bold leading-relaxed">{game.description}</p>
                             <div className="mt-6 flex items-center gap-2 text-primary font-black uppercase tracking-widest text-xs group-hover:translate-x-2 transition-transform duration-300">
                                 Play Now <Zap size={14} className="fill-primary" />
                             </div>

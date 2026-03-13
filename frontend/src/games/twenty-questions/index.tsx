@@ -2,8 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Trophy, ArrowRight, HelpCircle, RefreshCw, MessageCircle, CheckCircle2, XCircle } from 'lucide-react';
-import { useAuth } from '../../context/AuthContext';
-import axios from 'axios';
+import api from '../../utils/api';
 
 const MYSTERIES = [
     {
@@ -107,10 +106,7 @@ const QUESTIONS = [
     { id: 'forSports', text: "Is it used for sports?" }
 ];
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080';
-
 const TwentyQuestions: React.FC = () => {
-    const { token } = useAuth();
     const navigate = useNavigate();
     const [gameState, setGameState] = useState<'idle' | 'playing' | 'guessing' | 'finished'>('idle');
     const [mystery, setMystery] = useState(MYSTERIES[0]);
@@ -151,19 +147,16 @@ const TwentyQuestions: React.FC = () => {
     const finishGame = useCallback(async (finalScore: number) => {
         setGameState('finished');
         try {
-            await axios.post(`${API_BASE_URL}/api/score`, {
+            await api.post('/api/score', {
                 gameId: 'twenty-questions',
                 score: finalScore,
                 duration: 0,
                 wrongAnswers: [],
-                timestamp: new Date().toISOString(),
-            }, {
-                headers: { Authorization: `Bearer ${token}` }
             });
         } catch (err) {
             console.error('Failed to save score:', err);
         }
-    }, [token]);
+    }, []);
 
     return (
         <div className="h-full flex flex-col items-center justify-center p-4">
@@ -223,7 +216,7 @@ const TwentyQuestions: React.FC = () => {
                                     {QUESTIONS.map((q) => (
                                         <button
                                             key={q.id}
-                                            onClick={() => handleAsk(q.id as any, q.text)}
+                                            onClick={() => handleAsk(q.id as keyof typeof mystery.facts, q.text)}
                                             disabled={history.some(h => h.q === q.text) || gameState === 'guessing'}
                                             className="w-full p-5 text-left bg-white rounded-2xl border-b-4 border-slate-100 hover:border-secondary hover:translate-x-1 transition-all flex items-center justify-between group disabled:opacity-50"
                                         >

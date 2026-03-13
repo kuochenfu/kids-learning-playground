@@ -1,15 +1,15 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, Trophy, ArrowRight, Zap, RefreshCw, XCircle, CheckCircle2 } from 'lucide-react';
-import axios from 'axios';
-import { useAuth } from '../../context/AuthContext';
+import api from '../../utils/api';
 import { Link } from 'react-router-dom';
+import { NumericKeypad } from '../../components/NumericKeypad';
+import useSound from '../../hooks/useSound';
 
-const MAX_TIME = 60; // 60 seconds per challenge
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080';
+const MAX_TIME = 60;
 
 const SpeedMath: React.FC = () => {
-    const { token } = useAuth();
+    const { playCorrect, playWrong, playComplete } = useSound();
 
     // Game State
     const [gameState, setGameState] = useState<'idle' | 'playing' | 'finished'>('idle');
@@ -53,25 +53,20 @@ const SpeedMath: React.FC = () => {
 
     const finishGame = useCallback(async () => {
         setGameState('finished');
+        playComplete();
         if (timerRef.current) clearInterval(timerRef.current);
 
         try {
-            await axios.post(`${API_BASE_URL}/api/score`, {
+            await api.post('/api/score', {
                 gameId: 'speed-math',
                 score,
                 duration: MAX_TIME - timeLeft,
                 wrongAnswers,
-                timestamp: new Date().toISOString(),
-            }, {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
             });
-            console.log('Score saved successfully');
         } catch (err) {
             console.error('Failed to save score:', err);
         }
-    }, [score, timeLeft, wrongAnswers, token]);
+    }, [score, timeLeft, wrongAnswers, playComplete]);
 
     // Timer logic
     useEffect(() => {
@@ -91,18 +86,28 @@ const SpeedMath: React.FC = () => {
         };
     }, [gameState, timeLeft, finishGame]);
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
+    const handleInput = (digit: string) => {
+        if (gameState !== 'playing' || userInput.length >= 4) return;
+        setUserInput(prev => prev + digit);
+    };
+
+    const handleDelete = () => {
+        setUserInput(prev => prev.slice(0, -1));
+    };
+
+    const handleSubmit = () => {
         if (gameState !== 'playing' || !userInput) return;
 
         const val = parseInt(userInput);
         if (val === question.result) {
             setScore(prev => prev + 10);
             setFeedback('correct');
+            playCorrect();
             setTimeout(generateQuestion, 400);
         } else {
             setWrongAnswers(prev => [...prev, `${question.a} ${question.op} ${question.b} = ${userInput}`]);
             setFeedback('wrong');
+            playWrong();
             setUserInput('');
         }
     };
@@ -177,39 +182,48 @@ const SpeedMath: React.FC = () => {
                                 <span className="text-4xl md:text-5xl font-black text-slate-300">=</span>
                             </div>
 
-                            <form onSubmit={handleSubmit} className="w-full max-w-xs relative">
-                                <input
-                                    autoFocus
-                                    type="number"
-                                    value={userInput}
-                                    onChange={(e) => setUserInput(e.target.value)}
-                                    placeholder="?"
-                                    className={`w-full text-center text-7xl md:text-8xl font-black py-6 rounded-[2.5rem] bg-slate-50 outline-none border-4 transition-all duration-200 
+                            <div className="w-full max-w-sm flex flex-col gap-4 relative">
+                                <div className={`w-full text-center text-7xl md:text-8xl font-black py-6 rounded-[2.5rem] bg-slate-50 border-4 transition-all duration-200 relative
                                     ${feedback === 'correct' ? 'border-secondary text-secondary bg-secondary/5' :
-                                            feedback === 'wrong' ? 'border-primary text-primary bg-primary/5' :
-                                                'border-slate-100 focus:border-primary-light focus:bg-white'}`}
+                                        feedback === 'wrong' ? 'border-primary text-primary bg-primary/5' :
+                                            'border-slate-100'}`}
+                                >
+                                    {userInput || <span className="text-slate-300">?</span>}
+                                    <AnimatePresence>
+                                        {feedback === 'correct' && (
+                                            <motion.div
+                                                initial={{ scale: 0, opacity: 0 }}
+                                                animate={{ scale: [0, 1.5, 1], opacity: 1 }}
+                                                className="absolute -top-12 -right-12 text-secondary pointer-events-none"
+                                            >
+                                                <CheckCircle2 size={64} className="fill-white" />
+                                            </motion.div>
+                                        )}
+                                        {feedback === 'wrong' && (
+                                            <motion.div
+                                                initial={{ scale: 0, opacity: 0 }}
+                                                animate={{ scale: [0, 1.5, 1], opacity: 1 }}
+                                                className="absolute -top-12 -right-12 text-primary pointer-events-none"
+                                            >
+                                                <XCircle size={64} className="fill-white" />
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
+                                </div>
+                                <NumericKeypad
+                                    onInput={handleInput}
+                                    onDelete={handleDelete}
+                                    disabled={feedback !== null}
                                 />
-                                <AnimatePresence>
-                                    {feedback === 'correct' && (
-                                        <motion.div
-                                            initial={{ scale: 0, opacity: 0 }}
-                                            animate={{ scale: [0, 1.5, 1], opacity: 1 }}
-                                            className="absolute -top-12 -right-12 text-secondary pointer-events-none"
-                                        >
-                                            <CheckCircle2 size={64} className="fill-white" />
-                                        </motion.div>
-                                    )}
-                                    {feedback === 'wrong' && (
-                                        <motion.div
-                                            initial={{ scale: 0, opacity: 0 }}
-                                            animate={{ scale: [0, 1.5, 1], opacity: 1 }}
-                                            className="absolute -top-12 -right-12 text-primary pointer-events-none"
-                                        >
-                                            <XCircle size={64} className="fill-white" />
-                                        </motion.div>
-                                    )}
-                                </AnimatePresence>
-                            </form>
+                                <button
+                                    type="button"
+                                    onClick={handleSubmit}
+                                    disabled={!userInput || feedback !== null}
+                                    className="py-4 rounded-2xl font-black text-xl bg-primary text-white shadow-playful hover:scale-102 transition-all disabled:opacity-40 flex items-center justify-center gap-2"
+                                >
+                                    Submit <ArrowRight size={20} />
+                                </button>
+                            </div>
                         </motion.div>
                     </motion.div>
                 )}

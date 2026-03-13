@@ -3,22 +3,24 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Trophy, Star } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
-import axios from 'axios';
+import api from '../utils/api';
+import { SkeletonCard } from '../components/Skeleton';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080';
+interface GameSession {
+    gameId: string;
+    score: number;
+    CreatedAt: string;
+}
 
 const Dashboard: React.FC = () => {
-    const { user, token } = useAuth();
-    const [sessions, setSessions] = useState<any[]>([]);
+    const { user } = useAuth();
+    const [sessions, setSessions] = useState<GameSession[]>([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchAchievements = async () => {
-            if (!token) return;
             try {
-                const res = await axios.get(`${API_BASE_URL}/api/achievements`, {
-                    headers: { Authorization: `Bearer ${token}` }
-                });
+                const res = await api.get('/api/achievements');
                 setSessions(res.data || []);
             } catch (err) {
                 console.error('Failed to fetch achievements:', err);
@@ -27,21 +29,18 @@ const Dashboard: React.FC = () => {
             }
         };
         fetchAchievements();
-    }, [token]);
+    }, []);
 
     const totalStars = sessions.reduce((acc, s) => acc + Math.floor(s.score / 10), 0);
     const totalScore = sessions.reduce((acc, s) => acc + s.score, 0);
 
-    // Grouping by gameId to get the BEST score for each game
-    const bestScores = Object.values(sessions.reduce((acc: any, s: any) => {
+    const bestScores = Object.values(sessions.reduce((acc: Record<string, GameSession>, s) => {
         if (!acc[s.gameId] || acc[s.gameId].score < s.score) {
             acc[s.gameId] = s;
         }
         return acc;
     }, {}));
-
-    // Sort best scores alphabetically by game name
-    bestScores.sort((a: any, b: any) => a.gameId.localeCompare(b.gameId));
+    bestScores.sort((a, b) => a.gameId.localeCompare(b.gameId));
 
     return (
         <div className="space-y-12">
@@ -54,40 +53,47 @@ const Dashboard: React.FC = () => {
                         Check your achievements and stars earned so far. Great job keep it up!
                     </p>
                 </div>
-
                 <Link to="/" className="btn-primary group">
                     <ArrowLeft className="group-hover:-translate-x-1 transition-transform" />
                     Back to Lobby
                 </Link>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="bg-white p-8 rounded-[2.5rem] shadow-playful border-b-8 border-primary/20 flex flex-col items-center">
-                    <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-6 shadow-inner">
-                        <Star className="text-primary fill-primary" size={40} />
-                    </div>
-                    <span className="text-5xl font-black text-slate-800 mb-2 tracking-tight">{totalStars}</span>
-                    <span className="text-lg font-bold text-slate-500 uppercase tracking-widest text-center">Stars Earned</span>
+            {loading ? (
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <SkeletonCard className="h-48" />
+                    <SkeletonCard className="h-48" />
+                    <SkeletonCard className="h-48" />
                 </div>
+            ) : (
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="bg-white p-8 rounded-[2.5rem] shadow-playful border-b-8 border-primary/20 flex flex-col items-center">
+                        <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-6 shadow-inner">
+                            <Star className="text-primary fill-primary" size={40} />
+                        </div>
+                        <span className="text-5xl font-black text-slate-800 mb-2 tracking-tight">{totalStars}</span>
+                        <span className="text-lg font-bold text-slate-500 uppercase tracking-widest text-center">Stars Earned</span>
+                    </div>
 
-                <div className="bg-white p-8 rounded-[2.5rem] shadow-playful border-b-8 border-secondary/20 flex flex-col items-center">
-                    <div className="w-20 h-20 bg-secondary/10 rounded-full flex items-center justify-center mb-6 shadow-inner">
-                        <Trophy className="text-secondary fill-secondary" size={40} />
+                    <div className="bg-white p-8 rounded-[2.5rem] shadow-playful border-b-8 border-secondary/20 flex flex-col items-center">
+                        <div className="w-20 h-20 bg-secondary/10 rounded-full flex items-center justify-center mb-6 shadow-inner">
+                            <Trophy className="text-secondary fill-secondary" size={40} />
+                        </div>
+                        <span className="text-5xl font-black text-slate-800 mb-2 tracking-tight">{sessions.length}</span>
+                        <span className="text-lg font-bold text-slate-500 uppercase tracking-widest text-center">Games Played</span>
                     </div>
-                    <span className="text-5xl font-black text-slate-800 mb-2 tracking-tight">{sessions.length}</span>
-                    <span className="text-lg font-bold text-slate-500 uppercase tracking-widest text-center">Games Played</span>
-                </div>
 
-                <div className="bg-white p-8 rounded-[2.5rem] shadow-playful border-b-8 border-accent/20 flex flex-col items-center">
-                    <div className="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center mb-6 shadow-inner">
-                        <Star className="text-accent fill-accent" size={40} />
+                    <div className="bg-white p-8 rounded-[2.5rem] shadow-playful border-b-8 border-accent/20 flex flex-col items-center">
+                        <div className="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center mb-6 shadow-inner">
+                            <Star className="text-accent fill-accent" size={40} />
+                        </div>
+                        <span className="text-5xl font-black text-slate-800 mb-2 tracking-tight">
+                            {sessions.length > 0 ? Math.floor(totalScore / sessions.length) : 0}
+                        </span>
+                        <span className="text-lg font-bold text-slate-500 uppercase tracking-widest text-center">Avg Score</span>
                     </div>
-                    <span className="text-5xl font-black text-slate-800 mb-2 tracking-tight">
-                        {sessions.length > 0 ? Math.floor(totalScore / sessions.length) : 0}
-                    </span>
-                    <span className="text-lg font-bold text-slate-500 uppercase tracking-widest text-center">Avg Score</span>
                 </div>
-            </div>
+            )}
 
             <div className="bg-white rounded-[3rem] p-10 shadow-playful border-b-8 border-slate-100/50">
                 <h2 className="text-3xl font-black text-slate-800 mb-10 flex items-center gap-4">
@@ -98,14 +104,16 @@ const Dashboard: React.FC = () => {
                 </h2>
 
                 {loading ? (
-                    <div className="py-10 text-center font-bold text-slate-400 animate-pulse">Loading sessions...</div>
+                    <div className="space-y-4">
+                        {[...Array(3)].map((_, i) => <SkeletonCard key={i} className="h-24" />)}
+                    </div>
                 ) : sessions.length === 0 ? (
                     <div className="py-20 text-center bg-slate-50 rounded-[2rem] border-4 border-dashed border-slate-100">
                         <p className="text-xl font-bold text-slate-400">No games played yet. Go to the Lobby to start!</p>
                     </div>
                 ) : (
                     <div className="space-y-6">
-                        {bestScores.map((item: any, i) => (
+                        {bestScores.map((item, i) => (
                             <motion.div
                                 initial={{ opacity: 0, x: -20 }}
                                 animate={{ opacity: 1, x: 0 }}
@@ -126,7 +134,6 @@ const Dashboard: React.FC = () => {
                                         </p>
                                     </div>
                                 </div>
-
                                 <div className="flex flex-col items-end">
                                     <div className="text-[10px] font-black uppercase text-slate-400 mb-1">Top Score</div>
                                     <span className="text-2xl font-black text-secondary leading-none mb-1">{item.score.toLocaleString()}</span>
